@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '0.18.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,9 +31,24 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Assets of application
+gem 'bootstrap-sass', '3.3.1'
+gem 'font-awesome-rails', '4.4.0.0'
+gem 'jquery-datatables-rails', '3.3.0'
+
+# Authentication of administrative control
+gem 'devise', '3.5.2'
+
+# Customize application ENV
+gem 'figaro', '1.1.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '3.3.3'
+  gem 'guard-rspec', '4.6.4', require: false
+  gem 'capybara', '2.1.0'
+  gem 'cucumber', '2.1.0'
 end
 
 group :development do
@@ -43,5 +57,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'quiet_assets'
 end
 
