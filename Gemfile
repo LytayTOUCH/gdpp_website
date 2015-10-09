@@ -36,6 +36,10 @@ gem 'bootstrap-sass', '3.3.1'
 gem 'font-awesome-rails', '4.4.0.0'
 gem 'jquery-datatables-rails', '3.3.0'
 
+# Assets for datetime picker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
+
 # Authentication of administrative control
 gem 'devise', '3.5.2'
 
