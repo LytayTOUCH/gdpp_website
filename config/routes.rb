@@ -1,8 +1,37 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  
-  get 'website/index'
+  devise_for :admins, skip: [:sessions, :passwords, :confirmations, :registrations]
+  as :admins do
+    # get 'administrator/login' => 'devise/sessions#new', as: :administrator_login
+    # delete 'administrator/logout' => 'devise/sessions#destroy', as: :administrator_logout
+    # session handling
+    scope '/admin' do
+      get     '/login'  => 'devise/sessions#new',     as: 'new_administrator_session'
+      post    '/login'  => 'devise/sessions#create',  as: 'administrator_session'
+      delete  '/logout' => 'devise/sessions#destroy', as: 'destroy_administrator_session'
+      # joining
+      get   '/join' => 'devise/registrations#new',    as: 'new_administrator_registration'
+      post  '/join' => 'devise/registrations#create', as: 'administrator_registration'
+    end
+    scope '/account' do
+      # password reset
+      get   '/reset-password'        => 'devise/passwords#new',    as: 'new_administrator_password'
+      put   '/reset-password'        => 'devise/passwords#update', as: 'administrator_password'
+      post  '/reset-password'        => 'devise/passwords#create'
+      get   '/reset-password/change' => 'devise/passwords#edit',   as: 'edit_administrator_password'
+      # confirmation
+      get   '/confirm'        => 'devise/confirmations#show',   as: 'administrator_confirmation'
+      post  '/confirm'        => 'devise/confirmations#create'
+      get   '/confirm/resend' => 'devise/confirmations#new',    as: 'new_administrator_confirmation'
+      # settings & cancellation
+      get '/cancel'   => 'devise/registrations#cancel', as: 'cancel_administrator_registration'
+      get '/settings' => 'devise/registrations#edit',   as: 'edit_administrator_registration'
+      put '/settings' => 'devise/registrations#update'
+      # account deletion
+      delete '' => 'devise/registrations#destroy'
+    end
+  end
 
+  get 'website/index'
   get 'website/home'
 
   # The priority is based upon order of creation: first created -> highest priority.
