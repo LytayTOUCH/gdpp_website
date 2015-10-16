@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  
   get 'website/index'
 
   get 'website/home'
