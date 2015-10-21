@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'website#index'
-  get 'website/home'
+  get 'contact' => 'website#contact'
   resources :administrator
   devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
   as :admin do
