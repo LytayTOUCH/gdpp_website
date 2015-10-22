@@ -1,0 +1,51 @@
+<%= render 'website/header/header' %>
+  <!-- content -->      
+  <div class="content  col-md-8 body">
+
+
+
+      <br>
+      <p class="text-center" style="font-size: 25px; font-family:'khmer muol'; " >
+        គ្រឹះស្ថាន - សហគ្រាសសាធារណៈ
+      </p>
+      <hr>
+      <div class="row"  >
+        
+      <%
+        $i = 0
+        $max = 13
+
+        while $i < $max do
+
+      %>
+          <div class="col-md-6" style="padding-bottom: 10px;" >
+            <%= image_tag("no-image.png", class: 'col-md-4 has-shadow ', style: 'padding:10px;' ) %>
+            <div class="col-md-8" style=" line-height: 27px;" >
+              <b>ឈ្មោះស្ថាប័នថ្នាក់កណ្តាល</b>
+              <br>
+              អាស័យដ្ឋាន៖............................<br>
+              ទូរស័ព្ទ៖...................................<br>
+              គេហទំព័រ៖ ...................................<br>
+
+            </div>
+          </div>
+      <% 
+      $i +=1
+       end 
+
+      %>
+      </div>
+        
+      <ul class="pagination">
+          <li class="disabled"><a href="#">&laquo;</a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&raquo;</a></li>
+      </ul>  
+
+  </div>
+  <%= render'website/sidebars/right_sidebar' %>
+  <%= render 'website/footer/footer' %>

@@ -22,3 +22,7 @@
 //= require moment/km
 //= require moment/ja
 //= require bootstrap-datetimepicker
+
+//= require owl.carousel
+
+//= require custom_js.js
