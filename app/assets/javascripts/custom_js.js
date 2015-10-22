@@ -1,4 +1,5 @@
 $(document).on('page:change', function() {
+  $('#my_datatable').DataTable();
   $("#slideshow1").owlCarousel({
     autoPlay : 3000,
     navigation : false, // Show next and prev buttons
