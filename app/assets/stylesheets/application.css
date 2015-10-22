@@ -17,3 +17,9 @@
 hr{
   margin: 5px;
 }
+input{
+  line-height: 30px !important;
+}
+select {
+  padding: 0px 10px !important;
+}

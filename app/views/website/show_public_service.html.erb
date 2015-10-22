@@ -1,0 +1,38 @@
+<%= render 'website/header/header' %>
+<!-- content -->      
+<div class="content  col-md-8 body">
+
+    <p class="text-center" style="font-family: 'khmer muol'; font-size: 20px; " > <%= "សេវាសាធារណៈ" %> </p>
+    <p class="color-fore text-center" > <%="សេចក្តីលម្អិតអំពីសេវាសាធារណៈ"%> </p>
+    <hr>
+    <br>
+
+
+    <%    
+      $i = 0
+      $n = 8
+      while $i < $n do
+    %>
+        <div class="row" >
+          <div class="col-md-12 color-hover cursor-pointer "  >
+          <div style="border-bottom: 1px solid #bbb; margin-bottom: 10px ;" >
+            <p><b> <%= "ឈ្មោះអ្នកទទួលមុខងា តូនាទី : " %> </b> <%= "តួនាទីនៃមុខដំណែង" %> </p>
+            <p>
+              <%= "ទូរស័ព្ទ : " %>  <%= "098 876 543" %><br>
+              <%= "Email : " %> <%= "email-mef@mef.com.kh" %> 
+            </p>
+          </div>
+          </div>
+        </div>
+    <% 
+      $i += 1
+      end 
+    %>
+    <p style="text-align:center ">
+    <%= link_to 'ទាញយកឯកសារ', '' %>
+    </p>
+    
+</div>
+<!-- /.content -->
+<%= render'website/sidebars/right_sidebar' %>
+<%= render 'website/footer/footer' %>

@@ -1,7 +1,85 @@
 <%= render 'website/header/header' %>
+  <!-- content -->      
+  <div class="content  col-md-8 body">
 
-<h1>Website#index</h1>
-<p>Find me in app/views/website/index.html.erb</p>
+    <div class="has-padding has-shadow" style="margin-bottom:10px;" >
+      <b><%= "ទំព័រដើម"  %></b>
+    </div>
+      <!-- Slider box  -->
+        <!-- Slides Container -->
+        <div class="slide-box" style="height: 430px;" >
+          <div id="slideshow1" class="owl-carousel owl-theme" >
+            <div class="item" >
+              <%= link_to root_path do %> <%= image_tag "slide_show/mef1.jpg"  %> <% end %>
+            </div>
+            <div class="item">
+              <!-- <div class="textoverlay"><h1>This just the text of image for test</h1><p>Description of image, this just a text of testing </p></div> -->
+              <%= link_to root_path do %> <%= image_tag "slide_show/mef2.jpg"  %> <% end %>
+            </div>
+            <div class="item">
+             <%= link_to root_path do %> <%= image_tag "slide_show/mef3.jpg"  %> <% end %>
+            </div>
+            <div class="item">
+            <%= link_to root_path do %> <%= image_tag "slide_show/mef4.jpg" %><% end %>
+            </div>
+            <div class="item">
+            <%= link_to root_path do %> <%= image_tag "slide_show/mef5.jpg" %><% end %>
+            </div>
+          </div>
+        </div>
+        
+    <div class="row" >
+      <div class="col-md-12">
+        <p class="content-main-title"> <%= "សេចក្ដីជូនដំណឹងស្តីពីការដេញថ្លៃថ្មីៗ" %> </p>
+        
+        <div class="row">
+            <% i = 1; while i<=6 do %>
+            <div class="col-md-4" style="margin-top: 20px" >
+              <p class="box-title"> <%= "ដំណឹងដេញថ្លៃទី​ #{i}" %> </p>
+              <p>
+                <%= "ក្រសួង/ស្ថាប័ណ" %><br>
+                <%= "សេចក្តីជូនដំណឹងជាសាធារណៈ ស្តីពីការដាក់ឱ្យដេញថ្លៃផ្គត់ផ្គង់ថ្មរ M30 និងស៊ីម៉ង់សម្រាប់ឆមាស់ទី២ " %>
+              </p>
+              
+              <%= link_to "ទាញយកឯកសារ", "#", class: "btn btn-xs btn-primary background-color-fore" %>
+            </div>
+            <% i+=1; end %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="content-main-title"> <%= "ច្បាប់និង លិខិតកតិយុទ្ធ" %> </p> 
+        <br>
+        <div class="row" >
+        <% i=1; while i<=4 do %>
+          <div class="col-md-3" style="text-align: center;" >
+            <%= image_tag('no-image.png', width: '100%', class: 'has-shadow')%>
+            <p class="box-title text-center "> <%= "ច្បាប់និងកតិយុទ្ធ #{i}" %> </p>
+            <%= link_to "ទាញយកឯកសារ", "#" %>
+          </div>
+        <% i+=1; end %>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+
+
+
+
+  
+  </div>
+  <!-- /.content -->
+
+
+  <!-- right sitebar -->
+    <%= render'website/sidebars/right_sidebar' %>
+  <!-- /.right sitebar -->
+
 
 <div class="container">
     <div class="row">
