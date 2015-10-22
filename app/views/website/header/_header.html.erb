@@ -1,31 +1,35 @@
-<div class="row">
-  <div class="col-md-12">
-    <h3 class="text-center">
-      Front End Header Bar
-      <br>
-      <%= render 'website/header/navigator' %>
-    </h3>
-  </div>
+<!-- containner -->
+<div class="container"> 
+    <div class="row has-shadow  ">
+      <!-- main-container -->
+      <div class="main-container" >
 
-    <!-- <div class="col-md-12 background-color-fore has-shadow fixed ">
-        <div class="admin-navbar " style="float: left; padding-top: 7px;">
-          <ul style=" width:400px; display: inline; margin-top: 15px; ">
-            <li style="display:inline;">
-              <a class="color-white" href="#">មាតិកា១</a> 
-            </li>
-            <li style="display:inline;">
-              <a class="color-white" href="#">មាតិកា១</a>
-            </li>
-            <li style="display:inline;">
-              <a class="color-white" href="#">មាតិកា១</a>
-            </li>
-          </ul>
-        </div>  
-        <p style="float:right;">  <b>នាមត្រកួល ឈ្មោះ </b> | ចាកចេញ</p>
 
+
+        <div class="main-header" >
+          <!-- top-header -->
+          <div class="top-header has-padding color-fore col-md-12">
+              <div class="col-md-6">
+                    <!-- left    -->
+              </div>
+              <div class="language-change-box col-md-6">
+                  <!-- <a href="" title="chang language">
+                    <img src="/assets/kh.png">     
+                  </a>
+                  <a href="" title="chang language">
+                    <img src="/assets/en.png">     
+                  </a> -->
+              </div>
+          </div>
+          <!-- /top-header -->
+
+          <!-- header-content -->
+          <div class="header-content has-padding ">
+              
+              <img  src="/assets/logo.png" class="img-responsive " style="width:400px; margin-top: 15px; margin-bottom: 15px;" >
+
+          </div>
+          <!-- /.header-content -->
         </div>
 
-
-    </div>
- -->
-</div>
+        <%= render 'website/header/navigator' %>
