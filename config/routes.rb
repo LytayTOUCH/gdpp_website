@@ -1,7 +1,38 @@
 Rails.application.routes.draw do
-  get 'website/index'
-
-  get 'website/home'
+  root 'website#index'
+  get 'contact' => 'website#contact'
+  resources :administrator
+  devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
+  as :admin do
+    # get 'administrator/login' => 'devise/sessions#new', as: :administrator_login
+    # delete 'administrator/logout' => 'devise/sessions#destroy', as: :administrator_logout
+    # session handling
+    scope '/admin' do
+      get     '/login'  => 'devise/sessions#new',     as: 'new_admin_session'
+      post    '/login'  => 'devise/sessions#create',  as: 'admin_session'
+      delete  '/logout' => 'devise/sessions#destroy', as: 'destroy_admin_session'
+      # joining
+      # get   '/register' => 'devise/registrations#new',    as: 'new_admin_registration'
+      # post  '/register' => 'devise/registrations#create', as: 'admin_registration'
+    end
+    # scope '/account' do
+    #   # password reset
+    #   get   '/reset-password'        => 'devise/passwords#new',    as: 'new_admin_password'
+    #   put   '/reset-password'        => 'devise/passwords#update', as: 'admin_password'
+    #   post  '/reset-password'        => 'devise/passwords#create'
+    #   get   '/reset-password/change' => 'devise/passwords#edit',   as: 'edit_admin_password'
+    #   # confirmation
+    #   get   '/confirm'        => 'devise/confirmations#show',   as: 'admin_confirmation'
+    #   post  '/confirm'        => 'devise/confirmations#create'
+    #   get   '/confirm/resend' => 'devise/confirmations#new',    as: 'new_admin_confirmation'
+    #   # settings & cancellation
+    #   get '/cancel'   => 'devise/registrations#cancel', as: 'cancel_admin_registration'
+    #   get '/settings' => 'devise/registrations#edit',   as: 'edit_admin_registration'
+    #   put '/settings' => 'devise/registrations#update'
+    #   # account deletion
+    #   delete '' => 'devise/registrations#destroy'
+    # end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
