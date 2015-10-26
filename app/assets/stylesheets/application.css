@@ -16,6 +16,7 @@
  */
 hr{
   margin: 5px;
+  border-color: green;
 }
 input{
   line-height: 30px !important;
