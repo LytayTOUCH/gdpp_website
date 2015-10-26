@@ -20,9 +20,12 @@ Rails.application.routes.draw do
 
   get 'procurement_goods' => 'website#show_procurement_goods'
 
+  resources :administrator do
+    collection do
+      get 'announcement' => 'administrator#show_announcement'
+    end
+  end
 
-
-  resources :administrator
   devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
   as :admin do
     # get 'administrator/login' => 'devise/sessions#new', as: :administrator_login

@@ -49,6 +49,9 @@ gem 'figaro', '1.1.1'
 # slide show
 gem 'owlcarousel-rails'
 
+# attachment file 
+gem "paperclip", "~> 4.3"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -66,5 +69,9 @@ group :development do
   gem 'spring'
 
   gem 'quiet_assets'
+
+  # show as table when console sql
+  gem "table_print"
+
 end
 

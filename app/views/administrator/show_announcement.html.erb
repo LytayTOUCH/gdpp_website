@@ -1,0 +1,67 @@
+<%= render 'administrator/header/header' %>
+
+<% if admin_signed_in? %>
+  <%= link_to 'log out', destroy_admin_session_path, :method => :delete%>
+  <div>Signed in as... <%= current_admin.email %></div>
+  <div><%= current_admin.username.capitalize %></div>
+  <div><%= current_admin.user_profile.inspect %></div>
+<% end %>
+
+
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b>Announcment Manager</b>
+  </div>
+  <div class="panel-body" >
+    <table id="announcement_table" class="table table-bordered"  >
+      <thead>
+        <tr >
+          <th>#</th>
+          <th>Title</th>
+          <th>Procurement Entity</th>
+          <th>Budget source</th>
+          <th>open register</th>
+          <th>Close date </th>
+          <th>open doc date </th>
+          <th>Public </th>
+          <th>Action </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% i = 1 %>
+        <% @announcments.each do |announcement| %>
+          <tr>
+            <td><%= i %></td>
+            <td><%= announcement.title %></td> 
+            <td><%= announcement.procurement_entity.name %></td> 
+            <td><%= announcement.budget_source.name %></td> 
+            <td><%= announcement.open_register_date %></td> 
+            <td><%= announcement.close_submit_date %></td> 
+            <td><%= announcement.open_bid_doc_date %></td> 
+            <td>
+            <%= link_to "Yes", "#", class: "btn btn-xs btn-success" if announcement.public == true %>
+            <%= link_to "No", "#", class: "btn btn-xs btn-danger " if announcement.public == false %>
+            </td> 
+            <td><%= "none" %></td> 
+          </tr>
+        <% i+=1; end %>
+
+      </tbody>
+
+    </table>
+    
+
+  </div>
+  <div class="panel-footer" >
+    <%= link_to "Create new", "" , class: "btn btn-primary" %>
+  </div>
+
+  <!-- /.panel-body -->
+</div>
+<!-- /.panel -->
+
+
+
+
+
+<%= render 'administrator/footer/footer' %>
