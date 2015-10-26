@@ -16,4 +16,11 @@
  */
 hr{
   margin: 5px;
+  border-color: green;
+}
+input{
+  line-height: 30px !important;
+}
+select {
+  padding: 0px 10px !important;
 }

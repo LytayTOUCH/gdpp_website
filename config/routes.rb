@@ -1,6 +1,27 @@
 Rails.application.routes.draw do
   root 'website#index'
-  get 'contact' => 'website#contact'
+  # get 'contact' => 'website#contact'
+
+
+  get 'public_service' => 'website#show_public_service'
+  get 'faq'=> 'website#show_question_answer'
+  get 'contact' => 'website#show_contact'
+
+  get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
+  get 'procurement_entity_ministry' => 'website#show_procurement_entity_ministry'
+  get 'procurement_entity_public_foundation' => 'website#show_procurement_entity_public_foundation'
+
+  get 'bidder_list_registrative_form' => 'website#show_bidder_list_registrative_form'
+  get 'bidding_document' => 'website#show_bidding_document'
+  get 'planning_approval_correction' => 'website#show_planning_approval_correction'
+
+  get  'gdpp_role' => 'website#show_gdpp_role'
+  get 'gdpp_structure' => 'website#show_gdpp_structure'
+
+  get 'procurement_goods' => 'website#show_procurement_goods'
+
+
+
   resources :administrator
   devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
   as :admin do
