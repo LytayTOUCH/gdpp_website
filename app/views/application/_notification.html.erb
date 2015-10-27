@@ -1,23 +1,16 @@
 <% flash.each do |name, msg| %>
   <div class="row" id="notification">
-    <div class="col-md-8 col-md-offset-2">
-      <% if name.eql? 'notice' %>
-        <script type="text/javascript">
-          setTimeout("$('#notification').fadeOut('fast', function(){$(this).remove();})", 5000);
-        </script>
-        <div class="alert alert-success text-center" role="alert" style="z-index:100; padding: 5px; margin: 0px;">
-          <span class="fa fa-check-circle" aria-hidden="true"></span>
-          <%= msg %>
-        </div>
-      <% else %>
-        <script type="text/javascript">
-          setTimeout("$('#notification').fadeOut('fast', function(){$(this).remove();})", 5000);
-        </script>
-        <div class="alert alert-danger text-center" role="alert" style="z-index:100; padding: 5px; margin: 0px;">
-          <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-          <%= msg %>
-        </div>
-      <% end %>
-    </div>
+    <script type="text/javascript">
+      $(document).ready(function (){
+        $('.top-right').notify({
+          type: '<%= name %>'=='notice' ? 'alert alert-success' : 'alert alert-danger',
+          message: { html: '<%= name %>'=='notice' ? '<span class="fa fa-check-circle" aria-hidden="true"></span> <%= msg %>': '<span class="fa fa-exclamation-triangle" aria-hidden="true"></span> <%= msg %>'},
+          onClosed: function(){
+            $('#notification').remove();
+          }
+        }).show();
+      });
+    </script>
+    <div class='notifications top-right'></div>
   </div>
 <% end %>
