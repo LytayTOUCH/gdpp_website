@@ -1,6 +1,5 @@
-
-<%= simple_form_for @announcement, url: administrator_index_path do |f| %>
-      
+<%= debug @announcement %>
+<%= simple_form_for(@announcement) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :announcement_type_id, collection: @announcement_types %>
@@ -10,6 +9,5 @@
     <%= f.input :close_submit_date %>
     <%= f.input :open_bid_doc_date %>
     <%= f.input :public %>
-
-    <%= f.button :submit, class: 'btn btn-primary background-color-fore' %>
+    <%= f.submit %>
 <% end %>

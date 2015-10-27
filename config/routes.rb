@@ -20,17 +20,12 @@ Rails.application.routes.draw do
 
   get 'procurement_goods' => 'website#show_procurement_goods'
 
-  resources :administrator do
-    collection do
-      get 'announcement' => 'administrator#announcement'
-      get 'new_announcement' => 'administrator#new_announcement'
-      get 'edit_announcement' => 'administrator#edit_announcement'
-
-    end
-  end
-
+  resources :administrator
 
   resources :budget_sources
+
+  resources :announcements
+
   # # budget source
   # get 'budget_sources' => 'administrator#budget_sources'
   # post 'create_budget_source' => 'administrator#create_budget_source'
