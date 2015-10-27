@@ -1,0 +1,27 @@
+<%= render 'administrator/header/header' %>
+
+<% if admin_signed_in? %>
+  <%= link_to 'log out', destroy_admin_session_path, :method => :delete%>
+  <div>Signed in as... <%= current_admin.email %></div>
+  <div><%= current_admin.username.capitalize %></div>
+  <div><%= current_admin.user_profile.inspect %></div>
+<% end %>
+<br>
+<hr>
+
+  <div class="panel panel-primary" >
+    <div class="panel-heading" >
+      <b>New Announcement</b>
+    </div>
+    <div class="panel-body" >
+    <div class="col-md-5" >
+      <%= render 'administrator/announcements/form' %>
+    </div>
+    </div>
+  </div>
+  
+
+<hr>
+
+
+<%= render 'administrator/footer/footer' %>

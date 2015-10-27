@@ -22,9 +22,25 @@ Rails.application.routes.draw do
 
   resources :administrator do
     collection do
-      get 'announcement' => 'administrator#show_announcement'
+      get 'announcement' => 'administrator#announcement'
+      get 'new_announcement' => 'administrator#new_announcement'
+      get 'edit_announcement' => 'administrator#edit_announcement'
+
     end
   end
+
+
+  resources :budget_sources
+  # # budget source
+  # get 'budget_sources' => 'administrator#budget_sources'
+  # post 'create_budget_source' => 'administrator#create_budget_source'
+  
+  # get 'new_budget_source/new' => 'administrator#new_budget_source', as: "new_budget_source"
+  
+  # get 'budget_source/:id' => 'administrator#show_budget_source', as: "budget_source"
+  # get 'edit_budget_source/:id/edit' => 'administrator#edit_budget_source', as: "edit_budget_source"
+  # get 'destroy_budget_source/:id' => 'administrator#edit_budget_source', as: "destroy_budget_source"
+  # patch 'update_budget_source/:id' => 'administrator#update_budget_source' as: 
 
   devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
   as :admin do

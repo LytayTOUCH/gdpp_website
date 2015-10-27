@@ -1,1 +1,15 @@
-edit announcement form 
+
+<%= simple_form_for @announcement, url: administrator_index_path do |f| %>
+      
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :announcement_type_id, collection: @announcement_types %>
+    <%= f.input :procurement_entity_id, collection: @procurement_entities %>
+    <%= f.input :budget_source_id, collection: @budget_sources %>
+    <%= f.input :open_register_date %>
+    <%= f.input :close_submit_date %>
+    <%= f.input :open_bid_doc_date %>
+    <%= f.input :public %>
+
+    <%= f.button :submit, class: 'btn btn-primary background-color-fore' %>
+<% end %>

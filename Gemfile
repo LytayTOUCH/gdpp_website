@@ -52,6 +52,9 @@ gem 'owlcarousel-rails'
 # attachment file 
 gem "paperclip", "~> 4.3"
 
+# simple form
+gem 'simple_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -74,4 +77,5 @@ group :development do
   gem "table_print"
 
 end
+
 
