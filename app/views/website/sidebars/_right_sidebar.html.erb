@@ -25,10 +25,11 @@
     <div class=" widget-box has-shadow">
         <h2>ដំណឹងស្តីពីការដេញថ្លៃ</h2>
         <ul style="list-style:none">
-            <li><%= link_to 'លទ្ធកម្មទំនេញ', procurement_goods_path %></li>
-            <li><%= link_to 'លទ្ធកម្មសំណង់',  '#' %></li>
-            <li><%= link_to 'លទ្ធកម្មសេវាកម្ម', '#' %></li>
-            <li><%= link_to 'លទ្ធកម្មទីព្រឹក្សា',  '#' %></li>
+            
+            <% @announcement_types.each do |announcement_type| %>
+                <li> <%= link_to announcement_type.name , show_announcements_path(type_id: announcement_type.id ) %> </li>
+            <% end %>
+
         </ul>
     </div>
 

@@ -18,13 +18,17 @@ Rails.application.routes.draw do
   get  'gdpp_role' => 'website#show_gdpp_role'
   get 'gdpp_structure' => 'website#show_gdpp_structure'
 
-  get 'procurement_goods' => 'website#show_procurement_goods'
+  get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
 
   resources :administrator
 
   resources :budget_sources
 
   resources :announcements
+
+  resources :procurement_entities
+
+  resources :announcement_types
 
   # # budget source
   # get 'budget_sources' => 'administrator#budget_sources'

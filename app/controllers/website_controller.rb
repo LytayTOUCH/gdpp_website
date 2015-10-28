@@ -1,4 +1,5 @@
 class WebsiteController < ApplicationController
+  before_action :load_announcement_type
   def index
   end
 
@@ -57,10 +58,15 @@ class WebsiteController < ApplicationController
     
   end
 
+
 # order menu
-  def show_procurement_goods
-    
+  def show_announcements
+    @announcements = Announcement.where(announcement_type_id: params[:type_id], public: true )
   end
-  
+
+  private
+    def load_announcement_type
+      @announcement_types = AnnouncementType.all
+    end  
 
 end

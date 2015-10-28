@@ -1,7 +1,7 @@
-<%= debug @announcement %>
+<!-- <%= debug @announcement %> -->
 <%= simple_form_for(@announcement) do |f| %>
     <%= f.input :title %>
-    <%= f.input :description %>
+    <%= f.input :description, as:"text" %>
     <%= f.input :announcement_type_id, collection: @announcement_types %>
     <%= f.input :procurement_entity_id, collection: @procurement_entities %>
     <%= f.input :budget_source_id, collection: @budget_sources %>
