@@ -1,6 +1,5 @@
 class ProcurementEntitiesController < ApplicationController
-  before_action :authenticate_admin!
-  before_action :set_procurement_entity, only: [:edit, :update, :destroy]
+  before_action :authenticate_admin!, :set_procurement_entity, only: [:edit, :update, :destroy]
   layout "administrator"
   def index
     @procurement_entities = ProcurementEntity.all

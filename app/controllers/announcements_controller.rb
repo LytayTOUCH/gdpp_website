@@ -1,6 +1,5 @@
 class AnnouncementsController < ApplicationController
-  before_action :authenticate_admin!
-  before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, :set_announcement, only: [:show, :edit, :update, :destroy]
   layout 'administrator'
   def index
     @announcements = Announcement.all
