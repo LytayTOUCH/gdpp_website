@@ -20,15 +20,14 @@ Rails.application.routes.draw do
 
   get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
 
-  resources :administrator
-
-  resources :budget_sources
-
-  resources :announcements
-
-  resources :procurement_entities
-
-  resources :announcement_types
+  resources :administrator do
+    collection do
+      resources :budget_sources
+      resources :announcements
+      resources :procurement_entities
+      resources :announcement_types
+    end
+  end
 
   # # budget source
   # get 'budget_sources' => 'administrator#budget_sources'
