@@ -1,5 +1,6 @@
 class AnnouncementTypesController < ApplicationController
-  before_action :authenticate_admin!, :set_announcement_type, only: [:edit, :update,:destroy]
+  before_action :set_announcement_type, only: [:edit, :update,:destroy]
+  before_action :authenticate_admin!
   layout 'administrator'
   
   def index

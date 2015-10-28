@@ -3,11 +3,11 @@
     <div class="col-xs-12" >
       <div class="row" >
         <div class="col-xs-9" >
-          <%= link_to "Dashboard", administrator_index_path %> | 
-          <%= link_to "Announcements", announcements_path %> |
-          <%= link_to "Budget sources", budget_sources_path %> |
-          <%= link_to "Announcement types", announcement_types_path %> |
-          <%= link_to "Procurement entities", procurement_entities_path %>
+          <%= link_to "Dashboard", administrator_index_path, class: 'btn btn-default' %> 
+          <%= link_to "Announcements", announcements_path, class: 'btn btn-default' %>
+          <%= link_to "Budget sources", budget_sources_path, class: 'btn btn-default' %>
+          <%= link_to "Announcement types", announcement_types_path, class: 'btn btn-default' %>
+          <%= link_to "Procurement entities", procurement_entities_path, class: 'btn btn-default' %>
         </div>
         <div class="col-xs-3" style="text-align:right" >
           <b><%= link_to current_admin.username.capitalize, "#" %></b> | 
