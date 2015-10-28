@@ -12,5 +12,5 @@ class AdministratorController < ApplicationController
 
   end
 
->>>>>>> cedef833c98f163e082a019f23ef223cf0d2ecba
+>>>>>>> e51f184461dd97ffdcf9f76ad52a8128b993c2b2
 end
