@@ -1,0 +1,60 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+kh:
+  devise:
+    confirmations:
+      confirmed: "អាសយដ្ឋានអ៊ីម៉ែលរបស់អ្នកត្រូវបានបញ្ជាក់ថាបានជោគជ័យ"
+      send_instructions: "អ្នកនឹងទទួលបាននូវអ៊ីម៉ែលណែនាំអំពីរបៀបក្នុងការបញ្ជាក់អ៊ីម៉ែលក្នុងរយៈពេល ២ ឬ ៣ នាទី"
+      send_paranoid_instructions: "ប្រសិនបើអ៊ីម៉ែលរបស់អ្នកមានរួចរាល់នៅក្នុង database, អ្នកនឹងទទួលបាននូវអ៊ីម៉ែលណែនាំអំពីរបៀបក្នុងការបញ្ជាក់អ៊ីម៉ែលក្នុងរយៈពេល "
+    failure:
+      already_authenticated: "អ្នកបាន Log in រួចហើយ"
+      inactive: "Accountរបស់អ្នកមិនបាន activate នោះទេ"
+      invalid: "ការបញ្ចូល អ៊ីម៉ែល ឬ ពាក្យសម្ងាត់មិនត្រឹមត្រូវ។"
+      locked: "Account របស់អ្នកត្រូវបាន lock"
+      last_attempt: "អ្នកនៅសល់ចំនួនមួយដងទៀតទេក្នុងការព្យាយាម Log in មុនពេល Accountរបស់អ្នកត្រូវបាន lock"
+      not_found_in_database: "បញ្ជូល %{authentication_keys} ឬ លេខសំងាត់មិនបានត្រឹមត្រូវ"
+      timeout: "Session របស់អ្នកផុតកំណត់ សូមធ្វើការ sign in ម្តងទៀតដើម្បីបន្ត"
+      unauthenticated: "អ្នកត្រូវការចូលគណនីយ ឬ ចុះឈ្មោះមុននឹងបន្ត"
+      unconfirmed: "អ្នកគួរតែបញ្ជាក់អាសយដ្ឋានអ៊ីមែលរបស់អ្នកមុននឹងបន្ត។"
+    mailer:
+      confirmation_instructions:
+        subject: "សេចក្តីណែនាំអំពីការបញ្ជាក់"
+      reset_password_instructions:
+        subject: "សេចក្តីណែនាំអំពីការកំណត់ពាក្យសម្ងាត់ឡើងវិញ"
+      unlock_instructions:
+        subject: "សេចក្តីណែនាំក្នុងការដោះសោ"
+    omniauth_callbacks:
+      failure: "មិនអាចផ្តល់នូវសិទ្ធិទៅអោយអ្នកបានតាម %{kind} ព្រោះ \"%{reason}\"."
+      success: "ការផ្តល់នូវសិទ្ធិពី %{kind} account បានជោគជ័យ"
+    passwords:
+      no_token: "អ្នកមិនអាចដំណើរការ ទំព័រ នេះបានទេដោយមិនមានការឆ្លងកាត់ការ reset លេខសំងាត់. បើអ្នកធ្វើការ  access តាមអ៊ីម៉ែល  reset password នោះអ្នកត្រូវប្រាកដថាបានប្រើប្រាស់នូវ  URL ទំរង់ពេញ"
+      send_instructions: "អ្នកនឹងទទួលបាននូវអ៊ីម៉ែលណែនាំអំពីរបៀបក្នុងការ  reset លេខសំងាត់ ក្នុងរយៈពេល ២ ឬ ៣ នាទី"
+      send_paranoid_instructions: "ប្រសិនបើអ៊ីម៉ែលរបស់អ្នកមានរួចរាល់នៅក្នុង database, អ្នកនឹងទទួលបាននូវ link សំរាប់ស្រង់យក លេខសំងាត់ ទៅកាន់អ៊ីម៉ែលរបស់អ្នកក្នុងរយៈពេល ២ ឬ ៣ នាទី"
+      updated: "លេខសំងាត់របស់អ្នកបានផ្លាស់ប្តូរដោយជោគជ័យ ឥលូវនេះអ្នកបានចូលបានសំរេច"
+      updated_not_active: "លេខសំងាត់របស់អ្នកបានផ្លាស់ប្តូរដោយជោគជ័យ"
+    registrations:
+      destroyed: "លាហើយ! Account របស់អ្នកត្រួវបានលុបចោល សង្ឃឹមថានឹងបានជួបគ្នាលើកក្រោយទៀត"
+      signed_up: "សូមស្វាគមន៍! អ្នកបានចុះឈ្មោះដោយជោគជ័យ"
+      signed_up_but_inactive: "អ្នកបានចុះឈ្មោះដោយជោគជ័យ ប៉ុន្តែ អ្នកមិនអាចដំណើរការបានទេព្រោះ account របស់អ្នកមិនទាន់ត្រូវបានអនុញ្ញាត"
+      signed_up_but_locked: "អ្នកបានចុះឈ្មោះដោយជោគជ័យ ប៉ុន្តែ អ្នកមិនអាចដំណើរការបានទេព្រោះ account របស់អ្នកត្រូវបាន lock"
+      signed_up_but_unconfirmed: "សារដែលមានភ្ជាប់ជាមួយនូវ link សំរាប់ផ្ទៀងផ្ទាត់បានផ្ញើទៅកាន់អ៊ីម៉ែលរបស់អ្នក. សូមធ្វើតាម link ដើម្បីប្រើប្រាស់ account"
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
+      updated: "Your account has been updated successfully."
+    sessions:
+      signed_in: "ចូលប្រើប្រាស់ដោយជោគជ័យ"
+      signed_out: "ចាកចេញដោយជោគជ័យ"
+      already_signed_out: "បានចាកចេញការប្រើប្រាស់ដោយជោគជ័យ"
+    unlocks:
+      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
+      send_paranoid_instructions: "បើអ្នកមានអ៊ីម៉ែលរួចរាល់ហើយ, អ្នកនឹងទទួលបាននូវអ៊ីម៉ែលដែលពីការណែនាំពីរបៀប unlock ក្នុងរយៈពេល ២ ឬ ៣ នាទី"
+      unlocked: "Account របស់អ្នកត្រូវបាន unlock ដោយជោគជ័យ. សូម sign in ដើម្បីបន្ត"
+  errors:
+    messages:
+      already_confirmed: "ត្រូវបានផ្ទៀងផ្ទាត់រួចរាល់, សូមសាក sign in ម្តងទៀត"
+      confirmation_period_expired: "ត្រូវការផ្ទៀងផ្ទាត់ក្នុងរយៈពេល %{period}, សូមធ្វើការស្នើសំុម្តងទៀត"
+      expired: "ត្រូវបានផុតកំណត់, សូមធ្វើការស្នើសំុម្តងទៀត"
+      not_found: "មិនអាចរកបាន"
+      not_locked: "មិនត្រូវបានជាប់គាំង"
+      not_saved:
+        one: "កំហុសមួយត្រូវបានហាមឃាត់ដោយ %{resource} ក្នុងការកត់ត្រាទុក"
+        other: "%{count} កំហុសត្រូវបានហាមឃាត់ដោយ %{resource} ក្នុងការកត់ត្រាទុក"

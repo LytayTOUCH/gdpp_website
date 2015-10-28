@@ -35,6 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '3.3.1'
 gem 'font-awesome-rails', '4.4.0.0'
 gem 'jquery-datatables-rails', '3.3.0', path: 'vendor/jquery-datatables-rails-3.3.0'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'bootstrap_notify', '0.0.5'
 
 # Assets for datetime picker
 gem 'momentjs-rails', '2.10.3', path: 'vendor/momentjs-rails-2.10.3'
