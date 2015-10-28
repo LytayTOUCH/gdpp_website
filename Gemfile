@@ -34,15 +34,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Assets of application
 gem 'bootstrap-sass', '3.3.1'
 gem 'font-awesome-rails', '4.4.0.0'
-gem 'jquery-datatables-rails' #, '3.3.0', path: 'vendor/jquery-datatables-rails-3.3.0'
+gem 'jquery-datatables-rails' , '3.3.0', path: 'vendor/jquery-datatables-rails-3.3.0'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'bootstrap_notify', '0.0.5'
 
 # Assets for datetime picker
-gem 'momentjs-rails', '2.10.3' #, path: 'vendor/momentjs-rails-2.10.3'
-gem 'bootstrap3-datetimepicker-rails' #, '4.15.35', path: 'vendor/bootstrap3-datetimepicker-rails-4.15.35'
-gem 'datetime_picker_rails', '~> 0.0.5'
+gem 'momentjs-rails', '2.10.3' , path: 'vendor/momentjs-rails-2.10.3'
+gem 'bootstrap3-datetimepicker-rails' , '4.15.35', path: 'vendor/bootstrap3-datetimepicker-rails-4.15.35'
 
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 # Authentication of administrative control
 gem 'devise', '3.5.2'
 

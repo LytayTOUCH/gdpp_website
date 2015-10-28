@@ -5,9 +5,9 @@
     <%= f.input :announcement_type_id, collection: @announcement_types %>
     <%= f.input :procurement_entity_id, collection: @procurement_entities %>
     <%= f.input :budget_source_id, collection: @budget_sources %>
-    <%= f.input :open_register_date %>
-    <%= f.input :close_submit_date %>
-    <%= f.input :open_bid_doc_date %>
+    <%= f.input :open_register_date, as: :date_picker %>
+    <%= f.input :close_submit_date, as: :date_picker %>
+    <%= f.input :open_bid_doc_date, as: :date_picker %>
     <%= f.input :public %>
     <%= f.submit %>
 <% end %>
