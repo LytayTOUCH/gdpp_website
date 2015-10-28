@@ -7,7 +7,7 @@ class LawRegulationsController < ApplicationController
   end
 
   def new
-    
+    @law_regulation = LawRegulation.new
   end
 
   def create

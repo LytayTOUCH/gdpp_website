@@ -35,14 +35,6 @@ ActiveRecord::Schema.define(version: 20151028033944) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
-  create_table "law_regulations", force: :cascade do |t|
-    t.string   "title"
-    t.string   "description"
-    t.string   "thumbnail"
-    t.string   "law_doc_attachment"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-
   create_table "announcement_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -71,6 +63,15 @@ ActiveRecord::Schema.define(version: 20151028033944) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "law_regulations", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "thumbnail"
+    t.string   "law_doc_attachment"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "procurement_entities", force: :cascade do |t|
