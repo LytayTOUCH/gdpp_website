@@ -6,4 +6,11 @@ class AdministratorController < ApplicationController
 
   end
 
+<<<<<<< HEAD
+=======
+  def show
+
+  end
+
+>>>>>>> e51f184461dd97ffdcf9f76ad52a8128b993c2b2
 end

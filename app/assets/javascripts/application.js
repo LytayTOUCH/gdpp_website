@@ -25,4 +25,6 @@
 //= require bootstrap_notify
 //= require owl.carousel
 
+
+
 //= require custom_js.js

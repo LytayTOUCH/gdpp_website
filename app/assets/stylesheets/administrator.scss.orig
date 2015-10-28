@@ -1,8 +1,13 @@
 // Place all the styles related to the Administrator controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.notifications{
-  z-index:1000;
+<<<<<<< HEAD
+
+.admin-nav {
+  background-color: #fff;
+  padding-top:13px;
+  padding-bottom: 13px;
+  
 }
 .admin-footer{
   background-color: #fff;
@@ -12,3 +17,8 @@
   position:fixed;
   width: 1200px;
 }
+=======
+.notifications{
+  z-index:1000;
+}
+>>>>>>> fda33224a87a6119f29839e8127e349cd33ba326
