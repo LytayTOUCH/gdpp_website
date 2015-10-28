@@ -13,10 +13,10 @@ class AnnouncementTypesController < ApplicationController
   def create
     @announcement_type = AnnouncementType.new(announcement_type_param)
     if @announcement_type.save
-      flash[:notice] = "Announcement type add completed"
+      flash[:notice] = "Create success!"
       redirect_to announcement_types_path
     else
-      flash[:notice] = "Can't not create Announcment type"
+      flash[:warning] = "Create unsuccess!"
       render "new"
     end
   end
@@ -26,10 +26,10 @@ class AnnouncementTypesController < ApplicationController
   end
   def update
     if @announcement_type.update_attributes(announcement_type_param)
-      flash[:notice] = "Announcment type update successfully!"
+      flash[:notice] = "Update success!"
       redirect_to announcement_types_path
     else
-      flash[:notice] = "Can't not update announcment_type"
+      flash[:warning] = "Update unsuccess!"
       render "edit"
     end
   end
@@ -37,9 +37,9 @@ class AnnouncementTypesController < ApplicationController
     if Announcement.where(announcement_type_id: @announcement_type.id).empty?
       # it's related with announcement
       @announcement_type.destroy
-      flash[:notice] = "Announcment type  Deleted"
+      flash[:notice] = "Delete success!"
     else 
-      flash[:notice] = "Can't not delete, this using in announcment"
+      flash[:warning] = "Delete unsuccess!, or is using in Announcement."
     end
     redirect_to announcement_types_path
   end

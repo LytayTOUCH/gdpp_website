@@ -12,9 +12,9 @@ class AnnouncementsController < ApplicationController
   def update
     if(@announcement.update_attributes(announcement_param))
       flash[:notice] = "Update success"
-      redirect_to announcement_path
+      redirect_to announcements_path
     else
-      flash[:notice] = "Update faild"
+      flash[:warning] = "Update unsuccess!"
       render "edit"
     end
   end
@@ -32,7 +32,7 @@ class AnnouncementsController < ApplicationController
       flash[:notice] = "Create successfully"
       redirect_to announcements_path
     else
-      flash[:notice] = "Create Unsuccess!"
+      flash[:warning] = "Create unsuccess!"
       render "new"
     end
   end

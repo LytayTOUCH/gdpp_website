@@ -16,10 +16,10 @@ class BudgetSourcesController < ApplicationController
   def create
     @budget_source = BudgetSource.new(budget_source_param)
     if @budget_source.save 
-      flash[:notice] = "Create successfully"
+      flash[:notice] = "Create success!"
       redirect_to budget_sources_path
     else
-      flash[:notice] = "Create unsuccess"
+      flash[:warning] = "Create unsuccess"
       render "new"
     end
   end
@@ -29,7 +29,7 @@ class BudgetSourcesController < ApplicationController
       flash[:notice] = "Update success"
       redirect_to budget_sources_path
     else
-      flash[:notice] = "unable to update"
+      flash[:warning] = "Update unsuccess"
       render "edit"
     end
   end
@@ -41,7 +41,7 @@ class BudgetSourcesController < ApplicationController
       flash[:notice] = "Delete success"
       redirect_to budget_sources_path
     else 
-      flash[:notice] = "Can't not delete, this using in announcment"
+      flash[:warning] = "Delete unsuccess, or is using in Announcement"
       redirect_to budget_sources_path
     end
 
