@@ -4,6 +4,9 @@ class AnnouncementsController < ApplicationController
   def index
     @announcements = Announcement.all
   end
+  def show
+    
+  end
   def edit
     @announcement_types = AnnouncementType.all
     @procurement_entities = ProcurementEntity.all
@@ -38,7 +41,9 @@ class AnnouncementsController < ApplicationController
   end
 
   def destroy
-    
+    @announcement.destroy
+    flash[:notice] = "Delete success"
+    redirect_to announcements_path
   end
 
   private
@@ -56,6 +61,9 @@ class AnnouncementsController < ApplicationController
         :open_register_date,
         :close_submit_date,
         :open_bid_doc_date,
+        :announcement_file,
+        :bidding_file,
+
         :public
         )
     end

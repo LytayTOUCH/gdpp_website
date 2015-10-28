@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026021521) do
+ActiveRecord::Schema.define(version: 20151028083101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,8 +51,16 @@ ActiveRecord::Schema.define(version: 20151026021521) do
     t.date     "close_submit_date"
     t.date     "open_bid_doc_date"
     t.boolean  "public"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "announcement_file_file_name"
+    t.string   "announcement_file_content_type"
+    t.integer  "announcement_file_file_size"
+    t.datetime "announcement_file_updated_at"
+    t.string   "bidding_file_file_name"
+    t.string   "bidding_file_content_type"
+    t.integer  "bidding_file_file_size"
+    t.datetime "bidding_file_updated_at"
   end
 
   add_index "announcements", ["announcement_type_id"], name: "index_announcements_on_announcement_type_id", using: :btree

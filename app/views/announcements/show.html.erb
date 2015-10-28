@@ -1,0 +1,36 @@
+<br>
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= @announcement.title %></b>
+  </div>
+  <div class="panel-body" > 
+    <div class="row" >
+      
+      <div class="col-xs-6" >
+        <ul style="list-style:none;" >
+          <li> <%= "Announcement Type: #{@announcement.announcement_type.name} " %> </li>
+          <li> <%= "Procurement Entity: #{@announcement.procurement_entity.name} " %> </li>
+          <li> <%= "Budget Source: #{@announcement.budget_source.name} " %> </li>
+          <li> <%= "Open register date: #{@announcement.open_register_date} " %> </li>
+          <li> <%= "Close submit date: #{@announcement.close_submit_date} " %> </li>
+          <li> <%= "Open bidding document: #{@announcement.open_bid_doc_date} " %> </li>
+          <li> <%= "Announcment file: " %> <% if @announcement.announcement_file? %>
+                     <%= link_to @announcement.announcement_file_file_name, @announcement.announcement_file.url, target: '_blank' %>
+                    <% else %>
+                      No attached file(s)
+                    <% end %> </li>
+          <li> <%= "bidding file: " %> <% if @announcement.bidding_file? %>
+           <%= link_to @announcement.bidding_file_file_name, @announcement.bidding_file.url, target: '_blank' %>
+          <% else %>
+            No attached file(s)
+          <% end %> </li>
+        </ul>
+      </div>
+      <div class="col-xs-6" >
+        <b><%= "Description" %></b><hr>
+        <%= @announcement.description %>
+      </div>
+
+    </div>
+  </div>
+</div>
