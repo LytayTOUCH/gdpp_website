@@ -1,3 +1,38 @@
-<div class="law"> Welcome to កតិយុទ្ធ </div>
-<%= link_to "New Law and Regulation", new_law_regulation_path %><br/>
-<%= link_to "Edit Law and Regulation", edit_law_regulation_path(1) %>
+<br>
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b>Law and Regulation</b>
+  </div>
+  <div class="panel-body" >
+    <table class="table table-bordered" >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% no = 1; @law_regulations.each do |law_regulation| %>
+          <tr>
+            <td> <%= no %> </td>
+            <td> <%= law_regulation.title %> </td>
+            <td> <%= law_regulation.description %> </td>
+            <td>
+              <%= link_to "View", law_regulation_path(law_regulation) , class: "btn btn-xs btn-success"  %>
+              <%= link_to "edit", edit_law_regulation_path(law_regulation) , class: "btn btn-xs btn-primary"  %>
+              <%= link_to 'Delete', "#" , class: "btn btn-xs btn-danger" %>
+            </td>
+          </tr>
+
+        <% no+= 1;  end %>
+      </tbody>
+
+    </table>
+    
+  </div>
+  <div class="panel-footer" >
+    <%= link_to "Add ", new_law_regulation_path, class: "btn btn-primary" %>
+  </div>
+</div>
