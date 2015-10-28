@@ -51,6 +51,12 @@ gem 'figaro', '1.1.1'
 # slide show
 gem 'owlcarousel-rails'
 
+# attachment file 
+gem "paperclip", "~> 4.3"
+
+# simple form
+gem 'simple_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -67,7 +73,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'quiet_assets'
-  gem "paperclip"
+  gem 'quiet_assets'  
+
+  # show as table when console sql
+  gem "table_print"
+
 end
+
 

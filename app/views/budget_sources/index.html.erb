@@ -1,0 +1,35 @@
+<br>
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= "Budget source" %></b>
+  </div>
+  <div class="panel-body" >
+    <table class="table table-bordered" >
+      <thead>
+        <tr>
+          <th><%= "#" %></th>
+          <th><%= "budget source name" %></th>
+          <th><%= "Action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% no = 1; @budget_sources.each do |budget_source| %>
+          <tr>
+            <td> <%= no %> </td>
+            <td> <%= budget_source.name %> </td>
+            <td>
+              <%= link_to "edit", edit_budget_source_path(budget_source) , class: "btn btn-xs btn-primary"  %> | 
+              <%= link_to 'Delete',  { action: :destroy, id: budget_source.id}, method: :delete, data: { confirm: 'Are you sure to delete budget source?' }, class: "btn btn-xs btn-danger" %>
+            </td>
+          </tr>
+
+        <% no+= 1;  end %>
+      </tbody>
+
+    </table>
+    
+  </div>
+  <div class="panel-footer" >
+    <%= link_to "Add ", new_budget_source_path, class: "btn btn-primary" %>
+  </div>
+</div>

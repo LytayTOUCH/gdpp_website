@@ -1,0 +1,35 @@
+<br>
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= "Procurement entities" %></b>
+  </div>
+  <div class="panel-body" >
+    <table class="table table-bordered" >
+      <thead>
+        <tr>
+          <th><%= "#" %></th>
+          <th><%= "Procurement Entity name" %></th>
+          <th><%= "Action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% no = 1; @procurement_entities.each do |pe| %>
+          <tr>
+            <td> <%= no %> </td>
+            <td> <%= pe.name %> </td>
+            <td>
+              <%= link_to "edit", edit_procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %> | 
+              <%= link_to 'Delete',  { action: :destroy, id: pe.id}, method: :delete, data: { confirm: 'Are you sure to delete procurement entity source?' }, class: "btn btn-xs btn-danger" %>
+            </td>
+          </tr>
+
+        <% no+= 1;  end %>
+      </tbody>
+
+    </table>
+    
+  </div>
+  <div class="panel-footer" >
+    <%= link_to "Add ", new_procurement_entity_path, class: "btn btn-primary" %>
+  </div>
+</div>

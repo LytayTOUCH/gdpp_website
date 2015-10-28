@@ -18,11 +18,31 @@ Rails.application.routes.draw do
   get  'gdpp_role' => 'website#show_gdpp_role'
   get 'gdpp_structure' => 'website#show_gdpp_structure'
 
-  get 'procurement_goods' => 'website#show_procurement_goods'
+  get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
 
   resources :law_regulations
 
   resources :administrator
+
+  resources :budget_sources
+
+  resources :announcements
+
+  resources :procurement_entities
+
+  resources :announcement_types
+
+  # # budget source
+  # get 'budget_sources' => 'administrator#budget_sources'
+  # post 'create_budget_source' => 'administrator#create_budget_source'
+  
+  # get 'new_budget_source/new' => 'administrator#new_budget_source', as: "new_budget_source"
+  
+  # get 'budget_source/:id' => 'administrator#show_budget_source', as: "budget_source"
+  # get 'edit_budget_source/:id/edit' => 'administrator#edit_budget_source', as: "edit_budget_source"
+  # get 'destroy_budget_source/:id' => 'administrator#edit_budget_source', as: "destroy_budget_source"
+  # patch 'update_budget_source/:id' => 'administrator#update_budget_source' as: 
+
   devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
   as :admin do
     # get 'administrator/login' => 'devise/sessions#new', as: :administrator_login

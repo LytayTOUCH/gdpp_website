@@ -42,6 +42,41 @@ ActiveRecord::Schema.define(version: 20151028033944) do
     t.string   "law_doc_attachment"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+
+  create_table "announcement_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "announcements", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "announcement_type_id"
+    t.integer  "procurement_entity_id"
+    t.integer  "budget_source_id"
+    t.date     "open_register_date"
+    t.date     "close_submit_date"
+    t.date     "open_bid_doc_date"
+    t.boolean  "public"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "announcements", ["announcement_type_id"], name: "index_announcements_on_announcement_type_id", using: :btree
+  add_index "announcements", ["budget_source_id"], name: "index_announcements_on_budget_source_id", using: :btree
+  add_index "announcements", ["procurement_entity_id"], name: "index_announcements_on_procurement_entity_id", using: :btree
+
+  create_table "budget_sources", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "procurement_entities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_profiles", force: :cascade do |t|
@@ -54,4 +89,7 @@ ActiveRecord::Schema.define(version: 20151028033944) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "announcements", "announcement_types"
+  add_foreign_key "announcements", "budget_sources"
+  add_foreign_key "announcements", "procurement_entities"
 end
