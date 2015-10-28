@@ -14,9 +14,6 @@
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require_self
  */
-hr{
-  margin: 5px;
-}
 input{
   line-height: 30px !important;
 }
