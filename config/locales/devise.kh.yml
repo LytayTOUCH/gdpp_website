@@ -38,14 +38,14 @@ kh:
       signed_up_but_inactive: "អ្នកបានចុះឈ្មោះដោយជោគជ័យ ប៉ុន្តែ អ្នកមិនអាចដំណើរការបានទេព្រោះ account របស់អ្នកមិនទាន់ត្រូវបានអនុញ្ញាត"
       signed_up_but_locked: "អ្នកបានចុះឈ្មោះដោយជោគជ័យ ប៉ុន្តែ អ្នកមិនអាចដំណើរការបានទេព្រោះ account របស់អ្នកត្រូវបាន lock"
       signed_up_but_unconfirmed: "សារដែលមានភ្ជាប់ជាមួយនូវ link សំរាប់ផ្ទៀងផ្ទាត់បានផ្ញើទៅកាន់អ៊ីម៉ែលរបស់អ្នក. សូមធ្វើតាម link ដើម្បីប្រើប្រាស់ account"
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
-      updated: "Your account has been updated successfully."
+      update_needs_confirmation: "អ្នកបានកែប្រែ account  របស់អ្នកដោយជោគជ័យ, ប៉ុន្តែពួកយើងត្រូវការការផ្ទៀងផ្ទាត់ពីអ៊ីម៉ែលថ្មីរបស់អ្នក. សូមធ្វើការត្រួតពិនិត្យអ៊ីម៉ែល និង ធ្វើតាមការណែនាំដើម្បីផ្ទៀងផ្ទាត់ពីអ៊ីម៉ែលថ្មីរបស់អ្នក"
+      updated: "Account  របស់អ្នកត្រូវបានកែប្រែដោយជោគជ័យ"
     sessions:
       signed_in: "ចូលប្រើប្រាស់ដោយជោគជ័យ"
       signed_out: "ចាកចេញដោយជោគជ័យ"
       already_signed_out: "បានចាកចេញការប្រើប្រាស់ដោយជោគជ័យ"
     unlocks:
-      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
+      send_instructions: "អ្នកនឹងទទួលបាននូវអ៊ីម៉ែលដែលនិយាយពីការណែនាំដើម្បីរបៀប unlock account របស់អ្នកក្នុងរយៈពេល ២ ឬ ៣ នាទី"
       send_paranoid_instructions: "បើអ្នកមានអ៊ីម៉ែលរួចរាល់ហើយ, អ្នកនឹងទទួលបាននូវអ៊ីម៉ែលដែលពីការណែនាំពីរបៀប unlock ក្នុងរយៈពេល ២ ឬ ៣ នាទី"
       unlocked: "Account របស់អ្នកត្រូវបាន unlock ដោយជោគជ័យ. សូម sign in ដើម្បីបន្ត"
   errors:
