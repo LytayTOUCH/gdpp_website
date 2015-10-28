@@ -19,5 +19,14 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-kh:
-  hello: "Hello World"
+en:
+  hello: "សួរស្តីពិភពលោក"
+  form:
+    header:
+      login: "ប្រព័ន្ធគ្រប់គ្រង់គេហទំព័រ"
+      username: "អ៊ីម៉ែល ឬ ឈ្មោះអ្នកប្រើប្រាស់"
+      password: "ពាក្យសំងាត់"
+      remember_me: "ចងចាំការប្រើប្រាស់"
+      submit: "ចូលប្រើប្រាស់"
+  date:
+    order: "Test"

@@ -1,137 +1,21 @@
 <% if admin_signed_in? %>
-
-<div class="row">
-
-
-<nav class="col-lg-12 navbar navbar-default background-color-fore background-color-fore has-shadow fixed " style="z-index:100;">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="only"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+  <div class="row admin-nav" >
+    <div class="col-xs-12" >
+      <div class="row" >
+        <div class="col-xs-9" >
+          <%= link_to "Dashboard", administrator_index_path %> | 
+          <%= link_to "Announcements", announcements_path %> |
+          <%= link_to "Budget sources", budget_sources_path %> |
+          <%= link_to "Announcement types", announcement_types_path %> |
+          <%= link_to "Procurement entities", procurement_entities_path %>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="/">ទំព័រដើម</a>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
-                ស្ថាប័នអនុវត្តលទ្ធកម្ម
-                <span class="caret"></span>
-</a>
-              <ul class="dropdown-menu">
-                <li><a href="/procurement_entity_ministry">ក្រសួង – ស្ថាប័នថ្នាក់កណ្តាល</a>
-                </li>
-                <li><a href="/procurement_entity_public_foundation">គ្រឹះស្ថានសាធារណៈ – សហគ្រាសសាធារណៈ</a>
-                </li>
-                <li><a href="/procurement_entity_city_province">រាជធានី​ – ខេត្ត</a>
-                </li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="/public_service">
-                សេវាសាធារណៈ
-                <span class="sr-only">(current)</span>
-</a>            </li>
-
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">
-                អំពីស្ថាប័ន
-                <span class="caret"></span>
-</a>              <ul class="dropdown-menu">
-                <li>
-                  <a href="/gdpp_role">តួនាទីអគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណៈ</a>
-                </li>
-                <li>
-                  <a href="/gdpp_structure">រចនាសម្ព័ន្ធស្ថាប័ន</a>
-                </li>
-                
-              </ul>
-            </li>
-
-            <li>
-              <!-- <a href="">ទំនាក់ទំនង</a> -->
-              <a href="/contact">ទំនាក់ទំនង</a>
-            </li>
-            <li>
-              
-              <%= link_to destroy_admin_session_path, :method => :delete, :class => 'color-white' do%>
+        <div class="col-xs-3" style="text-align:right" >
+          <b><%= link_to current_admin.username.capitalize, "#" %></b> | 
+          <%= link_to destroy_admin_session_path, :method => :delete do%>
                 <i class="fa fa-sign-out fa-lg"></i>Sign Out
               <% end %>
-            </li>
-          </ul>
-          
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-
-  <!-- <div class="row">
-
-  <div class="col-lg-12 background-color-fore has-shadow fixed  " style="z-index: 100; width:100% " >
-    <div class="col-md-8 col-md-offset-2 has-padding color-white" style="padding-bottom: 0px;">
-      <div class=" banner  " style="margin-left: -10px; margin-top: -5px;" >
-        <img src="/assets/MEF_logo.png" height="30px" style="float:left">
-      </div>
-      
-      <div class="admin-navbar " style="float: left; padding: 7px 5px;"  >
-      
-        <ul style=" width:400px; display: inline; margin-top: 15px; " >
-          <li style="display:inline;">
-            <a class="color-white" href="#">មាតិកា១</a> 
-          </li>
-          <li style="display:inline;">
-            <a class="color-white" href="#">មាតិកា១</a>
-          </li>
-          <li style="display:inline;">
-            <a class="color-white" href="#">មាតិកា១</a>
-          </li>
-        </ul>
-
-      </div>
-
-      <div class="admin-navbar " style="float: right; padding: 7px 5px;"  >
-        <ul style=" width:400px; display: inline; margin-top: 15px; " >
-          
-          <li style="display:inline;">
-            <i class="fa fa-user color-white"> <%= current_admin.username.capitalize %></i>
-          </li>
-          
-          <li style="display:inline;">
-            <%= link_to destroy_admin_session_path, :method => :delete, :class => 'color-white' do%>
-              <i class="fa fa-sign-out">Sign Out</i>
-            <% end %>
-          </li>
-
-
-          <li class="dropdown open" style="display:inline">
-            <a href="#" class="dropdown-toggle color-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-
-        </ul>
-
-      </div>
-      
+        </div>
       </div>
     </div>
   </div>
- -->
-
-</div>
 <% end %> 
