@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'procurement_goods' => 'website#show_procurement_goods'
 
-
+  resources :law_regulations
 
   resources :administrator
   devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]

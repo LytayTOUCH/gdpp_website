@@ -68,5 +68,6 @@ group :development do
   gem 'spring'
 
   gem 'quiet_assets'
+  gem "paperclip"
 end
 
