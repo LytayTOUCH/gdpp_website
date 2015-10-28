@@ -1,6 +1,5 @@
 class BudgetSourcesController < ApplicationController
-  before_action :authenticate_admin!
-  before_action :set_budget_source, only:[:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, :set_budget_source, only:[:show, :edit, :update, :destroy]
   layout "administrator"
   def index
     @budget_sources = BudgetSource.all
