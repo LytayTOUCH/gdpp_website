@@ -1,6 +1,7 @@
 class WebsiteController < ApplicationController
   before_action :load_announcement_type
   def index
+    @announcement = Announcement.limit(6).sorted_by_date
   end
 
   def home

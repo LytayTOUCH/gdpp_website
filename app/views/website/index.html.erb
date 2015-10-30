@@ -33,17 +33,32 @@
         <p class="content-main-title"> <%= "សេចក្ដីជូនដំណឹងស្តីពីការដេញថ្លៃថ្មីៗ" %> </p>
         
         <div class="row">
-            <% i = 1; while i<=6 do %>
-            <div class="col-md-4" style="margin-top: 20px" >
-              <p class="box-title"> <%= "ដំណឹងដេញថ្លៃទី​ #{i}" %> </p>
-              <p>
-                <%= "ក្រសួង/ស្ថាប័ណ" %><br>
-                <%= "សេចក្តីជូនដំណឹងជាសាធារណៈ ស្តីពីការដាក់ឱ្យដេញថ្លៃផ្គត់ផ្គង់ថ្មរ M30 និងស៊ីម៉ង់សម្រាប់ឆមាស់ទី២ " %>
-              </p>
-              
-              <%= link_to "ទាញយកឯកសារ", "#", class: "btn btn-xs btn-primary background-color-fore" %>
-            </div>
+            
+            <% i = 1; @announcement.each do |announcement| %>
+              <div class="col-md-12" style="padding-bottom: 20px; border-bottom: 1px solid #eee; padding-top:5px; " >
+                <p> <b><%= link_to announcement.title, show_announcement_path(announcement), style: 'color:black;' %></b> </p>
+                <p><i>
+                  <%= "ស្ថាប័ណ ៖ #{announcement.procurement_entity.name}" %>, 
+                  <%= "ប្រភេទដេញថ្លៃ ៖ #{announcement.announcement_type.name}" %>,
+                  <%= "ចេញផ្សាយ ៖ #{announcement.updated_at.strftime("%B %d, %Y") }" %>
+                  </i>
+                  <br>
+                </p>
+                
+                
+                <% if announcement.announcement_file? %>
+                 <%= link_to "ទាញយកសេចក្តីជូនដំណឹង", announcement.announcement_file.url, target: '_blank', class: 'btn btn-xs btn-primary' %>
+                <% end %>​
+                <% if announcement.bidding_file? %>
+                 <%= link_to "ទាញយកឯកសារដេញថ្លៃ", announcement.bidding_file.url, target: '_blank', class: 'btn btn-xs btn-primary' %>
+                <% end %>
+
+
+                
+              </div>
             <% i+=1; end %>
+
+
         </div>
 
       </div>
@@ -66,12 +81,6 @@
     </div>
 
     <br>
-
-
-
-
-
-  
   </div>
   <!-- /.content -->
 
