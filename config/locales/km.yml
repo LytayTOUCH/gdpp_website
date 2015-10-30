@@ -37,3 +37,7 @@ km:
       announcement_type: 'ប្រភេទប្រកាសលិទ្ធកម្ម'
       procurement_entity: 'ស្ថាប័នអនុវត្ត'
       sign_out: 'ចាកចេញ'
+  website:
+    label:
+      new: 'ថ្មីៗ'
+    release_date: 'ថ្ងៃចេញផ្សាយ'
