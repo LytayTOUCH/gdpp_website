@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'gdpp_structure' => 'website#show_gdpp_structure'
 
   get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
+  get 'show_announcement/:id' => 'website#show_announcement', as: 'show_announcement'
 
   resources :administrator do
     collection do

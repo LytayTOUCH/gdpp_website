@@ -1,6 +1,5 @@
 
 <div class="content  col-md-8 body">
-
     <div class="has-padding has-shadow" style="margin-bottom:10px;" >
       <b><%= "Bidding Advertisment "  %></b>
     </div>
@@ -11,23 +10,41 @@
           <thead>
             <tr>
               <th >#</th>
-              <th >បរិយាយអំពីការដេញថ្លៃ</th>
-              <th width="170px" >ស្ថាប័នអនុវត្តិលទ្ធកម្ម</th>
-              <th >ប្រភពមូលនិធិ</th>
+              <th ><%= "បរិយាយអំពីការដេញថ្លៃ" %></th>
+              <th class="text-nowrap" ><%= "ស្ថាប័នអនុវត្តិលទ្ធកម្ម" %></th>
+              <th class="text-nowrap" ><%= "ប្រភពមូលនិធិ" %></th>
             </tr>
           </thead>
           <tbody  >
-
             <% $i= 1; @announcements.each do |announcement| %>
               <tr>
                 <td style="vertical-align: middle; text-align:center"><%= $i %></td>
                 <td style="line-height: 24px;" >
-                <%= link_to announcement.title , "#" %><br>
-                <%= "សេចក្តីជូនដំណឹង៖" %>[<%= link_to "ភាសាខ្មែរ", "" %>]
+                <%= link_to announcement.title , show_announcement_path(announcement) %>
+                <%= "<span class= 'badge' style='background-color: #C50000' >New</span>".html_safe if (Time.now.to_i/(60*60*24) - announcement.updated_at.to_i/(60*60*24))<=15 %>
                 <br>
-                <%= "ដំណឹងដេញថ្លៃ៖" %>[<%= link_to "ភាសាខ្មែរ", "" %>]
+                <%= "សេចក្តីជូនដំណឹង៖" %>
+                [
+                  <% if announcement.announcement_file? %>
+                   <%= link_to "ភាសាខ្មែរ", announcement.announcement_file.url, target: '_blank' %>
+                  <% else %>
+                    <%= "ពុំមានឯកសាភ្ជាប់" %>
+                  <% end %> </li>
+                ]
                 <br>
-                <i><%= announcement.updated_at %></i>
+                <span>
+                  <%= "ដំណឹងដេញថ្លៃ៖" %>
+                  [
+                    <% if announcement.bidding_file? %>
+                     <%= link_to "ភាសាខ្មែរ", announcement.bidding_file.url, target: '_blank' %>
+                    <% else %>
+                      <%= "ពុំមានឯកសាភ្ជាប់" %>
+                    <% end %> </li>
+                  ]
+                </span>
+                <br>
+                
+                <i style="font-size: 11px" ><%= "Last updated on #{announcement.updated_at.strftime("%B %d, %Y") }" %></i>
                 </td>
                 <td style="vertical-align:middle; line-height: 24px;" ><%= announcement.procurement_entity.name %></td>
                 <td style="vertical-align:middle; line-height: 24px;" ><%= announcement.budget_source.name %></td>
