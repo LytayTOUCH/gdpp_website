@@ -12,6 +12,8 @@ class Announcement < ActiveRecord::Base
   validates :close_submit_date, presence: true
   validates :open_bid_doc_date, presence: true
 
+  scope :sorted_by_date, -> {order ("announcements.updated_at DESC")}
+
   has_attached_file :announcement_file, :url => "/:class/:attachment/:id/:basename.:extension", :path => ":rails_root/public/:class/:attachment/:id/:basename.:extension"
   has_attached_file :bidding_file, :url => "/:class/:attachment/:id/:basename.:extension", :path => ":rails_root/public/:class/:attachment/:id/:basename.:extension"
   validates_attachment :announcement_file, :bidding_file, :content_type => { :content_type => [

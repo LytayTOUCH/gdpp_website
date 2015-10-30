@@ -4,9 +4,9 @@
     <b>Announcement</b>
   </div>
   <div class="panel-body" >
-    <table class="table table-bordered" >
+    <table class="table table-bordered datatable" >
       <thead>
-        <tr>
+        <tr class="text-nowrap" >
           <th>#</th>
           <th>Title</th>
           <th>Type</th>
@@ -23,7 +23,7 @@
         <% no = 1; @announcements.each do |announcement| %>
           <tr>
             <td> <%= no %> </td>
-            <td> <%= announcement.title %> </td>
+            <td width="300px" > <%= announcement.title %> </td>
             <td> <%= announcement.announcement_type.name %> </td>
             <td> <%= announcement.procurement_entity.name %> </td>
             <td> <%= announcement.budget_source.name %> </td>
