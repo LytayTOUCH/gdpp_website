@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-kh:
+km:
   devise:
     confirmations:
       confirmed: "អាសយដ្ឋានអ៊ីម៉ែលរបស់អ្នកត្រូវបានបញ្ជាក់ថាបានជោគជ័យ"
