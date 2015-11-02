@@ -5,6 +5,7 @@ class AdministratorController < ApplicationController
   def index
     @announcements = Announcement.all
     @law_regulations = LawRegulation.all
+    @faqs = Faq.all
     @budget_sources = BudgetSource.all
     @procurement_entities = ProcurementEntity.all
   end

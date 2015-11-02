@@ -1,0 +1,23 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b>Question - <%= @faq.id %></b>
+  </div>
+  <div class="panel-body" > 
+    <div class="row" >
+      <div class="col-xs-6" >
+        <ul style="list-style:none;" >
+          <td>
+            <%= "Question: " %> 
+            <%= @faq.question %>
+          </td>
+        </ul>
+        <ul style="list-style:none;" >
+          <td>
+            <%= "Answer: " %> 
+            <%= @faq.answer %>
+          </td>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

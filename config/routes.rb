@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
   get 'public_service' => 'website#show_public_service'
-  get 'faq'=> 'website#show_question_answer'
+  get 'faq'=> 'website#show_question_answer', as: 'qna'
   get 'contact' => 'website#show_contact'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       resources :procurement_entities
       resources :announcement_types
       resources :law_regulations
+      resources :faqs
     end
   end
 

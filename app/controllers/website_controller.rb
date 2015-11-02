@@ -17,7 +17,7 @@ class WebsiteController < ApplicationController
   end
 
   def show_question_answer
-    
+    @faqs = Faq.all
   end
 
   def show_contact
