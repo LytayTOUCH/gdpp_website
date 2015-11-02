@@ -14,9 +14,16 @@ end
 
 
 budget_source_list = [
-  {name: "budget source A"},
-  {name: "budget source B"},
-  {name: "budget source C"}
+  {name: "ថវិការាជរដ្ឋាភិបាល"},
+  {name: "ថវិការបស់អគ្គិសនីកម្ពុជា"},
+  {name: "ថវិការបស់រដ្ឋាករទឹកស្វយ័តក្រុងភ្នំពេញ"},
+  {name: "ថវិការបស់បញ្ញត្តិករទូរគមនាគមន៍កម្ពុជា"},
+  {name: "ថវិការបស់បេឡាជាតិរបបសន្តិសុខសង្គម"},
+  {name: "ថវិការបស់គ្រឹះស្ថានបោះពុម្ព និងចែកផ្សាយ"},
+  {name: "ថវិការបស់បេឡាជាតិរបបសន្តិសុខសង្គម"},
+  {name: "ថវិការបស់សាកលវិទ្យាល័យ"},
+  {name: "ថវិការបស់រដ្ឋាករទឹកស្វយ័តសៀមរាប"},
+  {name: "ថវិការបស់មជ្ឍមណ្ឌលជាតិពិសោធន៍សុខាភិបាល"}
 ].each do |budget_source|
   @budget_source = BudgetSource.create_with(name: budget_source[:name]).find_or_create_by(name: budget_source[:name])
 end
@@ -102,7 +109,7 @@ end
   Announcement.create_with(
       title: announcement[:title],
       description: announcement[:description],
-      announcement_type_id: announcement[:announcement_type_id], 
+      announcement_type_id: announcement[:announcement_type_id],
       open_register_date: announcement[:open_register_date],
       close_submit_date: announcement[:close_submit_date],
       open_bid_doc_date: announcement[:open_bid_doc_date],
