@@ -1,6 +1,7 @@
 class LawRegulationsController < ApplicationController
-  layout 'administrator'
+  before_action :set_law_regulation, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
+  layout 'administrator'
 
   def index
     @law_regulations = LawRegulation.all
@@ -43,7 +44,17 @@ class LawRegulationsController < ApplicationController
     end
   end
 
+  def destroy
+    @law_regulation.destroy
+    flash[:notice] = "Delete success"
+    redirect_to law_regulations_path
+  end
+
   private
+  def set_law_regulation
+    @law_regulation = LawRegulation.find(params[:id])
+  end
+
   def law_regulation_params
     params.require(:law_regulation).permit(:title, :description, :thumbnail, :law_doc_attachment)
   end

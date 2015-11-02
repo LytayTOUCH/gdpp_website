@@ -1,7 +1,7 @@
 <%= simple_form_for(@law_regulation, html: { multipart: true }) do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :thumbnail, as: :file, value: "law_regulation.thumbnail" %>
+  <%= f.input :thumbnail, as: :file %>
   <%= f.input :law_doc_attachment, as: :file %>
   <%= f.submit %>
 <% end %>
