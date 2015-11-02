@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028083101) do
+ActiveRecord::Schema.define(version: 20151102071100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,11 +73,27 @@ ActiveRecord::Schema.define(version: 20151028083101) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "procurement_entities", force: :cascade do |t|
+  create_table "procurement_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "procurement_entities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "website"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "procurement_category_id"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
+
+  add_index "procurement_entities", ["procurement_category_id"], name: "index_procurement_entities_on_procurement_category_id", using: :btree
 
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "admin_id"
@@ -92,4 +108,5 @@ ActiveRecord::Schema.define(version: 20151028083101) do
   add_foreign_key "announcements", "announcement_types"
   add_foreign_key "announcements", "budget_sources"
   add_foreign_key "announcements", "procurement_entities"
+  add_foreign_key "procurement_entities", "procurement_categories"
 end

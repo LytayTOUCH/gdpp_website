@@ -9,6 +9,7 @@
         <tr>
           <th><%= "#" %></th>
           <th><%= "Procurement Entity name" %></th>
+          <th><%= "Phone" %></th>
           <th><%= "Action" %></th>
         </tr>
       </thead>
@@ -17,9 +18,11 @@
           <tr>
             <td> <%= no %> </td>
             <td> <%= pe.name %> </td>
+            <td> <%= pe.phone %> </td>
             <td>
-              <%= link_to "edit", edit_procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %> | 
+              <%= link_to "edit", edit_procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %>
               <%= link_to 'Delete',  { action: :destroy, id: pe.id}, method: :delete, data: { confirm: 'Are you sure to delete procurement entity source?' }, class: "btn btn-xs btn-danger" %>
+              <%= link_to "show", procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %>
             </td>
           </tr>
 

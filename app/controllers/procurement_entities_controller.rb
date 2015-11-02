@@ -1,11 +1,12 @@
 class ProcurementEntitiesController < ApplicationController
-  before_action :set_procurement_entity, only: [:edit, :update, :destroy]
+  before_action :set_procurement_entity, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
   layout 'administrator'
   def index
-    @procurement_entities = ProcurementEntity.all
+    @procurement_entities = ProcurementEntity.all.sort_by_last_update
   end
   def edit
+    @procurement_categories = ProcurementCategory.all
   end
   def update
     if @procurement_entity.update_attributes(procurement_entity_param)
@@ -17,6 +18,7 @@ class ProcurementEntitiesController < ApplicationController
     end
   end
   def new
+    @procurement_categories = ProcurementCategory.all
     @procurement_entity = ProcurementEntity.new
   end
   def create
@@ -41,12 +43,15 @@ class ProcurementEntitiesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
     def set_procurement_entity
       @procurement_entity = ProcurementEntity.find(params[:id])
     end
     def procurement_entity_param
-      params.require(:procurement_entity).permit(:name)
+      params.require(:procurement_entity).permit(:name, :procurement_category_id, :phone, :address, :website, :logo)
     end
 
 

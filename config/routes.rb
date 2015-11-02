@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
   get 'show_announcement/:id' => 'website#show_announcement', as: 'show_announcement'
 
+  get 'show_procurement_entities/:category_id' => 'website#show_procurement_entities', as: 'show_procurement_entities'
+
   resources :administrator do
     collection do
       resources :budget_sources

@@ -1,5 +1,5 @@
 class WebsiteController < ApplicationController
-  before_action :load_announcement_type
+  before_action :load_announcement_type, :load_procurement_category
   def index
     @announcement = Announcement.limit(6).sorted_by_date
   end
@@ -24,6 +24,9 @@ class WebsiteController < ApplicationController
   end
 
 # Procurement entity
+  def show_procurement_entities
+    @procurement_entities = ProcurementEntity.where(procurement_category_id: params[:category_id])
+  end
 
   def show_procurement_entity_city_province
     
@@ -68,10 +71,12 @@ class WebsiteController < ApplicationController
     @announcement = Announcement.find(params[:id])
   end
 
-
   private
     def load_announcement_type
       @announcement_types = AnnouncementType.all
-    end  
+    end
+    def load_procurement_category
+      @procurement_categories = ProcurementCategory.all
+    end
 
 end
