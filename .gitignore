@@ -14,7 +14,3 @@
 
 # Ignore application configuration
 /config/application.yml
-
-# Ignore Gemfile.lock and schema.rb
-Gemfile.lock
-/db/schema.rb
