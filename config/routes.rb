@@ -20,9 +20,6 @@ Rails.application.routes.draw do
 
   get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
 
-  resources :law_regulations
-
-  resources :administrator
   get 'show_announcement/:id' => 'website#show_announcement', as: 'show_announcement'
 
   resources :administrator do
@@ -31,6 +28,7 @@ Rails.application.routes.draw do
       resources :announcements
       resources :procurement_entities
       resources :announcement_types
+      resources :law_regulations
     end
   end
 
