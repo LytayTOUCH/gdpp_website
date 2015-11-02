@@ -30,3 +30,14 @@ km:
       submit: "ចូលប្រើប្រាស់"
   date:
     order: "Test"
+  dashboard:
+    navigator_menu:
+      announcement: 'ប្រកាសលិទ្ធកម្ម'
+      budget_sources: 'ប្រភពថវិការ'
+      announcement_type: 'ប្រភេទប្រកាសលិទ្ធកម្ម'
+      procurement_entity: 'ស្ថាប័នអនុវត្ត'
+      sign_out: 'ចាកចេញ'
+  website:
+    label:
+      new: 'ថ្មីៗ'
+    release_date: 'ថ្ងៃចេញផ្សាយ'

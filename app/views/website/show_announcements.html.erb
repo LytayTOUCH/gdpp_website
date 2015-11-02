@@ -21,7 +21,7 @@
                 <td style="vertical-align: middle; text-align:center"><%= $i %></td>
                 <td style="line-height: 24px;" >
                 <%= link_to announcement.title , show_announcement_path(announcement) %>
-                <%= "<span class= 'badge' style='background-color: #C50000' >New</span>".html_safe if (Time.now.to_i/(60*60*24) - announcement.updated_at.to_i/(60*60*24))<=15 %>
+                <%= "<span class= 'badge' style='background-color: #C50000; padding: 10px 5px 5px 5px;' >#{t('website.label.new')}</span>".html_safe if (Time.now.to_i/(60*60*24) - announcement.updated_at.to_i/(60*60*24))<=15 %>
                 <br>
                 <%= "សេចក្តីជូនដំណឹង៖" %>
                 [
@@ -44,7 +44,7 @@
                 </span>
                 <br>
                 
-                <i style="font-size: 11px" ><%= "Last updated on #{announcement.updated_at.strftime("%B %d, %Y") }" %></i>
+                <i style="font-size: 11px" ><%= "#{t('website.release_date')} #{announcement.updated_at.strftime("%B %d, %Y") }" %></i>
                 </td>
                 <td style="vertical-align:middle; line-height: 24px;" ><%= announcement.procurement_entity.name %></td>
                 <td style="vertical-align:middle; line-height: 24px;" ><%= announcement.budget_source.name %></td>
