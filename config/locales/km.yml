@@ -36,6 +36,7 @@ km:
       budget_sources: 'ប្រភពថវិការ'
       announcement_type: 'ប្រភេទប្រកាសលិទ្ធកម្ម'
       procurement_entity: 'ស្ថាប័នអនុវត្ត'
+      law_regulation: 'ច្បាប់កតិយុទ្ធ'
       sign_out: 'ចាកចេញ'
   website:
     label:
