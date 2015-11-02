@@ -1,6 +1,7 @@
 class WebsiteController < ApplicationController
   before_action :load_announcement_type
   def index
+    @announcement = Announcement.limit(6).sorted_by_date
   end
 
   def home
@@ -58,11 +59,15 @@ class WebsiteController < ApplicationController
     
   end
 
-
 # order menu
   def show_announcements
-    @announcements = Announcement.where(announcement_type_id: params[:type_id], public: true )
+    @announcements = Announcement.where(announcement_type_id: params[:type_id], public: true ).sorted_by_date
   end
+
+  def show_announcement
+    @announcement = Announcement.find(params[:id])
+  end
+
 
   private
     def load_announcement_type

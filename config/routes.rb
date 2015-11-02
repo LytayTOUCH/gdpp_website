@@ -23,14 +23,16 @@ Rails.application.routes.draw do
   resources :law_regulations
 
   resources :administrator
+  get 'show_announcement/:id' => 'website#show_announcement', as: 'show_announcement'
 
-  resources :budget_sources
-
-  resources :announcements
-
-  resources :procurement_entities
-
-  resources :announcement_types
+  resources :administrator do
+    collection do
+      resources :budget_sources
+      resources :announcements
+      resources :procurement_entities
+      resources :announcement_types
+    end
+  end
 
   # # budget source
   # get 'budget_sources' => 'administrator#budget_sources'

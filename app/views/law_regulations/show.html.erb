@@ -1,3 +1,4 @@
+<br>
 <div class="panel panel-primary" >
   <div class="panel-heading" >
     <b><%= @law_regulation.title %></b>
@@ -6,19 +7,29 @@
     <div class="row" >
       
       <div class="col-xs-6" >
-        <ul>
-          <li> <%= "Law Regulation Title: #{@law_regulation.title} " %> </li>
-        </ul>
-
-      
-        <ul>
-          <li> <%= "Law Regulation Description: #{@law_regulation.description} " %> </li>
+        <ul style="list-style:none;" >
+          <td>
+            <%= "Law Regulation Image: " %> 
+            <% if @law_regulation.thumbnail? %>
+              <%= image_tag @law_regulation.thumbnail.url, size: "50x50" %>
+            <% else %>
+              No image(s)
+            <% end %>  
+          </td>
+          <li> <%= "Law Regulation file: " %> 
+            <% if @law_regulation.law_doc_attachment? %>
+              <%= link_to @law_regulation.law_doc_attachment_file_name, @law_regulation.law_doc_attachment.url, target: '_blank' %>
+            <% else %>
+              No attached file(s)
+            <% end %> 
+          </li>
         </ul>
       </div>
-
       <div class="col-xs-6" >
-        
+        <b><%= "Description" %></b><hr>
+        <%= @law_regulation.description %>
       </div>
+
     </div>
   </div>
 </div>

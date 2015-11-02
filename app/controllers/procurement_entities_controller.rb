@@ -1,6 +1,7 @@
 class ProcurementEntitiesController < ApplicationController
-  before_action :authenticate_admin!, :set_procurement_entity, only: [:edit, :update, :destroy]
-  layout "administrator"
+  before_action :set_procurement_entity, only: [:edit, :update, :destroy]
+  before_action :authenticate_admin!
+  layout 'administrator'
   def index
     @procurement_entities = ProcurementEntity.all
   end
@@ -8,10 +9,10 @@ class ProcurementEntitiesController < ApplicationController
   end
   def update
     if @procurement_entity.update_attributes(procurement_entity_param)
-      flash[:notice] = "Update success"
+      flash[:notice] = "Update success!"
       redirect_to procurement_entities_path
     else
-      flash[:notice] = "unable to update"
+      flash[:warning] = "Update unsuccess!"
       render "edit"
     end
   end
@@ -21,10 +22,10 @@ class ProcurementEntitiesController < ApplicationController
   def create
     @procurement_entity = ProcurementEntity.new(procurement_entity_param)
     if @procurement_entity.save 
-      flash[:notice] = "Create successfully"
+      flash[:notice] = "Create success!"
       redirect_to procurement_entities_path
     else
-      flash[:notice] = "Create unsuccess"
+      flash[:warning] = "Create unsuccess!"
       render "new"
     end
   end
@@ -35,7 +36,7 @@ class ProcurementEntitiesController < ApplicationController
       flash[:notice] = "Delete success"
       redirect_to procurement_entities_path
     else 
-      flash[:notice] = "Can't not delete, this using in announcment"
+      flash[:warning] = "Delete unsuccess, or is using in Announcment."
       redirect_to procurement_entities_path
     end
   end

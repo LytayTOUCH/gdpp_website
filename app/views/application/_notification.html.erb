@@ -1,6 +1,7 @@
 <% flash.each do |name, msg| %>
   <div class="row" id="notification">
     <script type="text/javascript">
+      console.log('<%= name %>')
       $(document).ready(function (){
         $('.top-right').notify({
           type: '<%= name %>'=='notice' ? 'alert alert-success' : 'alert alert-danger',

@@ -1,8 +1,12 @@
 class AnnouncementsController < ApplicationController
-  before_action :authenticate_admin!, :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
   layout 'administrator'
   def index
     @announcements = Announcement.all
+  end
+  def show
+    @announcement = Announcement.find(params[:id])
   end
   def edit
     @announcement_types = AnnouncementType.all
@@ -12,9 +16,9 @@ class AnnouncementsController < ApplicationController
   def update
     if(@announcement.update_attributes(announcement_param))
       flash[:notice] = "Update success"
-      redirect_to announcement_path
+      redirect_to announcements_path
     else
-      flash[:notice] = "Update faild"
+      flash[:warning] = "Update unsuccess!"
       render "edit"
     end
   end
@@ -32,13 +36,15 @@ class AnnouncementsController < ApplicationController
       flash[:notice] = "Create successfully"
       redirect_to announcements_path
     else
-      flash[:notice] = "Create Unsuccess!"
+      flash[:warning] = "Create unsuccess!"
       render "new"
     end
   end
 
   def destroy
-    
+    @announcement.destroy
+    flash[:notice] = "Delete success"
+    redirect_to announcements_path
   end
 
   private
@@ -56,6 +62,9 @@ class AnnouncementsController < ApplicationController
         :open_register_date,
         :close_submit_date,
         :open_bid_doc_date,
+        :announcement_file,
+        :bidding_file,
+
         :public
         )
     end

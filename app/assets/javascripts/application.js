@@ -18,7 +18,7 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require moment
-// moment/<locale> need to stay after moment before boostrap-datetimepicker
+
 //= require moment/km
 //= require moment/ja
 //= require bootstrap-datetimepicker

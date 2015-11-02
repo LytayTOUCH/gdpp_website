@@ -1,0 +1,45 @@
+<div class="content  col-md-8 body">
+    <div class="has-padding has-shadow" style="margin-bottom:10px;" >
+      <b><%= "Bidding Advertisment Detail "  %></b>
+    </div>
+    <br>
+    <div class="box">
+      <div class="box-body">
+        <p style="font-weight:bold " class="color-fore" >
+          <%= @announcement.title %>
+        </p>
+
+
+        <p>
+          <b>
+          <%= "ស្ថាប័ន​អនុវត្ត​លទ្ធកម្ម ៖ #{@announcement.procurement_entity.name}" %><br>
+          <%= "ប្រភពមូលនិធិ ៖ #{@announcement.budget_source.name}" %><br>
+          <%= "សេចក្ដីជូនដំណឹង ៖ " %>
+            <% if @announcement.announcement_file? %>
+            <%= link_to "ភាសាខ្មែរ", @announcement.announcement_file.url, target: '_blank' %>
+            <% else %>
+              <%= "ពុំមានឯកសាភ្ជាប់" %>
+            <% end %>
+          <br>
+          <%= "ឯកសារដេញថ្លៃ ៖ " %>
+            <% if @announcement.bidding_file? %>
+            <%= link_to "ភាសាខ្មែរ", @announcement.bidding_file.url, target: '_blank' %>
+            <% else %>
+              <%= "ពុំមានឯកសាភ្ជាប់" %>
+            <% end %>
+
+          </b>
+        </p>
+        
+        <br>
+        <p style="text-align:justify" >
+          <%= @announcement.description %>
+        </p>
+        <hr>
+        <p style="text-align:right" >
+          <i><%= @announcement.updated_at.strftime("%B %d, %Y") %></i>
+        </p>
+
+      </div>
+    </div>
+</div>
