@@ -53,14 +53,9 @@
                  <%= link_to "ទាញយកឯកសារដេញថ្លៃ", announcement.bidding_file.url, target: '_blank', class: 'btn btn-xs btn-primary' %>
                 <% end %>
 
-
-                
               </div>
             <% i+=1; end %>
-
-
         </div>
-
       </div>
     </div>
 
@@ -69,11 +64,15 @@
         <p class="content-main-title"> <%= "ច្បាប់និង លិខិតកតិយុទ្ធ" %> </p> 
         <br>
         <div class="row" >
-        <% i=1; while i<=4 do %>
+        <% @law_regulations.each do |law_regulation| %>
           <div class="col-md-3" style="text-align: center;" >
-            <%= image_tag('no-image.png', width: '100%', class: 'has-shadow')%>
-            <p class="box-title text-center "> <%= "ច្បាប់និងកតិយុទ្ធ #{i}" %> </p>
-            <%= link_to "ទាញយកឯកសារ", "#" %>
+            <%= image_tag law_regulation.thumbnail.url, size: '100x100', class: 'has-shadow' %>
+            <p class="box-title text-center "> <%= law_regulation.title %> </p>
+            <% if law_regulation.law_doc_attachment? %>
+              <%= link_to "Download file", law_regulation.law_doc_attachment.url, target: '_blank' %>
+            <% else %>
+              No attached file(s)
+            <% end %> 
           </div>
         <% i+=1; end %>
         </div>
