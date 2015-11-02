@@ -2,6 +2,7 @@ class WebsiteController < ApplicationController
   before_action :load_announcement_type
   def index
     @announcement = Announcement.limit(6).sorted_by_date
+    @law_regulations = LawRegulation.all
   end
 
   def home
