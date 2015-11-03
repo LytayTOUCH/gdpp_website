@@ -38,6 +38,7 @@ km:
       procurement_entity: 'ស្ថាប័នអនុវត្ត'
       law_regulation: 'ច្បាប់កតិយុទ្ធ'
       faq: 'សំនួរចម្លើយ'
+      org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
       sign_out: 'ចាកចេញ'
   website:
     label:

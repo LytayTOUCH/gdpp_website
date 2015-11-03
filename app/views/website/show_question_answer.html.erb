@@ -1,29 +1,24 @@
   <!-- content -->      
-  <div class="content  col-md-8 body">
-  
-
-    <div class="has-padding has-shadow" style="margin-bottom:10px;" >
-      <b><%= "សំណួរ ចម្លើយ"  %></b>
-    </div>
-    <br/>
-
-    <% @faqs.each do |faq| %>
-      <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <p class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=faq.id%>"><%= faq.question %></a>
-            </p>
-          </div>
-          <div id="collapse<%=faq.id%>" class="panel-collapse collapse">
-            <div class="panel-body">
-              <%= faq.answer %>
-            </div>
-          </div>
-        </div>    
-      </div>
-    <% end %>  
-
-  
-
+<div class="content  col-md-8 body">
+  <div class="has-padding has-shadow" style="margin-bottom:10px;" >
+    <b><%="សំណួរ ចម្លើយ"%></b>
   </div>
+  <br/>
+
+  <% @faqs.each do |faq| %>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <p class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=faq.id%>"><%= faq.question %></a>
+          </p>
+        </div>
+        <div id="collapse<%=faq.id%>" class="panel-collapse collapse">
+          <div class="panel-body">
+            <%= faq.answer %>
+          </div>
+        </div>
+      </div>    
+    </div>
+  <% end %>  
+</div>

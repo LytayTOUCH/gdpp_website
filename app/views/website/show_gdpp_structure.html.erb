@@ -2,12 +2,20 @@
 <div class="content  col-md-8 body">
 
   <br>
-  <p class="text-center" style="font-size: 25px; font-family:'khmer muol'; " >
-    <%= 'អង្គការលេខរបស់អគនាយកដ្ឋានលទ្ធកម្មសាធារណៈ' %>
-  </p>
-  <hr>
+  <% @org_structures.each do |org_structure| %>
+    <p class="text-center" style="font-size: 25px; font-family:'khmer muol'; " >
+      <%= org_structure.title %>
+    </p>
+    <h5 class="text-center" style="font-size: 25px; font-family:'khmer muol'; " >
+      <%= org_structure.description %>
+    </5>
+    <hr>
 
-  <%= image_tag('hierarchy-photo.png' , style: 'width: 100%', align: 'center' ) %>
-
+    <% if org_structure.org_structure_image? %>
+      <%= image_tag org_structure.org_structure_image.url, style: 'width: 100%', align: 'center' %>
+    <% else %>
+      No image(s)
+    <% end %>  
+  <% end %>  
 </div>
 <!-- /.content -->

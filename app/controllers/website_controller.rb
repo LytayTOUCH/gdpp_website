@@ -57,7 +57,7 @@ class WebsiteController < ApplicationController
     
   end
   def show_gdpp_structure
-    
+    @org_structures = OrgStructure.all
   end
 
 # order menu

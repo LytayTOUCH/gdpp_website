@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       resources :announcement_types
       resources :law_regulations
       resources :faqs
+      resources :org_structures
     end
   end
 
