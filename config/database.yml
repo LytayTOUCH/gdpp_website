@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: gdpp_website_production
-  username: gdpp_website
-  password: <%= ENV['GDPP_WEBSITE_DATABASE_PASSWORD'] %>
+  username: <%= ENV['username'] %>
+  password: <%= ENV['password'] %>
