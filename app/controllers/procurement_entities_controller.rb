@@ -14,6 +14,7 @@ class ProcurementEntitiesController < ApplicationController
       redirect_to procurement_entities_path
     else
       flash[:warning] = "Update unsuccess!"
+      @procurement_categories = ProcurementCategory.all
       render "edit"
     end
   end
@@ -28,6 +29,7 @@ class ProcurementEntitiesController < ApplicationController
       redirect_to procurement_entities_path
     else
       flash[:warning] = "Create unsuccess!"
+      @procurement_categories = ProcurementCategory.all
       render "new"
     end
   end

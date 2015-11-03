@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102071100) do
+ActiveRecord::Schema.define(version: 20151102095417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,15 @@ ActiveRecord::Schema.define(version: 20151102071100) do
   end
 
   add_index "procurement_entities", ["procurement_category_id"], name: "index_procurement_entities_on_procurement_category_id", using: :btree
+
+  create_table "public_services", force: :cascade do |t|
+    t.string   "name"
+    t.string   "position"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "admin_id"

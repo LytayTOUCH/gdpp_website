@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'contact' => 'website#contact'
 
 
-  get 'public_service' => 'website#show_public_service'
+  get 'show_public_services' => 'website#show_public_services'
   get 'faq'=> 'website#show_question_answer'
   get 'contact' => 'website#show_contact'
 
@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       resources :announcements
       resources :procurement_entities
       resources :announcement_types
+      resources :public_services
     end
   end
 

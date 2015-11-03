@@ -11,8 +11,8 @@ class WebsiteController < ApplicationController
 
   # end
 
-  def show_public_service
-    
+  def show_public_services
+    @public_services = PublicService.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show_question_answer
@@ -25,7 +25,7 @@ class WebsiteController < ApplicationController
 
 # Procurement entity
   def show_procurement_entities
-    @procurement_entities = ProcurementEntity.where(procurement_category_id: params[:category_id])
+    @procurement_entities = ProcurementEntity.where(procurement_category_id: params[:category_id]).paginate(:page => params[:page], :per_page => 16)
   end
 
   def show_procurement_entity_city_province

@@ -118,3 +118,20 @@ end
       public: announcement[:public]
   ).find_or_create_by(title: announcement[:title])
 end
+
+# public service
+[
+  {name: "Mr. Jack son miky", position: "Position A", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. Mily dana", position: "Position B", phone: "0987554", email: "mra@email.com"},
+  {name: "Dr. Solatana", position: "Position C", phone: "0987554", email: "mra@email.com"},
+  {name: "Mr. John cina", position: "Position D", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. milina", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. joooli", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. somatra", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. somtanta", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. jackolo", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. dinata", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. sophaktra", position: "Position E", phone: "0987554", email: "mra@email.com"}
+].each do |ps|
+  PublicService.create_with(name: ps[:name], position: ps[:position], phone: ps[:phone], email: ps[:email] ).find_or_create_by(name: ps[:name]);
+end 
