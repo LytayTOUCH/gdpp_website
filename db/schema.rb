@@ -73,6 +73,21 @@ ActiveRecord::Schema.define(version: 20151102095417) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "law_regulations", force: :cascade do |t|
+    t.string   "title",                           limit: 50
+    t.string   "description"
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
+    t.string   "law_doc_attachment_file_name"
+    t.string   "law_doc_attachment_content_type"
+    t.integer  "law_doc_attachment_file_size"
+    t.datetime "law_doc_attachment_updated_at"
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+  end
+
   create_table "procurement_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -81,9 +96,6 @@ ActiveRecord::Schema.define(version: 20151102095417) do
 
   create_table "procurement_entities", force: :cascade do |t|
     t.string   "name"
-    t.string   "phone"
-    t.string   "address"
-    t.string   "website"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "procurement_category_id"
