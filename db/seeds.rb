@@ -12,7 +12,6 @@
   UserProfile.create_with(admin_id: @admin.id, name: admin[:user_profile][:name], address: admin[:user_profile][:address], phone: admin[:user_profile][:phone], position: admin[:user_profile][:position]).find_or_create_by(name: admin[:user_profile][:name])
 end
 
-
 budget_source_list = [
   {name: "ថវិការាជរដ្ឋាភិបាល"},
   {name: "ថវិការបស់អគ្គិសនីកម្ពុជា"},
@@ -26,6 +25,14 @@ budget_source_list = [
   {name: "ថវិការបស់មជ្ឍមណ្ឌលជាតិពិសោធន៍សុខាភិបាល"}
 ].each do |budget_source|
   @budget_source = BudgetSource.create_with(name: budget_source[:name]).find_or_create_by(name: budget_source[:name])
+end
+
+procurement_category_list =[
+  {name: "ក្រសួង – ស្ថាប័នថ្នាក់កណ្តាល"},
+  {name: "គ្រឹះស្ថានសាធារណៈ – សហគ្រាសសាធារណៈ"},
+  {name: "រាជធានី​ – ខេត្ត"}
+].each do |pc|
+  @procurement_category = ProcurementCategory.create_with(name: pc[:name]).find_or_create_by(name: pc[:name])
 end
 
 procurement_entity_list = [
@@ -87,7 +94,7 @@ procurement_entity_list = [
   {name: "ខេត្ត កោះកុង"},
   {name: "ខេត្ត ត្បូងឃ្មុំ"}
 ].each do |procurement_entity|
-  @procurement_entity = ProcurementEntity.create_with(name: procurement_entity[:name] ).find_or_create_by(name: procurement_entity[:name])
+  @procurement_entity = ProcurementEntity.create_with(name: procurement_entity[:name], procurement_category_id: @procurement_category.id ).find_or_create_by(name: procurement_entity[:name])
 end 
 
 announcement_type_list= [
@@ -118,3 +125,20 @@ end
       public: announcement[:public]
   ).find_or_create_by(title: announcement[:title])
 end
+
+# public service
+[
+  {name: "Mr. Jack son miky", position: "Position A", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. Mily dana", position: "Position B", phone: "0987554", email: "mra@email.com"},
+  {name: "Dr. Solatana", position: "Position C", phone: "0987554", email: "mra@email.com"},
+  {name: "Mr. John cina", position: "Position D", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. milina", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. joooli", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. somatra", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. somtanta", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. jackolo", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. dinata", position: "Position E", phone: "0987554", email: "mra@email.com"},
+  {name: "Miss. sophaktra", position: "Position E", phone: "0987554", email: "mra@email.com"}
+].each do |ps|
+  PublicService.create_with(name: ps[:name], position: ps[:position], phone: ps[:phone], email: ps[:email] ).find_or_create_by(name: ps[:name]);
+end 
