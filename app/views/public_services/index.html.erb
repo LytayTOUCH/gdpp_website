@@ -1,18 +1,18 @@
 <br>
 <div class="panel panel-primary" >
   <div class="panel-heading" >
-    <b><%= "Public Services" %></b>
+    <b><%= t('dashboard.navigator_menu.public_services') %></b>
   </div>
   <div class="panel-body" >
     <table class="table table-bordered datatable" >
       <thead>
         <tr>
           <th><%= "#" %></th>
-          <th><%= "Name" %></th>
-          <th><%= "Position" %></th>
-          <th><%= "Phone" %></th>
-          <th><%= "Email" %></th>
-          <th><%= "Action" %></th>
+          <th><%= t('table.public_services.name') %></th>
+          <th><%= t('table.public_services.position') %></th>
+          <th><%= t('table.public_services.phone') %></th>
+          <th><%= t('table.public_services.email') %></th>
+          <th><%= t('table.public_services.actions') %></th>
         </tr>
       </thead>
       <tbody>
@@ -24,8 +24,8 @@
             <td><%= ps.phone %></td>
             <td><%= ps.email %></td>
             <td>
-              <%= link_to "Edit", edit_public_service_path(ps), class: "btn btn-xs btn-primary" %>
-              <%= link_to 'Delete',  { action: :destroy, id: ps.id}, method: :delete, data: { confirm: "Are you sure to delete [ #{ps.name} ] from public service?"  }, class: "btn btn-xs btn-danger" %>
+              <%= link_to t('form.actions.edit'), edit_public_service_path(ps), class: "btn btn-xs btn-primary" %>
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: ps.id}, method: :delete, data: { confirm: "Are you sure to delete [ #{ps.name} ] from public service?"  }, class: "btn btn-xs btn-danger" %>
             </td>
           </tr>
         <% no +=1; end %>
@@ -33,6 +33,6 @@
     </table>
   </div>
   <div class="panel-footer" >
-    <%= link_to "Add ", new_public_service_path, class: "btn btn-primary" %>
+    <%= link_to t('form.button.add'), new_public_service_path, class: "btn btn-primary" %>
   </div>
 </div>

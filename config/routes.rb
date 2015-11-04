@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'website#index'
   # get 'contact' => 'website#contact'
 
-
   get 'show_public_services' => 'website#show_public_services'
   get 'faq'=> 'website#show_question_answer'
   get 'contact' => 'website#show_contact'

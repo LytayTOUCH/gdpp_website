@@ -96,6 +96,9 @@ ActiveRecord::Schema.define(version: 20151102095417) do
 
   create_table "procurement_entities", force: :cascade do |t|
     t.string   "name"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "website"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "procurement_category_id"

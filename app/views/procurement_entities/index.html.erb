@@ -1,15 +1,15 @@
 <div class="panel panel-primary" >
   <div class="panel-heading" >
-    <b><%= "Procurement entities" %></b>
+    <b><%= t('dashboard.navigator_menu.procurement_entity') %></b>
   </div>
   <div class="panel-body" >
     <table class="table table-bordered datatable" >
       <thead>
         <tr>
           <th><%= "#" %></th>
-          <th><%= "Procurement Entity name" %></th>
-          <th><%= "Phone" %></th>
-          <th><%= "Action" %></th>
+          <th><%= t('table.announcement.PE') %></th>
+          <th><%= t('table.announcement.phone') %></th>
+          <th><%= t('table.announcement.actions') %></th>
         </tr>
       </thead>
       <tbody>
@@ -19,9 +19,9 @@
             <td> <%= pe.name %> </td>
             <td> <%= pe.phone %> </td>
             <td>
-              <%= link_to "edit", edit_procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %>
-              <%= link_to 'Delete',  { action: :destroy, id: pe.id}, method: :delete, data: { confirm: 'Are you sure to delete procurement entity source?' }, class: "btn btn-xs btn-danger" %>
-              <%= link_to "show", procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %>
+              <%= link_to t('form.actions.edit'), edit_procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %>
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: pe.id}, method: :delete, data: { confirm: 'Are you sure to delete procurement entity source?' }, class: "btn btn-xs btn-danger" %>
+              <%= link_to t('form.actions.show'), procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %>
             </td>
           </tr>
 
@@ -32,6 +32,6 @@
     
   </div>
   <div class="panel-footer" >
-    <%= link_to "Add ", new_procurement_entity_path, class: "btn btn-primary" %>
+    <%= link_to t('form.button.add'), new_procurement_entity_path, class: "btn btn-primary" %>
   </div>
 </div>

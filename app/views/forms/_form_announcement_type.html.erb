@@ -1,4 +1,4 @@
 <%= simple_form_for(@announcement_type) do |f| %>
   <%= f.input :name %>
-  <%= f.submit %>
+  <%= f.submit t('form.button.submit'), class: 'btn btn-primary'%>
 <% end %>
