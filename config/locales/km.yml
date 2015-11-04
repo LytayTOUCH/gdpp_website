@@ -28,19 +28,47 @@ km:
       password: "ពាក្យសំងាត់"
       remember_me: "ចងចាំការប្រើប្រាស់"
       submit: "ចូលប្រើប្រាស់"
+    actions:
+      edit: 'កែតម្រូវ'
+      show: 'លម្អិត'
+      delete: 'លុប'
+    button:
+      submit: 'បង្កើត'
+      add: 'បន្ថែម'
   date:
     order: "Test"
   dashboard:
     navigator_menu:
-      announcement: 'ប្រកាសលិទ្ធកម្ម'
+      announcement: 'ប្រកាសលទ្ធកម្ម'
       budget_sources: 'ប្រភពថវិការ'
-      announcement_type: 'ប្រភេទប្រកាសលិទ្ធកម្ម'
+      announcement_type: 'ប្រភេទប្រកាសលទ្ធកម្ម'
       procurement_entity: 'ស្ថាប័នអនុវត្ត'
-      law_regulation: 'ច្បាប់កតិយុទ្ធ'
-      faq: 'សំនួរចម្លើយ'
-      org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
+      law_regulation: 'ច្បាប់គតិយុត្តិ'
+      public_services: 'សេវាកម្មសាធារណៈ'
       sign_out: 'ចាកចេញ'
+      faq: 'សំនួរចំលើយ'
+      org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
   website:
     label:
       new: 'ថ្មីៗ'
     release_date: 'ថ្ងៃចេញផ្សាយ'
+  table:
+    announcement:
+      title: 'បរិយាយ'
+      type: 'ប្រភេទ'
+      PE: 'ស្ថាប័នអនុវត្ត'
+      budget_source: 'ប្រភពថវិការ'
+      phone: 'ទូរស័ព្ទ'
+      public: 'ផ្សាយ'
+      actions: 'សកម្មភាព'
+    announcement_type: 'ប្រភពលទ្ធកម្ម'
+    public_services:
+      name: 'ឈ្មោះ'
+      position: 'មុខដំណែង'
+      phone: 'ទូរស័ព្ទ'
+      email: 'អ៊ីម៉ែល'
+      actions: 'សកម្មភាព'
+    law_regulation:
+      title: 'ចំណងជើង'
+      description: 'បរិយាយ'
+      actions: 'សកម្មភាព'

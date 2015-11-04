@@ -1,6 +1,6 @@
 <div class="panel panel-primary" >
   <div class="panel-heading" >
-    <b>Frequently asked questions</b>
+    <b><%= t('dashboard.navigator_menu.faq') %></b>
   </div>
   <div class="panel-body" >
     <table class="table table-bordered datatable" >
@@ -18,7 +18,7 @@
             <td> <%= no %> </td>
             <td> <%= faq.question %> </td>
             <td> <%= faq.answer %> </td>
-            <td>
+            <td class="text-nowrap">
               <%= link_to "View", faq_path(faq) , class: "btn btn-xs btn-success"  %>
               <%= link_to 'Delete',  { action: :destroy, id: faq.id}, method: :delete, data: { confirm: "Are you sure to delete this question?" }, class: "btn btn-xs btn-danger" %>
               <%= link_to "edit", edit_faq_path(faq) , class: "btn btn-xs btn-primary"  %>

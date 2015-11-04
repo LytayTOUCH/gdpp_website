@@ -22,17 +22,17 @@
               <% end %>
 
               <ul class="dropdown-menu">
-                <li><%= link_to 'ក្រសួង – ស្ថាប័នថ្នាក់កណ្តាល', procurement_entity_ministry_path %>
+              <% @procurement_categories.each do |pc| %>
+                <li>
+                <%= link_to pc.name, show_procurement_entities_path(category_id: pc.id)  %>
                 </li>
-                <li><%= link_to 'គ្រឹះស្ថានសាធារណៈ – សហគ្រាសសាធារណៈ', procurement_entity_public_foundation_path %>
-                </li>
-                <li><%= link_to 'រាជធានី​ – ខេត្ត', procurement_entity_city_province_path %>
-                </li>
+              <% end %>
+                
               </ul>
             </li>
             
             <li >
-              <%= link_to public_service_path do %>
+              <%= link_to show_public_services_path do %>
                 សេវាសាធារណៈ
                 <span class="sr-only">(current)</span>
               <% end %>
@@ -50,17 +50,14 @@
                 <li>
                   <%= link_to 'រចនាសម្ព័ន្ធស្ថាប័ន', gdpp_structure_path %>
                 </li>
-                
               </ul>
             </li>
-
             <li>
               <!-- <a href="">ទំនាក់ទំនង</a> -->
               <%= link_to "ទំនាក់ទំនង", contact_path %>
             </li>
             <li >
-              
-              <%= link_to "សំណួរចម្លើយ", qna_path %>
+              <%= link_to "សំណួរចម្លើយ", faq_path %>
             </li>
           </ul>
           

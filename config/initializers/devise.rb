@@ -8,6 +8,8 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'cb7706cc407aaf9e142c11670e5f6fcbfa8d03c64fdb11addcba2111804428b8ce39b0da88e118472727931f3d2a2c4848bbaaa2be905db2b6c53a4f4e076557'
 
+  config.secret_key = '7951e39a2128b2d1c546f290d3441f5fbd39491ef300143dfd551648b0e28c42595e50afa0f632efb1e718663154c76b5e578567979d824cbbec5e8ef3794775'
+  
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -62,7 +64,7 @@ Devise.setup do |config|
   # given strategies, for example, `config.http_authenticatable = [:database]` will
   # enable it only for database authentication. The supported strategies are:
   # :database      = Support basic authentication with authentication key + password
-  # config.http_authenticatable = false
+  config.http_authenticatable = false
 
   # If 401 status code should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true

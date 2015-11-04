@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20151103020854) do
   end
 
   create_table "org_structures", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",                            null: false
     t.text     "description"
     t.string   "org_structure_image_file_name"
     t.string   "org_structure_image_content_type"
@@ -106,8 +106,33 @@ ActiveRecord::Schema.define(version: 20151103020854) do
     t.datetime "updated_at",                       null: false
   end
 
+  create_table "procurement_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "procurement_entities", force: :cascade do |t|
     t.string   "name"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "website"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "procurement_category_id"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
+
+  add_index "procurement_entities", ["procurement_category_id"], name: "index_procurement_entities_on_procurement_category_id", using: :btree
+
+  create_table "public_services", force: :cascade do |t|
+    t.string   "name"
+    t.string   "position"
+    t.string   "phone"
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -125,4 +150,5 @@ ActiveRecord::Schema.define(version: 20151103020854) do
   add_foreign_key "announcements", "announcement_types"
   add_foreign_key "announcements", "budget_sources"
   add_foreign_key "announcements", "procurement_entities"
+  add_foreign_key "procurement_entities", "procurement_categories"
 end

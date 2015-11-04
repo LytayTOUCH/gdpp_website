@@ -1,0 +1,26 @@
+<br>
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= @procurement_entity.name %></b>
+  </div>
+  <div class="panel-body" >
+    <p style="line-height: 30px;" >
+      <% if @procurement_entity.logo? %>
+        <%= image_tag(@procurement_entity.logo.url(:medium)) %>
+      <% else %>
+        <%= image_tag('no-image.png', width: "200px") %>
+      <% end %>
+      <br>
+      <br>
+      <%= "Name : #{@procurement_entity.name}" %><br>
+      <%= "Type : " %> <%= @procurement_entity.procurement_category.name if @procurement_entity.procurement_category.present?  %><br>
+      <%= "Phone : #{@procurement_entity.phone}" %><br>
+      <%= "Address : #{@procurement_entity.address}" %><br>
+      <%= "Website : #{@procurement_entity.website}" %>
+    </p>
+  </div>
+  <div class="panel-footer" >
+    <%= link_to "Back", procurement_entities_path, class: 'btn btn-sm btn-primary' %>
+    <%= link_to "Edit", edit_procurement_entity_path(@procurement_entity), class: 'btn btn-sm btn-primary' %>
+  </div>
+</div>

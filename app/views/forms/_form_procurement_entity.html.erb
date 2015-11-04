@@ -1,4 +1,10 @@
 <%= simple_form_for(@procurement_entity) do |f| %>
   <%= f.input :name %>
-  <%= f.submit %>
+  <%= f.input :procurement_category_id, as: 'select', collection: @procurement_categories %>
+  <%= f.input :phone %>
+  <%= f.input :address %>
+  <%= f.input :website %>
+  <%= f.input :logo, as: :file %>
+
+  <%= f.submit t('form.button.submit'), class: 'btn btn-primary'%>
 <% end %>
