@@ -1,5 +1,5 @@
 class WebsiteController < ApplicationController
-  before_action :load_announcement_type, :load_procurement_category
+  before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements
   def index
     @announcement = Announcement.limit(6).sorted_by_date
     @law_regulations = LawRegulation.all
@@ -72,12 +72,23 @@ class WebsiteController < ApplicationController
     @announcement = Announcement.find(params[:id])
   end
 
-  private
-    def load_announcement_type
-      @announcement_types = AnnouncementType.all
-    end
-    def load_procurement_category
-      @procurement_categories = ProcurementCategory.all
-    end
+  def show_procurement_plans
+    @procurement_plans = ProcurementPlan.where(procurement_plan_type: params[:type])
+  end
+
+
+
+# Must load all action
+  def load_announcement_type
+    @announcement_types = AnnouncementType.all
+  end
+  
+  def load_procurement_category
+    @procurement_categories = ProcurementCategory.all
+  end
+
+  def load_newest_announcements
+    @newest_announcements = Announcement.sorted_by_date.limit(5)
+  end
 
 end

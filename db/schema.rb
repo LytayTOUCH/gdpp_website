@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104100423) do
+ActiveRecord::Schema.define(version: 20151105035302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,8 +132,13 @@ ActiveRecord::Schema.define(version: 20151104100423) do
     t.string   "name"
     t.integer  "procurement_entity_id"
     t.string   "year"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "procurement_plan_type"
+    t.string   "procurement_plan_file_file_name"
+    t.string   "procurement_plan_file_content_type"
+    t.integer  "procurement_plan_file_file_size"
+    t.datetime "procurement_plan_file_updated_at"
   end
 
   add_index "procurement_plans", ["procurement_entity_id"], name: "index_procurement_plans_on_procurement_entity_id", using: :btree

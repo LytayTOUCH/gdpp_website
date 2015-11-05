@@ -1,0 +1,50 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= t('dashboard.navigator_menu.procurement_plan') %></b>
+  </div>
+  <div class="panel-body" >
+    <table class="table table-bordered datatable" >
+      <thead>
+        <tr>
+          <th><%= "#" %></th>
+          <th><%= t('table.procurement_plan.name') %></th>
+          <th><%= t('table.announcement.PE') %></th>
+          <th><%= t('table.announcement.type') %></th>
+          <th><%= t('table.procurement_plan.year') %></th>
+          <th><%= "file" %></th>
+
+          <th><%= t('table.actions') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% no = 1; @procurement_plans.each do |pp| %>
+          <tr>
+            <td> <%= no %> </td>
+            <td> <%= pp.name %> </td>
+            <td> <%= pp.procurement_entity.name %> </td>
+            <td>
+              <%= t('table.procurement_plan.annual') if pp.procurement_plan_type == "annual" %> 
+              <%= t('table.procurement_plan.adjusted') if pp.procurement_plan_type == "adjusted" %> 
+            </td>
+            <td> <%= pp.year %> </td>
+            <td>
+              <% if pp.procurement_plan_file? %>
+                <%= link_to pp.procurement_plan_file_file_name, pp.procurement_plan_file.url, target: "_blank" %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to t('form.actions.edit'), edit_procurement_plan_path(pp) , class: "btn btn-xs btn-primary"  %>
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: pp.id}, method: :delete, data: { confirm: "Are you sure to delete [#{pp.name}] ?" }, class: "btn btn-xs btn-danger" %>
+              <%= link_to t('form.actions.show'), procurement_plan_path(pp) , class: "btn btn-xs btn-info"  %>
+            </td>
+          </tr>
+        <% no+= 1;  end %>
+      </tbody>
+
+    </table>
+    
+  </div>
+  <div class="panel-footer" >
+    <%= link_to t('form.button.add'), new_procurement_plan_path, class: "btn btn-primary" %>
+  </div>
+</div>

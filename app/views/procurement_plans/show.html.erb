@@ -1,0 +1,27 @@
+<br>
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= @procurement_plan.name %></b>
+  </div>
+  <div class="panel-body" >
+    <p style="line-height: 30px;" >
+      
+      <%= t('table.procurement_plan.name') %> <%= " : #{@procurement_plan.name}" %><br>
+      <%= t('table.announcement.PE') + " : " %> <%= @procurement_plan.procurement_entity.name if @procurement_plan.procurement_entity.present?  %><br>
+      <%= t('table.announcement.type') + " : " %>
+        <%= t('table.procurement_plan.annual') if @procurement_plan.procurement_plan_type == "annual" %> 
+        <%= t('table.procurement_plan.adjusted') if @procurement_plan.procurement_plan_type == "adjusted" %>
+      <br>
+      <%= t('table.procurement_plan.year') + " : #{@procurement_plan.year}" %><br>
+      <%= t('table.procurement_plan.file') + " : " %>
+      <% if @procurement_plan.procurement_plan_file? %>
+        <%= link_to @procurement_plan.procurement_plan_file_file_name, @procurement_plan.procurement_plan_file.url, target: "_blank" %>
+      <% end %>
+
+    </p>
+  </div>
+  <div class="panel-footer" >
+    <%= link_to "Back", procurement_plans_path, class: 'btn btn-sm btn-primary' %>
+    <%= link_to "Edit", edit_procurement_plan_path(@procurement_plan), class: 'btn btn-sm btn-primary' %>
+  </div>
+</div>

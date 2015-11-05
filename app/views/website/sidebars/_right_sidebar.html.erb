@@ -2,23 +2,12 @@
     <% if  !request.fullpath.end_with?("/","/announcements") %>
         <div class=" widget-box has-shadow color-black ">
             <h2>សេចក្ដីជូនដំណឹងស្តីពីការដេញថ្លៃថ្មីៗ</h2>
-                
-                <div class="list-item-box" >
-                    <p class="title" >សេចក្តីប្រកាស់ទី១ </p>
-                    <p class="after-title" >សំណង់ 01-07-2015</p>
-                </div>
-                <div class="list-item-box" >
-                    <p class="title" >សេចក្តីប្រកាស់ទី១ </p>
-                    <p class="after-title" >សំណង់ 01-07-2015</p>
-                </div>
-                <div class="list-item-box" >
-                    <p class="title" >សេចក្តីប្រកាស់ទី១ </p>
-                    <p class="after-title" >សំណង់ 01-07-2015</p>
-                </div>
-                <div class="list-item-box" >
-                    <p class="title" >សេចក្តីប្រកាស់ទី១ </p>
-                    <p class="after-title" >សំណង់ 01-07-2015</p>
-                </div>
+                <% @newest_announcements.each do |na| %>
+                  <div class="list-item-box" >
+                    <%= link_to na.title, show_announcement_path(na), class: "title" %><br>
+                    <span class="after-titl" ><%= na.announcement_type.name %> - <%= na.updated_at.strftime("%B %d, %Y") %></span>
+                  </div>
+                <% end %>
         </div>
         
     <% end %>
@@ -34,11 +23,11 @@
     </div>
 
     <div class=" widget-box has-shadow">
-      <h2>ផែនការលទ្ធកម្ម</h2>
+      <h2><%= "ផែនការលទ្ធកម្ម" %></h2>
       
       <ul style="list-style:none" >
-        <li> <%= link_to "ផែនការលទ្ធកម្មដើមឆ្នាំ ", '#' %></li>
-        <li> <%= link_to "ផែនការលទ្ធកម្មកែតម្រូវ", '#' %></li>
+        <li> <%= link_to "ផែនការលទ្ធកម្មដើមឆ្នាំ ", show_procurement_plans_path(type: "annual" ) %></li>
+        <li> <%= link_to "ផែនការលទ្ធកម្មកែតម្រូវ", show_procurement_plans_path(type: "adjusted" ) %></li>
       </ul> 
 
     </div>

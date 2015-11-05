@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get 'show_procurement_entities/:category_id' => 'website#show_procurement_entities', as: 'show_procurement_entities'
 
+  get 'show_procurement_plans/:type' => 'website#show_procurement_plans', as: 'show_procurement_plans'
+
   resources :administrator do
     collection do
       resources :budget_sources
@@ -33,6 +35,7 @@ Rails.application.routes.draw do
       resources :public_services
       resources :faqs
       resources :org_structures
+      resources :procurement_plans
     end
   end
 

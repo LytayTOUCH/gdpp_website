@@ -1,0 +1,2 @@
+module ProcurementPlansHelper
+end

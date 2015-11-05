@@ -1,0 +1,11 @@
+<%= simple_form_for(@procurement_plan) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :procurement_entity_id, collection: @procurement_entities %>
+  <%= f.input :procurement_plan_type, collection:
+    [['លទ្ធកម្មដើមឆ្នាំ', 'annual'],
+    ['លទ្ធកម្មកែតម្រូវ', 'adjusted']] 
+  %>
+  <%= f.input :year %>
+  <%= f.input :procurement_plan_file, as: :file %>
+  <%= f.submit t('form.button.submit'), class: 'btn btn-primary'%>
+<% end %>

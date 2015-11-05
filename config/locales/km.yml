@@ -43,16 +43,20 @@ km:
       budget_sources: 'ប្រភពថវិការ'
       announcement_type: 'ប្រភេទប្រកាសលទ្ធកម្ម'
       procurement_entity: 'ស្ថាប័នអនុវត្ត'
+      procurement_plan: 'ផែនការ'
       law_regulation: 'ច្បាប់គតិយុត្តិ'
       public_services: 'សេវាកម្មសាធារណៈ'
       sign_out: 'ចាកចេញ'
       faq: 'សំនួរចំលើយ'
       org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
+
+
   website:
     label:
       new: 'ថ្មីៗ'
     release_date: 'ថ្ងៃចេញផ្សាយ'
   table:
+    actions: 'សកម្មភាព'
     announcement:
       title: 'បរិយាយ'
       type: 'ប្រភេទ'
@@ -72,3 +76,10 @@ km:
       title: 'ចំណងជើង'
       description: 'បរិយាយ'
       actions: 'សកម្មភាព'
+    procurement_plan:
+      name: 'ឈ្មោះផែនការ'
+      year: 'ឆ្នាំ'
+      adjusted: "លទ្ធកម្មកែតម្រូវ"
+      annual: "លទ្ធកម្មដើមឆ្នាំ"
+      file: "ឯកសារ"
+      
