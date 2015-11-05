@@ -1,5 +1,5 @@
 class WebsiteController < ApplicationController
-  before_action :load_announcement_type
+  before_action :load_announcement_type, :load_procurement_category
   def index
     @announcement = Announcement.limit(6).sorted_by_date
     @law_regulations = LawRegulation.all
@@ -12,12 +12,12 @@ class WebsiteController < ApplicationController
 
   # end
 
-  def show_public_service
-    
+  def show_public_services
+    @public_services = PublicService.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show_question_answer
-    
+    @faqs = Faq.all
   end
 
   def show_contact
@@ -25,6 +25,9 @@ class WebsiteController < ApplicationController
   end
 
 # Procurement entity
+  def show_procurement_entities
+    @procurement_entities = ProcurementEntity.where(procurement_category_id: params[:category_id]).paginate(:page => params[:page], :per_page => 16)
+  end
 
   def show_procurement_entity_city_province
     
@@ -57,7 +60,7 @@ class WebsiteController < ApplicationController
     
   end
   def show_gdpp_structure
-    
+    @org_structures = OrgStructure.all
   end
 
 # order menu
@@ -69,10 +72,12 @@ class WebsiteController < ApplicationController
     @announcement = Announcement.find(params[:id])
   end
 
-
   private
     def load_announcement_type
       @announcement_types = AnnouncementType.all
-    end  
+    end
+    def load_procurement_category
+      @procurement_categories = ProcurementCategory.all
+    end
 
 end

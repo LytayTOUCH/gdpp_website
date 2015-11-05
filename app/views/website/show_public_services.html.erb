@@ -1,0 +1,23 @@
+<div class="content  col-md-8 body">
+    <p class="text-center" style="font-family: 'khmer muol'; font-size: 20px; " > <%= "សេវាសាធារណៈ" %> </p>
+    <p class="color-fore text-center" > <%="សេចក្តីលម្អិតអំពីសេវាសាធារណៈ"%> </p>
+    <hr>
+    <br>
+    <% @public_services.each do |ps| %>
+      <div class="row" >
+          <div class="col-md-12 color-hover cursor-pointer "  >
+          <div style="border-bottom: 1px solid #bbb; margin-bottom: 10px ;" >
+            <p><b> <%= ps.name %> </b> <%= " : " %> <%= ps.position %> </p>
+            <p>
+              <%= "ទូរស័ព្ទ : " %>  <%= ps.phone %><br>
+              <%= "Email : " %> <%= ps.email %> 
+            </p>
+          </div>
+          </div>
+        </div>
+    <% end %>
+    <%= will_paginate @public_services, renderer: BootstrapPagination::Rails %>
+    <p style="text-align:center ">
+    <%= link_to 'ទាញយកឯកសារ', '' %>
+    </p>
+</div>

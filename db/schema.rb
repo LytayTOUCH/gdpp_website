@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102071100) do
+ActiveRecord::Schema.define(version: 20151104100423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(version: 20151102071100) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "faqs", force: :cascade do |t|
+    t.text     "question",   null: false
+    t.text     "answer",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "law_regulations", force: :cascade do |t|
     t.string   "title",                           limit: 50
     t.string   "description"
@@ -86,6 +93,17 @@ ActiveRecord::Schema.define(version: 20151102071100) do
     t.datetime "law_doc_attachment_updated_at"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
+  end
+
+  create_table "org_structures", force: :cascade do |t|
+    t.string   "title",                            null: false
+    t.text     "description"
+    t.string   "org_structure_image_file_name"
+    t.string   "org_structure_image_content_type"
+    t.integer  "org_structure_image_file_size"
+    t.datetime "org_structure_image_updated_at"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "procurement_categories", force: :cascade do |t|
@@ -110,6 +128,25 @@ ActiveRecord::Schema.define(version: 20151102071100) do
 
   add_index "procurement_entities", ["procurement_category_id"], name: "index_procurement_entities_on_procurement_category_id", using: :btree
 
+  create_table "procurement_plans", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "procurement_entity_id"
+    t.string   "year"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "procurement_plans", ["procurement_entity_id"], name: "index_procurement_plans_on_procurement_entity_id", using: :btree
+
+  create_table "public_services", force: :cascade do |t|
+    t.string   "name"
+    t.string   "position"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "admin_id"
     t.string   "name"
@@ -124,4 +161,5 @@ ActiveRecord::Schema.define(version: 20151102071100) do
   add_foreign_key "announcements", "budget_sources"
   add_foreign_key "announcements", "procurement_entities"
   add_foreign_key "procurement_entities", "procurement_categories"
+  add_foreign_key "procurement_plans", "procurement_entities"
 end

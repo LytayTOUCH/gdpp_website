@@ -11,4 +11,6 @@ class LawRegulation < ActiveRecord::Base
 
   validates_attachment_size :law_doc_attachment, less_than: 10.megabytes  
 
+  validates :title, presence: true
+
 end

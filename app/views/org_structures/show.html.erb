@@ -1,0 +1,27 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= @org_structure.title %></b>
+  </div>
+  <div class="panel-body" > 
+    <div class="row" >
+      
+      <div class="col-xs-6" >
+        <ul style="list-style:none;" >
+          <td>
+            <%= "Organizational Structure Image: " %> 
+            <% if @org_structure.org_structure_image? %>
+              <%= image_tag @org_structure.org_structure_image.url, size: "80x50" %>
+            <% else %>
+              No image(s)
+            <% end %>  
+          </td>
+        </ul>
+      </div>
+      <div class="col-xs-6" >
+        <b><%= "Description" %></b><hr>
+        <%= @org_structure.description %>
+      </div>
+
+    </div>
+  </div>
+</div>

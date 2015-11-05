@@ -8,8 +8,9 @@
     <%= f.input :open_register_date, as: :date_picker %>
     <%= f.input :close_submit_date, as: :date_picker %>
     <%= f.input :open_bid_doc_date, as: :date_picker %>
-    <%= f.input :announcement_file, as: :file %>
-    <%= f.input :bidding_file, as: :file %>
+    <%= f.input :announcement_file, as: :file, class: 'btn btn-primary' %>
+    <%= f.input :bidding_file, as: :file, class: 'btn btn-primary' %>
     <%= f.input :public %>
-    <%= f.submit %>
+    <%= f.submit t('form.button.submit'), class: 'btn btn-primary'%>
 <% end %>
+

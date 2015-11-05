@@ -1,0 +1,36 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= t('dashboard.navigator_menu.org_structure') %></b>
+  </div>
+  <div class="panel-body" >
+    <table class="table table-bordered datatable" >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% no = 1; @org_structures.each do |org_structure| %>
+          <tr>
+            <td> <%= no %> </td>
+            <td> <%= org_structure.title %> </td>
+            <td> <%= org_structure.description %> </td>
+            <td>
+              <%= link_to "View", org_structure_path(org_structure) , class: "btn btn-xs btn-success"  %>
+              <%= link_to 'Delete',  { action: :destroy, id: org_structure.id}, method: :delete, data: { confirm: "Are you sure to delete this structure ?" }, class: "btn btn-xs btn-danger" %>
+              <%= link_to "edit", edit_org_structure_path(org_structure) , class: "btn btn-xs btn-primary"  %>
+            </td>
+          </tr>
+        <% no+= 1;  end %>
+      </tbody>
+
+    </table>
+    
+  </div>
+  <div class="panel-footer" >
+    <%= link_to "Add ", new_org_structure_path, class: "btn btn-primary" %>
+  </div>
+</div>

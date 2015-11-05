@@ -1,0 +1,36 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= t('dashboard.navigator_menu.faq') %></b>
+  </div>
+  <div class="panel-body" >
+    <table class="table table-bordered datatable" >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Question</th>
+          <th>Answer</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% no = 1; @faqs.each do |faq| %>
+          <tr>
+            <td> <%= no %> </td>
+            <td> <%= faq.question %> </td>
+            <td> <%= faq.answer %> </td>
+            <td class="text-nowrap">
+              <%= link_to "View", faq_path(faq) , class: "btn btn-xs btn-success"  %>
+              <%= link_to 'Delete',  { action: :destroy, id: faq.id}, method: :delete, data: { confirm: "Are you sure to delete this question?" }, class: "btn btn-xs btn-danger" %>
+              <%= link_to "edit", edit_faq_path(faq) , class: "btn btn-xs btn-primary"  %>
+            </td>
+          </tr>
+        <% no+= 1;  end %>
+      </tbody>
+
+    </table>
+    
+  </div>
+  <div class="panel-footer" >
+    <%= link_to "Add ", new_faq_path, class: "btn btn-primary" %>
+  </div>
+</div>

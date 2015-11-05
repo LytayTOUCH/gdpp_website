@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   root 'website#index'
   # get 'contact' => 'website#contact'
 
-
-  get 'public_service' => 'website#show_public_service'
+  get 'show_public_services' => 'website#show_public_services'
   get 'faq'=> 'website#show_question_answer'
   get 'contact' => 'website#show_contact'
 
@@ -22,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'show_announcement/:id' => 'website#show_announcement', as: 'show_announcement'
 
+  get 'show_procurement_entities/:category_id' => 'website#show_procurement_entities', as: 'show_procurement_entities'
+
   resources :administrator do
     collection do
       resources :budget_sources
@@ -29,6 +30,9 @@ Rails.application.routes.draw do
       resources :procurement_entities
       resources :announcement_types
       resources :law_regulations
+      resources :public_services
+      resources :faqs
+      resources :org_structures
     end
   end
 
