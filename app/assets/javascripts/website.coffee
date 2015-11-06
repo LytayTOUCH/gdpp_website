@@ -16,4 +16,4 @@ $(document).on 'page:change', ->
       "next": "បន្ទាប់"
       "previous": "មុន"
 
-  $('#example').DataTable()
+  # $('#example').DataTable()
