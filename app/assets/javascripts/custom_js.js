@@ -4,8 +4,8 @@ $(document).on('page:change', function() {
         'lengthMenu': 'បង្ហាញ _MENU_ ក្នុងមួយទំព័រ',
         'zeroRecords': 'មិនមានទិន្នន័យដែលបានស្វែងរក - សូមទោស',
         'info': 'បង្ហាញ _PAGE_ នៃ _PAGES_ ទំព័រ',
-        'infoEmpty': 'No records available',
-        'infoFiltered': '(filtered from _MAX_ total records)',
+        'infoEmpty': 'មិនមានទិន្នន័យក្នុងតារាង',
+        'infoFiltered': '(បានតម្រង _MAX_ ជួរដេកនៃទន្នន័យសរុប)',
         'search': 'ស្វែងរក',
         "paginate": {
           "first": "ដំបូង",
