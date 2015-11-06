@@ -82,4 +82,7 @@ km:
       adjusted: "លទ្ធកម្មកែតម្រូវ"
       annual: "លទ្ធកម្មដើមឆ្នាំ"
       file: "ឯកសារ"
-      
+  will_paginate:
+    previous_label: "មុន"
+    next_label: "បន្ទាប់"
+    page_gap: "&hellip;"
