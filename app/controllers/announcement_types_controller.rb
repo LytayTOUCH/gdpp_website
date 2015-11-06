@@ -1,7 +1,7 @@
 class AnnouncementTypesController < ApplicationController
-  before_action :set_announcement_type, only: [:edit, :update,:destroy]
+  # before_action :set_announcement_type, only: [:edit, :update,:destroy]
   before_action :authenticate_admin!
-  layout 'administrator'
+  # layout 'administrator'
   
   def index
     @announcement_types = AnnouncementType.all
@@ -25,6 +25,7 @@ class AnnouncementTypesController < ApplicationController
   def edit
     
   end
+  
   def update
     if @announcement_type.update_attributes(announcement_type_param)
       flash[:notice] = "Update success!"

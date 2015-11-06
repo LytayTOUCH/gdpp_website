@@ -66,9 +66,16 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '3.3.3'
+  gem 'factory_girl_rails', '~> 4.2.0'
   gem 'guard-rspec', '4.6.4', require: false
-  gem 'capybara', '2.1.0'
+  gem 'capybara', '2.5.0'
   gem 'cucumber', '2.1.0'
+end
+
+group :test do
+  gem 'shoulda'
+  gem 'shoulda-matchers', require: false
+  gem 'faker'
 end
 
 group :development do

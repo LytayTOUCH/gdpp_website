@@ -9,6 +9,8 @@ class LawRegulation < ActiveRecord::Base
     "application/msword", 
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document"] }
 
+    scope :sorted_by_date, -> {order ("law_regulations.updated_at DESC")}
+
   validates_attachment_size :law_doc_attachment, less_than: 10.megabytes  
 
   validates :title, presence: true
