@@ -7,9 +7,9 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>actions</th>
+          <th><%= t('table.org_structure.title')%></th>
+          <th><%= t('table.org_structure.description')%></th>
+          <th><%= t('table.actions')%></th>
         </tr>
       </thead>
       <tbody>
@@ -19,9 +19,9 @@
             <td> <%= org_structure.title %> </td>
             <td> <%= org_structure.description %> </td>
             <td>
-              <%= link_to "View", org_structure_path(org_structure) , class: "btn btn-xs btn-success"  %>
-              <%= link_to 'Delete',  { action: :destroy, id: org_structure.id}, method: :delete, data: { confirm: "Are you sure to delete this structure ?" }, class: "btn btn-xs btn-danger" %>
-              <%= link_to "edit", edit_org_structure_path(org_structure) , class: "btn btn-xs btn-primary"  %>
+              <%= link_to t('form.actions.show'), org_structure_path(org_structure) , class: "btn btn-xs btn-success"  %>
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: org_structure.id}, method: :delete, data: { confirm: "Are you sure to delete this structure ?" }, class: "btn btn-xs btn-danger" %>
+              <%= link_to t('form.actions.edit'), edit_org_structure_path(org_structure) , class: "btn btn-xs btn-primary"  %>
             </td>
           </tr>
         <% no+= 1;  end %>

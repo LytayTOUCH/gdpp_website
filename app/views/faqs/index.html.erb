@@ -7,9 +7,9 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Question</th>
-          <th>Answer</th>
-          <th>actions</th>
+          <th><%= t('table.faqs.question') %></th>
+          <th><%= t('table.faqs.answer') %></th>
+          <th><%= t('table.actions') %></th>
         </tr>
       </thead>
       <tbody>
@@ -19,9 +19,9 @@
             <td> <%= faq.question %> </td>
             <td> <%= faq.answer %> </td>
             <td class="text-nowrap">
-              <%= link_to "View", faq_path(faq) , class: "btn btn-xs btn-success"  %>
-              <%= link_to 'Delete',  { action: :destroy, id: faq.id}, method: :delete, data: { confirm: "Are you sure to delete this question?" }, class: "btn btn-xs btn-danger" %>
-              <%= link_to "edit", edit_faq_path(faq) , class: "btn btn-xs btn-primary"  %>
+              <%= link_to t('form.actions.show'), faq_path(faq) , class: "btn btn-xs btn-success"  %>
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: faq.id}, method: :delete, data: { confirm: "Are you sure to delete this question?" }, class: "btn btn-xs btn-danger" %>
+              <%= link_to t('form.actions.edit'), edit_faq_path(faq) , class: "btn btn-xs btn-primary"  %>
             </td>
           </tr>
         <% no+= 1;  end %>
