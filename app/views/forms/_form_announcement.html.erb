@@ -11,6 +11,10 @@
     <%= f.input :announcement_file, as: :file, class: 'btn btn-primary' %>
     <%= f.input :bidding_file, as: :file, class: 'btn btn-primary' %>
     <%= f.input :public %>
-    <%= f.submit t('form.button.submit'), class: 'btn btn-primary'%>
+    <% if @announcement.new_record? %>
+      <%= f.submit t('form.button.create'), class: 'btn btn-primary'%>
+    <% else %>
+      <%= f.submit t('form.button.update'), class: 'btn btn-primary'%>
+    <% end %>
 <% end %>
 

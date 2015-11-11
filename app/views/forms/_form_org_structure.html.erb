@@ -2,5 +2,9 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :org_structure_image, as: :file %>
-  <%= f.submit %>
+  <% if @org_structure.new_record? %>
+    <%= f.submit t('form.button.create'), class: 'btn btn-primary'%>
+  <% else %>
+    <%= f.submit t('form.button.update'), class: 'btn btn-primary'%>
+  <% end %>
 <% end %>

@@ -35,7 +35,9 @@ km:
     button:
       submit: 'បង្កើត'
       add: 'បន្ថែម'
-  date:
+      create: 'បង្កើត'
+      update: 'កែប្រែ'
+  date: 
     order: "Test"
   dashboard:
     navigator_menu:
@@ -76,6 +78,12 @@ km:
       title: 'ចំណងជើង'
       description: 'បរិយាយ'
       actions: 'សកម្មភាព'
+    faq:
+      question: 'សំណួរ'
+      answer: 'ចំលើយ'
+    org_structure:
+      title: 'ចំណងជើង'
+      description: 'បរិយាយ'
     procurement_plan:
       name: 'ឈ្មោះផែនការ'
       year: 'ឆ្នាំ'
