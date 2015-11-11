@@ -49,8 +49,8 @@ km:
       sign_out: 'ចាកចេញ'
       faq: 'សំនួរចំលើយ'
       org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
-
-
+      procurement_method: 'វិធីសាស្រ្តលទ្ធកម្ម'
+      awarding_contract: 'ការប្រគល់កិច្ចសន្យា'
   website:
     label:
       new: 'ថ្មីៗ'
@@ -82,6 +82,11 @@ km:
       adjusted: "លទ្ធកម្មកែតម្រូវ"
       annual: "លទ្ធកម្មដើមឆ្នាំ"
       file: "ឯកសារ"
+    procurement_method:
+      name: 'ឈ្មោះលទ្ធកម្ម'
+    awarding_contract:
+      title: 'ចំណងជើង'
+      description: 'បរិយាយ'
   will_paginate:
     previous_label: "មុន"
     next_label: "បន្ទាប់"

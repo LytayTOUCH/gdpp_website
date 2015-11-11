@@ -1,0 +1,9 @@
+<!-- <%= debug @awarding_contract %> -->
+<%= simple_form_for(@awarding_contract, html: { multipart: true }) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description, as:"text" %>
+    <%= f.input :procurement_method_id, collection: @procurement_methods %>
+    <%= f.input :attachment_doc, as: :file %>
+    <%= f.submit t('form.button.submit'), class: 'btn btn-primary'%>
+<% end %>
+

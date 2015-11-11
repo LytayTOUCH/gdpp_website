@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'contact' => 'website#contact'
 
   get 'show_public_services' => 'website#show_public_services'
-  get 'faq'=> 'website#show_question_answer'
+  get 'faq_in_website'=> 'website#show_question_answer'
   get 'contact' => 'website#show_contact'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
@@ -36,6 +36,8 @@ Rails.application.routes.draw do
       resources :faqs
       resources :org_structures
       resources :procurement_plans
+      resources :procurement_methods
+      resources :awarding_contracts
     end
   end
 
