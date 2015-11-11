@@ -76,8 +76,6 @@ class WebsiteController < ApplicationController
     @procurement_plans = ProcurementPlan.where(procurement_plan_type: params[:type])
   end
 
-
-
 # Must load all action
   def load_announcement_type
     @announcement_types = AnnouncementType.all
