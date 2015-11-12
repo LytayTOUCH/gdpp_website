@@ -5,10 +5,13 @@ class Admin < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:login]
   has_one :user_profile
+  accepts_nested_attributes_for :user_profile, allow_destroy: true
   validates_format_of :username, with: /[a-zA-Z0-9_\.]/
   validates :username, :presence => true, :uniqueness => { :case_sensitive => false } # etc.
   validates_uniqueness_of :username
   attr_accessor :login
+
+  scope :get_active, -> { where(active: true) }
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup

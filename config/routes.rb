@@ -36,6 +36,8 @@ Rails.application.routes.draw do
       resources :faqs
       resources :org_structures
       resources :procurement_plans
+
+      resources :admins
     end
   end
 

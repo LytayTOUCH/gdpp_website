@@ -176,6 +176,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -305,6 +307,7 @@ DEPENDENCIES
   owlcarousel-rails
   paperclip (~> 4.3)
   pg (= 0.18.3)
+  pry-rails
   quiet_assets
   rails (= 4.2.4)
   rails-i18n (~> 4.0.0)

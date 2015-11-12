@@ -81,7 +81,9 @@ group :development do
   gem 'quiet_assets'  
 
   # show as table when console sql
+  gem 'pry-rails'
   gem "table_print"
+
 
 end
 

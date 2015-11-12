@@ -1,0 +1,34 @@
+<div class="panel panel-default panel-primary">
+  <div class="panel-heading">User Manager</div>
+  <div class="panel-body">
+    <table class="table datatable" >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>position</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>1</td>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td>" " </td>
+            <td>hello</td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+
+    
+  </div>
+  <div class="panel-footer">
+    <%= link_to "Add new", new_admin_path, class: "btn btn-primary" %>
+  </div>
+
+</div>
