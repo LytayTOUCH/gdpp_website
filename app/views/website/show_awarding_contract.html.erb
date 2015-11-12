@@ -1,0 +1,39 @@
+<div class="content  col-md-8 body">
+    <div class="has-padding has-shadow" style="margin-bottom:10px;" >
+      <b>
+        <%= "ពត៌មានលម្អិតនៃការប្រគល់កិច្ចសន្យា - "%>
+        <%= @awarding_contract.title %>
+      </b>
+    </div>
+    <br>
+    <div class="box">
+      <div class="box-body">
+        <p style="font-weight:bold " class="color-fore" >
+          <%= @awarding_contract.title %>
+        </p>
+
+
+        <p>
+          <b>
+            <%= "ឯកសារនៃការប្រគល់កិច្ចសន្យា ៖ " %>
+              <% if @awarding_contract.attachment_doc? %>
+              <%= link_to "ភាសាខ្មែរ", @awarding_contract.attachment_doc.url, target: '_blank' %>
+              <% else %>
+                <%= "ពុំមានឯកសារភ្ជាប់" %>
+              <% end %>
+            <br>
+          </b>
+        </p>
+        
+        <br>
+        <%= "បរិយាយ ៖ " %>
+        <%= @awarding_contract.description %>
+        
+        <hr>
+        <p style="text-align:right" >
+          <i><%= @awarding_contract.updated_at.strftime("%B %d, %Y") %></i>
+        </p>
+
+      </div>
+    </div>
+</div>

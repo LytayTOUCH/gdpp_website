@@ -53,6 +53,7 @@ km:
       org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
       procurement_method: 'វិធីសាស្រ្តលទ្ធកម្ម'
       awarding_contract: 'ការប្រគល់កិច្ចសន្យា'
+      law_category: 'ច្បាប់និងលិខិតបទដ្ឋានគតិយុត្តិ'
   website:
     label:
       new: 'ថ្មីៗ'
@@ -95,6 +96,8 @@ km:
     awarding_contract:
       title: 'ចំណងជើង'
       description: 'បរិយាយ'
+    law_category:
+      name: 'ឈ្មោះ'
   will_paginate:
     previous_label: "មុន"
     next_label: "បន្ទាប់"

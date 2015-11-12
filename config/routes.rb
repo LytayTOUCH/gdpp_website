@@ -25,6 +25,14 @@ Rails.application.routes.draw do
 
   get 'show_procurement_plans/:type' => 'website#show_procurement_plans', as: 'show_procurement_plans'
 
+  get 'show_law_regulations/:law_category_id' => 'website#show_law_regulations', as: 'show_law_regulations'
+
+  get 'show_law_regulation/:id' => 'website#show_law_regulation', as: 'show_law_regulation'
+
+  get 'show_awarding_contracts/:procurement_method_id' => 'website#show_awarding_contracts', as: 'show_awarding_contracts'
+
+  get 'show_awarding_contract/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'
+
   resources :administrator do
     collection do
       resources :budget_sources
@@ -38,6 +46,7 @@ Rails.application.routes.draw do
       resources :procurement_plans
       resources :procurement_methods
       resources :awarding_contracts
+      resources :law_categories
     end
   end
 

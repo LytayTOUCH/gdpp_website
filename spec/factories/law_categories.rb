@@ -1,11 +1,11 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :procurement_method do
+  factory :law_category do
     name { Faker::Name.name }
-    
-    factory :invalid_procurement_method do
-      name nil
-    end
   end
+
+  factory :invalid_law_category do
+    name nil
+  end  
 end

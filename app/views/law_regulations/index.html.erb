@@ -17,6 +17,7 @@
           <tr>
             <td> <%= no %> </td>
             <td> <%= law_regulation.title %> </td>
+            <td> <%= law_regulation.law_category.name %> </td>
             <td> <%= law_regulation.description %> </td>
             <td>
               <%= link_to t('form.actions.show'), law_regulation_path(law_regulation) , class: "btn btn-xs btn-success"  %>
