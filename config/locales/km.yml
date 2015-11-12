@@ -82,11 +82,16 @@ km:
       adjusted: "លទ្ធកម្មកែតម្រូវ"
       annual: "លទ្ធកម្មដើមឆ្នាំ"
       file: "ឯកសារ"
+    org_structure:
+      title: 'ឈ្មោះ'
     procurement_method:
       name: 'ឈ្មោះលទ្ធកម្ម'
     awarding_contract:
       title: 'ចំណងជើង'
       description: 'បរិយាយ'
+    faqs:
+      question: 'សំនួរ'
+      answer: 'ចំលើយ'
   will_paginate:
     previous_label: "មុន"
     next_label: "បន្ទាប់"
