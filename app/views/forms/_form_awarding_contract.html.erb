@@ -4,6 +4,6 @@
     <%= f.input :description, as:"text" %>
     <%= f.input :procurement_method_id, collection: @procurement_methods %>
     <%= f.input :attachment_doc, as: :file %>
-    <%= f.submit t('form.button.submit'), class: 'btn btn-primary'%>
+    <%= f.submit class: 'btn btn-primary'%>
 <% end %>
 
