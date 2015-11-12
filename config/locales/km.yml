@@ -73,7 +73,11 @@ km:
         title: 'ឈ្មៅះ'
         description: 'បរិយាយ'
         org_structure_image: 'រូបតំណាងស្ថាប័ន'
-
+      awarding_contract:
+        title: 'ចំណងជើង'
+        description: 'បរិយាយ'
+        procurement_method_id: 'វិធីសាស្រ្តលទ្ធកម្ម'
+        attachment_doc: 'ឯកសារប្រគល់កិច្ចសន្យា'
 
   form:
     header:
