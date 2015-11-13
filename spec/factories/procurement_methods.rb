@@ -2,5 +2,10 @@
 
 FactoryGirl.define do
   factory :procurement_method do
+    name { Faker::Name.name }
+    
+    factory :invalid_procurement_method do
+      name nil
+    end
   end
 end

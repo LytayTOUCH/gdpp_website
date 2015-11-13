@@ -13,6 +13,7 @@ class LawRegulationsController < ApplicationController
 
   def new
     @law_regulation = LawRegulation.new
+    @law_categories = LawCategory.all
   end
 
   def create
@@ -30,6 +31,7 @@ class LawRegulationsController < ApplicationController
 
   def edit
     @law_regulation = LawRegulation.find(params[:id])
+    @law_categories = LawCategory.all
   end
 
   def update
@@ -56,7 +58,7 @@ class LawRegulationsController < ApplicationController
   end
 
   def law_regulation_params
-    params.require(:law_regulation).permit(:title, :description, :thumbnail, :law_doc_attachment)
+    params.require(:law_regulation).permit(:title, :description, :thumbnail, :law_doc_attachment, :law_category_id)
   end
 
 end

@@ -70,7 +70,7 @@ km:
         question: 'សំនួរ'
         answer: 'ចំលើយ'
       org_structure:
-        title: 'ឈ្មៅះ'
+        title: 'ចំណងជើង'
         description: 'បរិយាយ'
         org_structure_image: 'រូបតំណាងស្ថាប័ន'
       awarding_contract:
@@ -78,7 +78,8 @@ km:
         description: 'បរិយាយ'
         procurement_method_id: 'វិធីសាស្រ្តលទ្ធកម្ម'
         attachment_doc: 'ឯកសារប្រគល់កិច្ចសន្យា'
-
+      procurement_method:
+        name: 'ឈ្មោះ'
   form:
     header:
       login: "ប្រព័ន្ធគ្រប់គ្រង់គេហទំព័រ"
@@ -94,7 +95,9 @@ km:
     button:
       submit: 'បង្កើត'
       add: 'បន្ថែម'
-  date:
+      create: 'បង្កើត'
+      update: 'កែប្រែ'
+  date: 
     order: "Test"
   dashboard:
     navigator_menu:
@@ -110,6 +113,7 @@ km:
       org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
       procurement_method: 'វិធីសាស្រ្តលទ្ធកម្ម'
       awarding_contract: 'ការប្រគល់កិច្ចសន្យា'
+      law_category: 'ច្បាប់និងលិខិតបទដ្ឋានគតិយុត្តិ'
   website:
     label:
       new: 'ថ្មីៗ'
@@ -135,12 +139,18 @@ km:
       title: 'ចំណងជើង'
       description: 'បរិយាយ'
       actions: 'សកម្មភាព'
+    faq:
+      question: 'សំណួរ'
+      answer: 'ចំលើយ'
+    org_structure:
+      title: 'ចំណងជើង'
+      description: 'បរិយាយ'
     procurement_plan:
       name: 'ឈ្មោះផែនការ'
       year: 'ឆ្នាំ'
       adjusted: "លទ្ធកម្មកែតម្រូវ"
       annual: "លទ្ធកម្មដើមឆ្នាំ"
-      file: "ឯកសារ"
+      file_name: "ឯកសារ"
     org_structure:
       title: 'ឈ្មោះ'
       description: 'បរិយាយ'
@@ -149,9 +159,8 @@ km:
     awarding_contract:
       title: 'ចំណងជើង'
       description: 'បរិយាយ'
-    faqs:
-      question: 'សំនួរ'
-      answer: 'ចំលើយ'
+    law_category:
+      name: 'ឈ្មោះ'
   will_paginate:
     previous_label: "មុន"
     next_label: "បន្ទាប់"

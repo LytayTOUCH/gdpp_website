@@ -4,6 +4,10 @@
     <%= f.input :description, as:"text" %>
     <%= f.input :procurement_method_id, collection: @procurement_methods %>
     <%= f.input :attachment_doc, as: :file %>
-    <%= f.submit class: 'btn btn-primary'%>
+    <% if @awarding_contract.new_record? %>
+      <%= f.submit t('form.button.create'), class: 'btn btn-primary'%>
+    <% else %>
+      <%= f.submit t('form.button.update'), class: 'btn btn-primary'%>
+    <% end %>
 <% end %>
 
