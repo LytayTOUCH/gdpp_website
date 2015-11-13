@@ -49,7 +49,7 @@ km:
       sign_out: 'ចាកចេញ'
       faq: 'សំនួរចំលើយ'
       org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
-
+      user_manager: 'គ្រប់គ្រងអ្នកប្រើប្រាស់'
 
   website:
     label:
@@ -82,4 +82,9 @@ km:
       adjusted: "លទ្ធកម្មកែតម្រូវ"
       annual: "លទ្ធកម្មដើមឆ្នាំ"
       file: "ឯកសារ"
-      
+    admin:
+      username: "ឈ្មោះអ្នកប្រើប្រាស់"
+      email: "អ៊ីម៉ែល"
+      position: "មុខដំណែង"
+      phone: "ទូរស័ព្ទ"
+      address: "អាសយដ្ឋាន"

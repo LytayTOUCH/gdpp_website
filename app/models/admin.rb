@@ -12,6 +12,7 @@ class Admin < ActiveRecord::Base
   attr_accessor :login
 
   scope :get_active, -> { where(active: true) }
+  scope :get_users, -> {where(admin: false)}
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup

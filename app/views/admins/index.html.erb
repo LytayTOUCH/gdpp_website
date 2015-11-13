@@ -1,14 +1,16 @@
 <div class="panel panel-default panel-primary">
-  <div class="panel-heading">User Manager</div>
+  <div class="panel-heading"><%= t('dashboard.navigator_menu.user_manager') %></div>
   <div class="panel-body">
     <table class="table datatable" >
       <thead>
         <tr>
           <th>#</th>
-          <th>Username</th>
-          <th>Email</th>
-          <th>position</th>
-          <th>Action</th>
+          <th><%= t('table.admin.username') %></th>
+          <th><%= t('table.admin.email') %></th>
+          <th><%= t('table.admin.position') %></th>
+          <th><%= t('table.admin.phone') %></th>
+          <th><%= t('table.admin.address') %></th>
+          <th><%= t('table.actions') %></th>
         </tr>
       </thead>
       <tbody>
@@ -17,18 +19,20 @@
             <td>1</td>
             <td><%= user.username %></td>
             <td><%= user.email %></td>
-            <td>" " </td>
-            <td>hello</td>
+            <td><%= user.user_profile.position if !user.user_profile.nil? %> </td>
+            <td><%= user.user_profile.phone if !user.user_profile.nil? %> </td>
+            <td><%= user.user_profile.address if !user.user_profile.nil? %> </td>
+            <td>
+              <%= link_to t('form.actions.edit'), edit_admin_path(user), class: "btn btn-info btn-xs" %>
+              <%= link_to t('form.actions.delete'), admin_path(user), method: :delete, data: { confirm: "Are you certain you want to delete #{user.username} ?"} , class: "btn btn-danger btn-xs" %>
+            </td>
           </tr>
         <% end %>
       </tbody>
-
     </table>
-
-    
   </div>
   <div class="panel-footer">
-    <%= link_to "Add new", new_admin_path, class: "btn btn-primary" %>
+    <%= link_to t('form.button.add'), new_admin_path, class: "btn btn-primary" %>
   </div>
 
 </div>
