@@ -38,6 +38,12 @@ Rails.application.routes.draw do
       resources :procurement_plans
 
       resources :admins
+      resources :current_profiles do
+        collection do
+          get 'edit' => 'current_profiles#edit'
+        end
+      end
+      
     end
   end
 
@@ -65,8 +71,8 @@ Rails.application.routes.draw do
       # get   '/register' => 'devise/registrations#new',    as: 'new_admin_registration'
       # post  '/register' => 'devise/registrations#create', as: 'admin_registration'
 
-      get '/settings' => 'devise/registrations#edit',   as: 'edit_admin_registration'
-      put '/settings' => 'devise/registrations#update', as: 'update_admin_registration'
+      # get '/settings' => 'devise/registrations#edit',   as: 'edit_admin_registration'
+      # put '/settings' => 'devise/registrations#update', as: 'update_admin_registration'
 
     end
     # scope '/account' do

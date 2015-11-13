@@ -46,10 +46,6 @@ class AdminsController < ApplicationController
     end
   end
 
-  def deactive
-    
-  end
-
   def destroy
     if @user.admin == false
       if @user.destroy
@@ -65,10 +61,7 @@ class AdminsController < ApplicationController
       redirect_to admins_path
     end
   end
-
-
   private
-
     def check_admin
       if current_admin.admin == false
         flash[:warning] = "You don't have permission!"
