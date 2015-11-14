@@ -69,6 +69,20 @@ ActiveRecord::Schema.define(version: 20151112030323) do
   add_index "announcements", ["budget_source_id"], name: "index_announcements_on_budget_source_id", using: :btree
   add_index "announcements", ["procurement_entity_id"], name: "index_announcements_on_procurement_entity_id", using: :btree
 
+  create_table "awarding_contracts", force: :cascade do |t|
+    t.string   "title",                       limit: 80, null: false
+    t.text     "description"
+    t.string   "attachment_doc_file_name"
+    t.string   "attachment_doc_content_type"
+    t.integer  "attachment_doc_file_size"
+    t.datetime "attachment_doc_updated_at"
+    t.integer  "procurement_method_id"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
+
+  add_index "awarding_contracts", ["procurement_method_id"], name: "index_awarding_contracts_on_procurement_method_id", using: :btree
+
   create_table "budget_sources", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -130,6 +144,12 @@ ActiveRecord::Schema.define(version: 20151112030323) do
 
   add_index "procurement_entities", ["procurement_category_id"], name: "index_procurement_entities_on_procurement_category_id", using: :btree
 
+  create_table "procurement_methods", force: :cascade do |t|
+    t.string   "name",       limit: 80, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "procurement_plans", force: :cascade do |t|
     t.string   "name"
     t.integer  "procurement_entity_id"
@@ -167,6 +187,7 @@ ActiveRecord::Schema.define(version: 20151112030323) do
   add_foreign_key "announcements", "announcement_types"
   add_foreign_key "announcements", "budget_sources"
   add_foreign_key "announcements", "procurement_entities"
+  add_foreign_key "awarding_contracts", "procurement_methods"
   add_foreign_key "procurement_entities", "procurement_categories"
   add_foreign_key "procurement_plans", "procurement_entities"
 end
