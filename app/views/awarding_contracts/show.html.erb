@@ -1,0 +1,23 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= @awarding_contract.title %></b>
+  </div>
+  <div class="panel-body" > 
+    <div class="row" >
+      <div class="col-xs-6" >
+        <ul style="list-style:none;" >
+          <%= "Title : #{@awarding_contract.title}" %><br>
+          <%= "Procurement Method : " %> <%= @awarding_contract.procurement_method.name if @awarding_contract.procurement_method.present?  %><br>
+          <%= "Description : #{@awarding_contract.description}" %>
+          <li> <%= "Law Regulation file: " %> 
+            <% if @awarding_contract.attachment_doc? %>
+              <%= link_to @awarding_contract.attachment_doc_file_name, @awarding_contract.attachment_doc.url, target: '_blank' %>
+            <% else %>
+              No attached file(s)
+            <% end %> 
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

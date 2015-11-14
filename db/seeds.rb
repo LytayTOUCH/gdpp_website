@@ -270,3 +270,14 @@ end
 ].each do |faq|
   Faq.create_with(question: faq[:question], answer: faq[:answer]).find_or_create_by(question: faq[:question])
 end
+
+[
+  {name: 'ដេញថ្លៃដោយប្រកួតប្រជែងជាអន្តរជាតិ'},
+  {name: 'ដេញថ្លៃដោយប្រកួតប្រជែងក្នុងស្រុក'},
+  {name: 'ដេញថ្លៃមានកំរិត'},
+  {name: 'ពិគ្រោះថ្លៃ'},
+  {name: 'ស្ទង់តម្លៃ'},
+  {name: 'លទ្ធកម្មដោយឡែក'}
+].each do |method|
+  ProcurementMethod.create_with(name: method[:name]).find_or_create_by(name: method[:name]);
+end

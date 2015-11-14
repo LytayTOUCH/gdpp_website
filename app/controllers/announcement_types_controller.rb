@@ -25,6 +25,7 @@ class AnnouncementTypesController < ApplicationController
   def edit
     
   end
+  
   def update
     if @announcement_type.update_attributes(announcement_type_param)
       flash[:notice] = "Update success!"

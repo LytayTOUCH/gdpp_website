@@ -2,7 +2,7 @@ class WebsiteController < ApplicationController
   before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements
   def index
     @announcement = Announcement.limit(6).sorted_by_date
-    @law_regulations = LawRegulation.all
+    @law_regulations = LawRegulation.limit(4).sorted_by_date
   end
 
   def home
@@ -75,8 +75,6 @@ class WebsiteController < ApplicationController
   def show_procurement_plans
     @procurement_plans = ProcurementPlan.where(procurement_plan_type: params[:type])
   end
-
-
 
 # Must load all action
   def load_announcement_type

@@ -1,0 +1,38 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= t('dashboard.navigator_menu.awarding_contract') %></b>
+  </div>
+  <div class="panel-body" >
+    <table class="table table-bordered datatable" >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= t('table.awarding_contract.title') %></th>
+          <th><%= t('table.procurement_plan.name') %></th>
+          <th><%= t('table.awarding_contract.description') %></th>
+          <th><%= t('table.actions') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% no = 1; @awarding_contracts.each do |awarding_contract| %>
+          <tr>
+            <td> <%= no %> </td>
+            <td> <%= awarding_contract.title %> </td>
+            <td> <%= awarding_contract.procurement_method.name %> </td>
+            <td> <%= awarding_contract.description %> </td>
+            <td>
+              <%= link_to t('form.actions.show'), awarding_contract_path(awarding_contract) , class: "btn btn-xs btn-success"  %>
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: awarding_contract.id}, method: :delete, data: { confirm: "Are you sure to delete '#{awarding_contract.title}'?" }, class: "btn btn-xs btn-danger" %>
+              <%= link_to t('form.actions.edit'), edit_awarding_contract_path(awarding_contract) , class: "btn btn-xs btn-primary"  %>
+            </td>
+          </tr>
+        <% no+= 1;  end %>
+      </tbody>
+
+    </table>
+    
+  </div>
+  <div class="panel-footer">
+    <%= link_to t('form.button.add'), new_awarding_contract_path, class: "btn btn-primary" %>
+  </div>
+</div>

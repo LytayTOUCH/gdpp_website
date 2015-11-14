@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'contact' => 'website#contact'
 
   get 'show_public_services' => 'website#show_public_services'
-  get 'faq'=> 'website#show_question_answer'
+  get 'faq_in_website'=> 'website#show_question_answer'
   get 'contact' => 'website#show_contact'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
@@ -36,7 +36,8 @@ Rails.application.routes.draw do
       resources :faqs
       resources :org_structures
       resources :procurement_plans
-
+      resources :procurement_methods
+      resources :awarding_contracts
       resources :admins
       resources :current_profiles do
         collection do
@@ -70,10 +71,6 @@ Rails.application.routes.draw do
       # joining
       # get   '/register' => 'devise/registrations#new',    as: 'new_admin_registration'
       # post  '/register' => 'devise/registrations#create', as: 'admin_registration'
-
-      # get '/settings' => 'devise/registrations#edit',   as: 'edit_admin_registration'
-      # put '/settings' => 'devise/registrations#update', as: 'update_admin_registration'
-
     end
     # scope '/account' do
     #   # password reset
@@ -87,8 +84,8 @@ Rails.application.routes.draw do
     #   get   '/confirm/resend' => 'devise/confirmations#new',    as: 'new_admin_confirmation'
     #   # settings & cancellation
     #   get '/cancel'   => 'devise/registrations#cancel', as: 'cancel_admin_registration'
-      # get '/settings' => 'devise/registrations#edit',   as: 'edit_admin_registration'
-      # put '/settings' => 'devise/registrations#update', as: 'update_admin_registration'
+    #   get '/settings' => 'devise/registrations#edit',   as: 'edit_admin_registration'
+    #   put '/settings' => 'devise/registrations#update'
     #   # account deletion
     #   delete '' => 'devise/registrations#destroy'
     # end
