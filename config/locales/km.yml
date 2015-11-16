@@ -97,6 +97,10 @@ km:
       add: 'បន្ថែម'
       create: 'បង្កើត'
       update: 'កែប្រែ'
+    number:
+      first: 'ទី១' 
+      second: 'ទី២'
+      third: 'ទី៣'
   date: 
     order: "Test"
   dashboard:
@@ -114,6 +118,7 @@ km:
       procurement_method: 'វិធីសាស្រ្តលទ្ធកម្ម'
       awarding_contract: 'ការប្រគល់កិច្ចសន្យា'
       law_category: 'ច្បាប់និងលិខិតបទដ្ឋានគតិយុត្តិ'
+      contact: 'ទំនាក់ទំនង'
   website:
     label:
       new: 'ថ្មីៗ'
@@ -161,6 +166,20 @@ km:
       description: 'បរិយាយ'
     law_category:
       name: 'ឈ្មោះ'
+    contact:
+      location_name: 'ឈ្មោះទីតាំង'
+      all_phones: 'ទូរស័ព្ទខ្សែទី១, ទី២, ទី៣'
+      phone_one: 'ទូរស័ព្ទខ្សែទី១'
+      phone_two: 'ទូរស័ព្ទខ្សែទី២'
+      phone_three: 'ទូរស័ព្ទខ្សែទី៣'
+      all_emails: 'អ៊ីម៉ែលទី១, ទី២, ទី៣'
+      email_one: 'អ៊ីម៉ែលទី១'
+      email_two: 'អ៊ីម៉ែលទី២'
+      email_three: 'អ៊ីម៉ែលទី៣'
+      all_addresses: 'អាស័យដ្ឋានទី១, ទី២, ទី៣'
+      address_one: 'អាស័យដ្ឋានទី១'
+      address_two: 'អាស័យដ្ឋានទី២'
+      address_three: 'អាស័យដ្ឋានទី៣'
   will_paginate:
     previous_label: "មុន"
     next_label: "បន្ទាប់"

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'show_public_services' => 'website#show_public_services'
   get 'faq_in_website'=> 'website#show_question_answer'
-  get 'contact' => 'website#show_contact'
+  get 'show_contact' => 'website#show_contact', as: 'show_contact'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
   get 'procurement_entity_ministry' => 'website#show_procurement_entity_ministry'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'bidding_document' => 'website#show_bidding_document'
   get 'planning_approval_correction' => 'website#show_planning_approval_correction'
 
-  get  'gdpp_role' => 'website#show_gdpp_role'
+  get 'gdpp_role' => 'website#show_gdpp_role'
   get 'gdpp_structure' => 'website#show_gdpp_structure'
 
   get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
@@ -47,6 +47,7 @@ Rails.application.routes.draw do
       resources :procurement_methods
       resources :awarding_contracts
       resources :law_categories
+      resources :contacts
     end
   end
 

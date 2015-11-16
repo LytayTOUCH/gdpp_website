@@ -21,7 +21,9 @@ class WebsiteController < ApplicationController
   end
 
   def show_contact
-    
+    @contacts = Contact.all
+    puts "============================"
+    puts @contacts.inspect
   end
 
 # Procurement entity
