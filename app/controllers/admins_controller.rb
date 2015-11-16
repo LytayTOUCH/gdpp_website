@@ -15,10 +15,10 @@ class AdminsController < ApplicationController
   def create
     @user = Admin.create(admin_params)
     if @user.save
-      flash[:notice] = "user create success"
+      flash[:notice] = t('message.success.create')
       redirect_to admins_path
     else
-      flash[:warning] = "save unsuccess !"
+      flash[:warning] = t('message.unsuccess.create')
       # @user.build_user_profile
       render 'new'
     end
@@ -34,14 +34,14 @@ class AdminsController < ApplicationController
     if @user.admin == false
       @user.update_attributes(admin_params)
       if @user.save
-        flash[:notice] = "user Update success"
+        flash[:notice] = t('message.success.update')
         redirect_to admins_path
       else
-        flash[:warning] = "Update unsuccess!"
+        flash[:warning] = t('message.unsuccess.update')
         render 'edit'
       end
     else
-      flash[:warning] = "Update unsuccess!"
+      flash[:warning] = t('message.unsuccess.update')
       render 'edit'
     end
   end
@@ -50,21 +50,21 @@ class AdminsController < ApplicationController
     if @user.admin == false
       if @user.destroy
         @user.user_profile.destroy
-        flash[:notice] = "#{@user.username} has deleted!"
+        flash[:notice] = @user.username  + t('message.success.delete')
         redirect_to admins_path
       else
-        flash[:warning] = "Cannot delete #{@user.username} !"
+        flash[:warning] = @user.username  + t('message.unsuccess.delete')
         redirect_to admins_path
       end
     else
-      flash[:warning] = "Cannot delete #{@user.username} !"
+      flash[:warning] = @user.username  + t('message.unsuccess.delete')
       redirect_to admins_path
     end
   end
   private
     def check_admin
       if current_admin.admin == false
-        flash[:warning] = "You don't have permission!"
+        flash[:warning] = t('message.permission_deny')
         redirect_to administrator_index_path
       end
     end
