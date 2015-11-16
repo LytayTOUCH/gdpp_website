@@ -59,7 +59,8 @@ Rails.application.routes.draw do
   # get 'destroy_budget_source/:id' => 'administrator#edit_budget_source', as: "destroy_budget_source"
   # patch 'update_budget_source/:id' => 'administrator#update_budget_source' as: 
 
-  devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
+
+  devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations], :controller => {:registrations => :registrations}
   as :admin do
     # get 'administrator/login' => 'devise/sessions#new', as: :administrator_login
     # delete 'administrator/logout' => 'devise/sessions#destroy', as: :administrator_logout
