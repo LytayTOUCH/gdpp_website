@@ -1,0 +1,6 @@
+<%= simple_form_for(@image_slide) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description, as: :text%>
+  <%= f.input :image %>
+  <%= f.submit t('form.button.submit'), class: 'btn btn-primary'%>
+<% end %>

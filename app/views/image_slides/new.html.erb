@@ -1,0 +1,13 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <%= "new image slide " %>
+  </div>
+  <div class="panel-body" > 
+    <div class="col-md-5 row">
+      <%= render 'form' %>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <%= link_to t('form.actions.back'), image_slides_path, class: 'btn btn-default' %>
+  </div>
+</div>

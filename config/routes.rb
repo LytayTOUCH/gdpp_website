@@ -36,6 +36,7 @@ Rails.application.routes.draw do
       resources :faqs
       resources :org_structures
       resources :procurement_plans
+      resources :image_slides
     end
   end
 
