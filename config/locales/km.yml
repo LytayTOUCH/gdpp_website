@@ -208,3 +208,24 @@ km:
     previous_label: "មុន"
     next_label: "បន្ទាប់"
     page_gap: "&hellip;"
+  message:
+    confirm:
+      delete: 'តើអ្នកពិតជាចង់លុប'
+    success:
+      create: 'បង្កើតបានដោយជោគជ័យ'
+      update: 'កែប្រែបានដោយជោគជ័យ'
+      delete: 'បានលុបដោយជោគជ័យ'
+    unsuccess:
+      create: 'មិនអាចបង្កើតបានទេ'
+      update: 'មិនអាចកែប្រែបានទេ'
+      delete: 'មិនអាចលុបបានទេ'
+    permission_deny: 'ពុំមានសិទ្ធដើម្បីចូលប្រើប្រាស់'
+  model:
+    user: 'អ្នកប្រើប្រាស់'
+    procurement_plan: 'ផែនការលទ្ធកម្ម'
+    announcement: 'លទ្ធកម្ម'
+  panel:
+    heading:
+      profile: "ពត៌មានរបស់"
+      add: ! "បន្ថែម%{model}"
+      edit: ! 'កែប្រែ%{model}'
