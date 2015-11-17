@@ -5,6 +5,9 @@
   <%= f.input :address %>
   <%= f.input :website %>
   <%= f.input :logo, as: :file %>
-
-  <%= f.submit class: 'btn btn-primary'%>
+  <% if @procurement_entity.new_record? %>
+    <%= f.submit t('form.button.create'), class: 'btn btn-primary'%>
+  <% else %>
+    <%= f.submit t('form.button.update'), class: 'btn btn-primary'%>
+  <% end %>
 <% end %>

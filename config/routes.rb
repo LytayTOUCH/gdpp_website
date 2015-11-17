@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'show_public_services' => 'website#show_public_services'
   get 'faq_in_website'=> 'website#show_question_answer'
-  get 'contact' => 'website#show_contact'
+  get 'show_contact' => 'website#show_contact', as: 'show_contact'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
   get 'procurement_entity_ministry' => 'website#show_procurement_entity_ministry'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'bidding_document' => 'website#show_bidding_document'
   get 'planning_approval_correction' => 'website#show_planning_approval_correction'
 
-  get  'gdpp_role' => 'website#show_gdpp_role'
+  get 'gdpp_role' => 'website#show_gdpp_role'
   get 'gdpp_structure' => 'website#show_gdpp_structure'
 
   get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
@@ -24,6 +24,14 @@ Rails.application.routes.draw do
   get 'show_procurement_entities/:category_id' => 'website#show_procurement_entities', as: 'show_procurement_entities'
 
   get 'show_procurement_plans/:type' => 'website#show_procurement_plans', as: 'show_procurement_plans'
+
+  get 'show_law_regulations/:law_category_id' => 'website#show_law_regulations', as: 'show_law_regulations'
+
+  get 'show_law_regulation/:id' => 'website#show_law_regulation', as: 'show_law_regulation'
+
+  get 'show_awarding_contracts/:procurement_method_id' => 'website#show_awarding_contracts', as: 'show_awarding_contracts'
+
+  get 'show_awarding_contract/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'
 
   resources :administrator do
     collection do
@@ -44,7 +52,8 @@ Rails.application.routes.draw do
           get 'edit' => 'current_profiles#edit'
         end
       end
-      
+      resources :law_categories
+      resources :contacts
     end
   end
 

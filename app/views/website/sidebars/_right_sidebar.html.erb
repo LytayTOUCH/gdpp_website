@@ -1,4 +1,4 @@
-<div class=" right-sitebar has-padding col-md-4 color-fore" >
+<div class="right-sitebar has-padding col-md-4 color-fore" >
     <% if  !request.fullpath.end_with?("/","/announcements") %>
         <div class=" widget-box has-shadow color-black ">
             <h2>សេចក្ដីជូនដំណឹងស្តីពីការដេញថ្លៃថ្មីៗ</h2>
@@ -8,17 +8,16 @@
                     <span class="after-titl" ><%= na.announcement_type.name %> - <%= na.updated_at.strftime("%B %d, %Y") %></span>
                   </div>
                 <% end %>
-        </div>
-        
+        </div>    
     <% end %>
     <div class=" widget-box has-shadow">
         <h2>ដំណឹងស្តីពីការដេញថ្លៃ</h2>
         <ul style="list-style:none">
-            
-            <% @announcement_types.each do |announcement_type| %>
-                <li> <%= link_to announcement_type.name , show_announcements_path(type_id: announcement_type.id ) %> </li>
-            <% end %>
-
+          <% @announcement_types.each do |announcement_type| %>
+            <li> 
+              <%= link_to announcement_type.name , show_announcements_path(type_id: announcement_type.id ) %> 
+            </li>
+          <% end %>
         </ul>
     </div>
 
@@ -29,28 +28,27 @@
         <li> <%= link_to "ផែនការលទ្ធកម្មដើមឆ្នាំ ", show_procurement_plans_path(type: "annual" ) %></li>
         <li> <%= link_to "ផែនការលទ្ធកម្មកែតម្រូវ", show_procurement_plans_path(type: "adjusted" ) %></li>
       </ul> 
-
     </div>
     <% if  !request.fullpath.end_with?("/","/announcements") %>
-    <div class="widget-box has-shadow">
-      <h2>ច្បាប់និងលិខិតកត្តិយុទ្ធ</h2>
-      
-      <ul style="list-style:none" >
-        <li> <%= link_to "ព្រះរាជក្រិត្រ", '#' %></li>
-        <li> <%= link_to "អនុក្រិត្យ", '#' %></li>
-        <li> <%= link_to "ប្រកាស", '#' %></li>
-        <li> <%= link_to "សារាចរណែនាំ", '#' %></li>
-        <li> <%= link_to "ឯកសាផ្សេងៗ", '#' %></li>
-      </ul> 
-        
-    </div>
+      <div class="widget-box has-shadow">
+        <h2>ច្បាប់និងលិខិតបទដ្ឋានកត្តិយុទ្ធ</h2>
+        <ul style="list-style:none">
+          <% @law_categories.each do |law_category| %>
+            <li> 
+              <%= link_to law_category.name, show_law_regulations_path(law_category_id: law_category.id ) %> 
+            </li>
+          <% end %>  
+        </ul>  
+      </div>
     <% end %>
     <div class="widget-box has-shadow">
       <h2> <%= "ការប្រគល់កិច្ចសន្យា" %> </h2>
       <ul style="list-style:none" >
-        <li> <%= link_to "ដេញថ្លៃដោយប្រកួតប្រជែងជាអន្តរជាតិ", '#' %> </li>
-        <li> <%= link_to "ពិគ្រោះថ្លៃ", '#' %></li>
-        <li> <%= link_to "ស្ទង់តម្លៃ", '#' %></li>
+        <% @procurement_methods.each do |procurement_method| %>
+          <li> 
+            <%= link_to procurement_method.name, show_awarding_contracts_path(procurement_method_id: procurement_method.id ) %> 
+          </li>
+        <% end %>  
       </ul>  
     </div>
 

@@ -1,4 +1,6 @@
 class LawRegulation < ActiveRecord::Base
+  belongs_to :law_category
+
   has_attached_file :thumbnail, :url => "/:class/:attachment/:id/:basename.:extension", :path => ":rails_root/public/:class/:attachment/:id/:basename.:extension"
   has_attached_file :law_doc_attachment, :url => "/:class/:attachment/:id/:basename.:extension", :path => ":rails_root/public/:class/:attachment/:id/:basename.:extension" 
 

@@ -1,5 +1,5 @@
 class WebsiteController < ApplicationController
-  before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements
+  before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements, :load_law_categories, :load_procurement_methods
   def index
     @announcement = Announcement.limit(6).sorted_by_date
     @law_regulations = LawRegulation.limit(4).sorted_by_date
@@ -21,7 +21,9 @@ class WebsiteController < ApplicationController
   end
 
   def show_contact
-    
+    @contacts = Contact.all
+    puts "============================"
+    puts @contacts.inspect
   end
 
 # Procurement entity
@@ -59,11 +61,12 @@ class WebsiteController < ApplicationController
   def show_gdpp_role
     
   end
+
   def show_gdpp_structure
     @org_structures = OrgStructure.all
   end
 
-# order menu
+# other menus
   def show_announcements
     @announcements = Announcement.where(announcement_type_id: params[:type_id], public: true ).sorted_by_date
   end
@@ -74,6 +77,24 @@ class WebsiteController < ApplicationController
 
   def show_procurement_plans
     @procurement_plans = ProcurementPlan.where(procurement_plan_type: params[:type])
+  end
+
+  def show_law_regulation
+    @law_regulation = LawRegulation.find(params[:id])
+  end
+
+  def show_law_regulations
+    @law_category = LawCategory.find(params[:law_category_id])
+    @law_regulations = LawRegulation.where(law_category_id: params[:law_category_id])
+  end
+
+  def show_awarding_contract
+    @awarding_contract = AwardingContract.find(params[:id])
+  end
+
+  def show_awarding_contracts
+    @procurement_method = ProcurementMethod.find(params[:procurement_method_id])
+    @awarding_contracts = AwardingContract.where(procurement_method_id: params[:procurement_method_id])
   end
 
 # Must load all action
@@ -87,6 +108,14 @@ class WebsiteController < ApplicationController
 
   def load_newest_announcements
     @newest_announcements = Announcement.sorted_by_date.limit(5)
+  end
+
+  def load_law_categories
+    @law_categories = LawCategory.all
+  end
+
+  def load_procurement_methods
+    @procurement_methods = ProcurementMethod.all
   end
 
 end

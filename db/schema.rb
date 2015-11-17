@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112030323) do
+ActiveRecord::Schema.define(version: 20151116032652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,11 +89,32 @@ ActiveRecord::Schema.define(version: 20151112030323) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.string   "location_name", limit: 80, null: false
+    t.string   "email_one"
+    t.string   "email_two"
+    t.string   "email_three"
+    t.string   "phone_one"
+    t.string   "phone_two"
+    t.string   "phone_three"
+    t.text     "address_one"
+    t.text     "address_two"
+    t.text     "address_three"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "faqs", force: :cascade do |t|
     t.text     "question",   null: false
     t.text     "answer",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "law_categories", force: :cascade do |t|
+    t.string   "name",       limit: 80, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "law_regulations", force: :cascade do |t|
@@ -109,7 +130,10 @@ ActiveRecord::Schema.define(version: 20151112030323) do
     t.datetime "law_doc_attachment_updated_at"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
+    t.integer  "law_category_id"
   end
+
+  add_index "law_regulations", ["law_category_id"], name: "index_law_regulations_on_law_category_id", using: :btree
 
   create_table "org_structures", force: :cascade do |t|
     t.string   "title",                            null: false
@@ -188,6 +212,7 @@ ActiveRecord::Schema.define(version: 20151112030323) do
   add_foreign_key "announcements", "budget_sources"
   add_foreign_key "announcements", "procurement_entities"
   add_foreign_key "awarding_contracts", "procurement_methods"
+  add_foreign_key "law_regulations", "law_categories"
   add_foreign_key "procurement_entities", "procurement_categories"
   add_foreign_key "procurement_plans", "procurement_entities"
 end

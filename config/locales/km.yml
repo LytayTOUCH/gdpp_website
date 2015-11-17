@@ -70,7 +70,7 @@ km:
         question: 'សំនួរ'
         answer: 'ចំលើយ'
       org_structure:
-        title: 'ឈ្មៅះ'
+        title: 'ចំណងជើង'
         description: 'បរិយាយ'
         org_structure_image: 'រូបតំណាងស្ថាប័ន'
       awarding_contract:
@@ -78,7 +78,8 @@ km:
         description: 'បរិយាយ'
         procurement_method_id: 'វិធីសាស្រ្តលទ្ធកម្ម'
         attachment_doc: 'ឯកសារប្រគល់កិច្ចសន្យា'
-
+      procurement_method:
+        name: 'ឈ្មោះ'
   form:
     header:
       login: "ប្រព័ន្ធគ្រប់គ្រង់គេហទំព័រ"
@@ -94,7 +95,13 @@ km:
     button:
       submit: 'បង្កើត'
       add: 'បន្ថែម'
-  date:
+      create: 'បង្កើត'
+      update: 'កែប្រែ'
+    number:
+      first: 'ទី១' 
+      second: 'ទី២'
+      third: 'ទី៣'
+  date: 
     order: "Test"
   dashboard:
     navigator_menu:
@@ -110,6 +117,8 @@ km:
       org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
       procurement_method: 'វិធីសាស្រ្តលទ្ធកម្ម'
       awarding_contract: 'ការប្រគល់កិច្ចសន្យា'
+      law_category: 'ច្បាប់និងលិខិតបទដ្ឋានគតិយុត្តិ'
+      contact: 'ទំនាក់ទំនង'
   website:
     label:
       new: 'ថ្មីៗ'
@@ -135,12 +144,18 @@ km:
       title: 'ចំណងជើង'
       description: 'បរិយាយ'
       actions: 'សកម្មភាព'
+    faq:
+      question: 'សំណួរ'
+      answer: 'ចំលើយ'
+    org_structure:
+      title: 'ចំណងជើង'
+      description: 'បរិយាយ'
     procurement_plan:
       name: 'ឈ្មោះផែនការ'
       year: 'ឆ្នាំ'
       adjusted: "លទ្ធកម្មកែតម្រូវ"
       annual: "លទ្ធកម្មដើមឆ្នាំ"
-      file: "ឯកសារ"
+      file_name: "ឯកសារ"
     admin:
       username: "ឈ្មោះអ្នកប្រើប្រាស់"
       email: "អ៊ីម៉ែល"
@@ -155,9 +170,22 @@ km:
     awarding_contract:
       title: 'ចំណងជើង'
       description: 'បរិយាយ'
-    faqs:
-      question: 'សំនួរ'
-      answer: 'ចំលើយ'
+    law_category:
+      name: 'ឈ្មោះ'
+    contact:
+      location_name: 'ឈ្មោះទីតាំង'
+      all_phones: 'ទូរស័ព្ទខ្សែទី១, ទី២, ទី៣'
+      phone_one: 'ទូរស័ព្ទខ្សែទី១'
+      phone_two: 'ទូរស័ព្ទខ្សែទី២'
+      phone_three: 'ទូរស័ព្ទខ្សែទី៣'
+      all_emails: 'អ៊ីម៉ែលទី១, ទី២, ទី៣'
+      email_one: 'អ៊ីម៉ែលទី១'
+      email_two: 'អ៊ីម៉ែលទី២'
+      email_three: 'អ៊ីម៉ែលទី៣'
+      all_addresses: 'អាស័យដ្ឋានទី១, ទី២, ទី៣'
+      address_one: 'អាស័យដ្ឋានទី១'
+      address_two: 'អាស័យដ្ឋានទី២'
+      address_three: 'អាស័យដ្ឋានទី៣'
   will_paginate:
     previous_label: "មុន"
     next_label: "បន្ទាប់"

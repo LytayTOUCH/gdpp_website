@@ -7,8 +7,8 @@ RSpec.describe LawRegulationsController, type: :controller do
   describe "GET #LawRegulationController" do
     context '#index' do
       it "populates an array of LawRegulation" do
-        law_regulation_one = create(:law_regulation, title: 'Law Regulation 1', description: 'description 1')
-        law_regulation_two = create(:law_regulation, title: 'Law Regulation 2', description: 'description 2')
+        law_regulation_one = create(:law_regulation, title: 'Law Regulation 1', description: 'description 1', law_category_id: LawCategory.find_or_create_by(attributes_for(:law_category)).id)
+        law_regulation_two = create(:law_regulation, title: 'Law Regulation 2', description: 'description 2', law_category_id: LawCategory.find_or_create_by(attributes_for(:law_category)).id)
         get :index
         expect(assigns(:law_regulations)).to match_array([law_regulation_one, law_regulation_two])
       end
@@ -74,7 +74,7 @@ RSpec.describe LawRegulationsController, type: :controller do
   describe 'PUT #update' do
     before :each do
       @law_regulation = FactoryGirl.create(:law_regulation, 
-        title: "Law Regulation 1", description: "description 1")
+        title: "Law Regulation 1", description: "description 1", law_category_id: LawCategory.find_or_create_by(attributes_for(:law_category)).id)
     end
 
     it "locates the requested @law_regulation" do
@@ -86,7 +86,7 @@ RSpec.describe LawRegulationsController, type: :controller do
     context "with valid attributes" do
       it "changes @law_regulation's attributes" do
         put :update, id: @law_regulation, law_regulation: FactoryGirl.attributes_for(:law_regulation,
-            title: "Change to Law Regulation 2", description: "description 1")
+            title: "Change to Law Regulation 2", description: "description 1", law_category_id: LawCategory.find_or_create_by(attributes_for(:law_category)).id)
         @law_regulation.reload
         expect(@law_regulation.title).to eq("Change to Law Regulation 2")
       end
@@ -101,7 +101,7 @@ RSpec.describe LawRegulationsController, type: :controller do
       it "does not change @law_regulation's attributes" do
         put :update, id: @law_regulation,
           law_regulation: FactoryGirl.attributes_for(:law_regulation,
-            title: nil, description: "description 1")
+            title: nil, description: "description 1", law_category_id: LawCategory.find_or_create_by(attributes_for(:law_category)).id)
         @law_regulation.reload
         expect(@law_regulation.title).to eq("Law Regulation 1")
       end
