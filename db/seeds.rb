@@ -281,3 +281,13 @@ end
 ].each do |method|
   ProcurementMethod.create_with(name: method[:name]).find_or_create_by(name: method[:name]);
 end
+
+[
+  {name: 'ព្រះរាជក្រម'},
+  {name: 'អនុក្រិត្យ'},
+  {name: 'ប្រកាស'},
+  {name: 'សារាចរណែនាំ'},
+  {name: 'ឯកសារផ្សេងៗ'}
+].each do |law_category|
+  LawCategory.create_with(name: law_category[:name]).find_or_create_by(name: law_category[:name])
+end

@@ -1,0 +1,53 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= t('dashboard.navigator_menu.contact') %></b>
+  </div>
+  <div class="panel-body" >
+    <table class="table table-bordered datatable" >
+      <thead>
+        <tr class="text-nowrap" >
+          <th>#</th>
+          <th><%= t('table.contact.location_name') %></th>
+          <th><%= t('table.contact.all_phones') %></th>
+          <th><%= t('table.contact.all_emails') %></th>
+          <th><%= t('table.contact.all_addresses') %></th>
+          <th><%= t('table.contact.actions') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% no = 1; @contacts.each do |contact| %>
+          <tr>
+            <td> <%= no %> </td>
+            <td width="300px" > <%= contact.location_name %> </td>
+            <td> 
+              <%= t('form.number.first') %> - <%= check_contact_available(contact.phone_one) %><br/>
+              <%= t('form.number.second') %> - <%= check_contact_available(contact.phone_two) %><br/>
+              <%= t('form.number.third') %> - <%= check_contact_available(contact.phone_three) %> 
+            </td>
+            <td> 
+              <%= t('form.number.first') %> - <%= check_contact_available(contact.email_one) %><br/>
+              <%= t('form.number.second') %> - <%= check_contact_available(contact.email_two) %><br/>
+              <%= t('form.number.third') %> - <%= check_contact_available(contact.email_three) %> 
+            </td>
+            <td>
+              <%= t('form.number.first') %> - <%= check_contact_available(contact.address_one) %><br/>
+              <%= t('form.number.second') %> - <%= check_contact_available(contact.address_two) %><br/>
+              <%= t('form.number.third') %> - <%= check_contact_available(contact.address_three) %> 
+            </td>
+            <td>
+            <%= link_to t('form.actions.show'), contact_path(contact) , class: "btn btn-xs btn-success" %>
+            <%= link_to t('form.actions.edit'), edit_contact_path(contact) , class: "btn btn-xs btn-primary"  %> 
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: contact.id}, method: :delete, data: { confirm: 'Are you sure to delete this contact?' }, class: "btn btn-xs btn-danger" %>
+            </td>
+          </tr>
+
+        <% no+= 1;  end %>
+      </tbody>
+
+    </table>
+    
+  </div>
+  <div class="panel-footer" >
+    <%= link_to t('form.button.add'), new_contact_path, class: "btn btn-primary" %>
+  </div>
+</div>

@@ -2,15 +2,41 @@
 <div class="content  col-md-8 body">
 
     <div>
-      <h1 class="content-main-title" ><%= "អាសយដ្ឋានទំនាក់ទំនង" %></h1>
+      <h1 class="content-main-title" ><%= "អាស័យដ្ឋានទំនាក់ទំនង" %></h1>
+      <br>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td>Location name : <b><%= contact.location_name %></b></td>
+        </tr><hr>
+        <tr>  
+          <td>
+            <b>Phone numbers</b><br>
+            First number : <%= check_contact_available(contact.phone_one) %><br>
+            Second number : <%= check_contact_available(contact.phone_two) %><br>
+            Third number : <%= check_contact_available(contact.phone_three) %>
+          </td>  
+        </tr><hr> 
+        <tr>  
+          <td>
+            <b>Email</b><br>
+            First email : <%= check_contact_available(contact.email_one) %><br> 
+            Second email : <%= check_contact_available(contact.email_two) %><br> 
+            Third email : <%= check_contact_available(contact.email_three) %> 
+          </td>  
+        </tr><hr>
 
-      <p class="title" ><b> <%= "អគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណៈនៃក្រសួងសេដ្ឋកិច្ច និង ហិរញ្ញវត្ថុ" %> </b> </p>
-      <p><%= "ផ្លូវលេខ ៩២ សង្កាត់វត្តភ្នំ ខ័ណដូនពេញ រាជធានីភ្នំពេញ" %></p>
-
+        <tr>  
+          <td>
+            <b>Address</b><br>
+            First address : <%= check_contact_available(contact.address_one) %><br> 
+            Second address : <%= check_contact_available(contact.address_two) %><br>
+            Third address : <%= check_contact_available(contact.address_three) %>
+          </td>  
+        </tr><br><br>
+      <% end %>
     </div>
 
     <div id="map" style="height: 400px" ></div>
-
 
 </div>
 <!-- /.content -->

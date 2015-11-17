@@ -1,4 +1,8 @@
 <%= simple_form_for(@announcement_type) do |f| %>
   <%= f.input :name %>
-  <%= f.submit class: 'btn btn-primary'%>
+  <% if @announcement_type.new_record? %>
+    <%= f.submit t('form.button.create'), class: 'btn btn-primary'%>
+  <% else %>
+    <%= f.submit t('form.button.update'), class: 'btn btn-primary'%>
+  <% end %>
 <% end %>

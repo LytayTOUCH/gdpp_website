@@ -15,5 +15,3 @@ $(document).on 'ready page:load', ->
       "last": "ចុងក្រោយ"
       "next": "បន្ទាប់"
       "previous": "មុន"
-
-  # $('#example').DataTable()

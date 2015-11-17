@@ -1,0 +1,26 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= @contact.location_name %></b>
+  </div>
+  <div class="panel-body" > 
+    <div class="row" >
+      <div class="col-xs-6" >
+        <ul style="list-style:none;" >
+          <b>Location name</b><%= " : #{@contact.location_name}" %><br><br>
+          <b>Phone number</b><br>
+          <%= "First phone number : " %> <%= check_contact_available(@contact.phone_one) %><br>
+          <%= "Second phone number : " %> <%= check_contact_available(@contact.phone_two) %><br>
+          <%= "Third phone number : " %> <%= check_contact_available(@contact.phone_three) %><br><br>
+          <b>Email</b><br>
+          <%= "First email : " %> <%= check_contact_available(@contact.email_one) %><br>
+          <%= "Second email : " %> <%= check_contact_available(@contact.email_two) %><br>
+          <%= "Third email : " %> <%= check_contact_available(@contact.email_three) %><br><br>
+          <b>Address</b><br>
+          <%= "First address : " %> <%= check_contact_available(@contact.address_one) %><br>
+          <%= "Second address : " %> <%= check_contact_available(@contact.address_two) %><br>
+          <%= "Third address : " %> <%= check_contact_available(@contact.address_three) %><br>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<%= simple_form_for(@law_category) do |f| %>
+  <%= f.input :name %>
+  <% if @law_category.new_record? %>
+    <%= f.submit t('form.button.create'), class: 'btn btn-primary'%>
+  <% else %>
+    <%= f.submit t('form.button.update'), class: 'btn btn-primary'%>
+  <% end %>
+<% end %>

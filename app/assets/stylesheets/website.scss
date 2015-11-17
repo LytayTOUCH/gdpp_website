@@ -375,8 +375,24 @@ p{
     display:block;
     padding: 20px;
 }
-
-.item a img{
-  width: 100%;
+.textoverlay {
+  .title{
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 23px;
+    text-shadow: 0 0 5px #000;
+  }
+  .description{
+    font-size: 15px;
+    line-height:23px;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+  }
 }
 
+.item a img, .item img{
+  width: 100%;
+}
+.slide-box div{
+  overflow: hidden;
+}

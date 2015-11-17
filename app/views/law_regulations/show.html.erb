@@ -14,6 +14,9 @@
               No image(s)
             <% end %>  
           </td>
+          <li> <%= "Law Category: " %> 
+            <%= @law_regulation.law_category.name %>
+          </li>
           <li> <%= "Law Regulation file: " %> 
             <% if @law_regulation.law_doc_attachment? %>
               <%= link_to @law_regulation.law_doc_attachment_file_name, @law_regulation.law_doc_attachment.url, target: '_blank' %>
