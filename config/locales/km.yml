@@ -20,7 +20,65 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 km:
-  hello: "សួរស្តីពិភពលោក"
+  helpers:
+      submit: &submit
+        create: "បង្កើត"
+        update: "កែតម្រូវ"
+
+  simple_form:
+    labels:
+      announcement:
+        title: 'ចំណងជើង'
+        description: 'បរិយាយ'
+        announcement_type_id: 'ប្រភេទលទ្ធកម្ម'
+        procurement_entity_id: 'ស្ថាប័នអនុវត្ត'
+        budget_source_id: 'ប្រភពថវិការ'
+        open_register_date: 'កាលបរិច្ឆេតចុះឈ្មោះ'
+        close_submit_date: 'កាលបរិច្ឆេតឈប់ទទួល'
+        open_bid_doc_date: 'កាលបរិច្ឆេតបើកឯកសារ'
+        announcement_file: 'ភ្ជាប់ឯកសារជូនដំណឹង'
+        bidding_file: 'ភ្ជាប់ឯកសារដេញថ្លៃ'
+        public: 'ចេញផ្សាយ'
+      announcement_type:
+        name: 'ប្រភេទលទ្ធកម្ម'
+      budget_source:
+        name: 'ប្រភពថវិការ'
+      procurement_plan:
+        name: 'ឈ្មោះផែនការ'
+        procurement_entity_id: 'ស្ថាប័នអនុវត្ត'
+        procurement_plan_type: 'ប្រភេទលទ្ធកម្ម'
+        year: 'ឆ្នាំ'
+        procurement_plan_file: 'ឯកសារផែនការអនុវត្តលទ្ធកម្ម'
+      procurement_entity:
+        name: 'ឈ្មោះស្ថាប័ន'
+        procurement_category_id: 'ប្រភេទលទ្ធកម្ម'
+        phone: 'លេខទូរស័ព្ទ'
+        address: 'អាស័យដ្ឋាន'
+        website: 'គេហទំព័រ'
+        logo: 'ឡូហ្គូ (Logo)'
+      public_service:
+        name: 'ឈ្មោះ'
+        position: 'មុខដំណែង'
+        phone: 'លេខទូរស័ព្ទ'
+        email: 'អ៊ីម៉ែល'
+      law_regulation:
+        title: 'ចំណងជើង'
+        description: 'បរិយាយ'
+        thumbnail: 'រូបតំណាង'
+        law_doc_attachment: 'ឯកសារច្បាប់គតិយុត្ត'
+      faq:
+        question: 'សំនួរ'
+        answer: 'ចំលើយ'
+      org_structure:
+        title: 'ឈ្មៅះ'
+        description: 'បរិយាយ'
+        org_structure_image: 'រូបតំណាងស្ថាប័ន'
+      awarding_contract:
+        title: 'ចំណងជើង'
+        description: 'បរិយាយ'
+        procurement_method_id: 'វិធីសាស្រ្តលទ្ធកម្ម'
+        attachment_doc: 'ឯកសារប្រគល់កិច្ចសន្យា'
+
   form:
     header:
       login: "ប្រព័ន្ធគ្រប់គ្រង់គេហទំព័រ"
@@ -32,6 +90,7 @@ km:
       edit: 'កែតម្រូវ'
       show: 'លម្អិត'
       delete: 'លុប'
+      back: 'ត្រលប់'
     button:
       submit: 'បង្កើត'
       add: 'បន្ថែម'
@@ -39,9 +98,9 @@ km:
     order: "Test"
   dashboard:
     navigator_menu:
-      announcement: 'ប្រកាសលទ្ធកម្ម'
+      announcement: 'លទ្ធកម្ម'
       budget_sources: 'ប្រភពថវិការ'
-      announcement_type: 'ប្រភេទប្រកាសលទ្ធកម្ម'
+      announcement_type: 'ប្រភេទលទ្ធកម្ម'
       procurement_entity: 'ស្ថាប័នអនុវត្ត'
       procurement_plan: 'ផែនការ'
       law_regulation: 'ច្បាប់គតិយុត្តិ'
@@ -49,8 +108,8 @@ km:
       sign_out: 'ចាកចេញ'
       faq: 'សំនួរចំលើយ'
       org_structure: 'រចនាសម្ព័ន្ធស្ថាប័ន'
-
-
+      procurement_method: 'វិធីសាស្រ្តលទ្ធកម្ម'
+      awarding_contract: 'ការប្រគល់កិច្ចសន្យា'
   website:
     label:
       new: 'ថ្មីៗ'
@@ -82,4 +141,24 @@ km:
       adjusted: "លទ្ធកម្មកែតម្រូវ"
       annual: "លទ្ធកម្មដើមឆ្នាំ"
       file: "ឯកសារ"
-      
+    admin:
+      username: "ឈ្មោះអ្នកប្រើប្រាស់"
+      email: "អ៊ីម៉ែល"
+      position: "មុខដំណែង"
+      phone: "ទូរស័ព្ទ"
+      address: "អាសយដ្ឋាន"
+    org_structure:
+      title: 'ឈ្មោះ'
+      description: 'បរិយាយ'
+    procurement_method:
+      name: 'ឈ្មោះលទ្ធកម្ម'
+    awarding_contract:
+      title: 'ចំណងជើង'
+      description: 'បរិយាយ'
+    faqs:
+      question: 'សំនួរ'
+      answer: 'ចំលើយ'
+  will_paginate:
+    previous_label: "មុន"
+    next_label: "បន្ទាប់"
+    page_gap: "&hellip;"

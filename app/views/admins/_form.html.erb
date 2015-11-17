@@ -1,0 +1,13 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.simple_fields_for :user_profile do |p| %>
+    <%= p.input :name %>
+    <%= p.input :address %>
+    <%= p.input :phone %>
+    <%= p.input :position %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
