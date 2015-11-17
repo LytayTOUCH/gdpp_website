@@ -89,6 +89,10 @@ km:
         address: 'អាស័យដ្ឋាន'
         phone: 'លេខទូរស័ព្ទ'
         position: 'មុខដំណែង'
+      image_slide:
+        title: 'ចំណងជើង'
+        description: 'សេចក្តីអធិប្បាយ'
+        image: 'រូបភាព'
 
   form:
     header:
@@ -122,6 +126,7 @@ km:
       procurement_method: 'វិធីសាស្រ្តលទ្ធកម្ម'
       awarding_contract: 'ការប្រគល់កិច្ចសន្យា'
       user_manager: 'គ្រប់គ្រងអ្នកប្រើប្រាស់'
+      image_slide:  'រូបភាពស្លាយ'
   website:
     label:
       new: 'ថ្មីៗ'
