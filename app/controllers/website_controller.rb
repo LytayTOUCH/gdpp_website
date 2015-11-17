@@ -3,6 +3,7 @@ class WebsiteController < ApplicationController
   def index
     @announcement = Announcement.limit(6).sorted_by_date
     @law_regulations = LawRegulation.all
+    @image_slides = ImageSlide.all
   end
 
   def home
