@@ -33,4 +33,9 @@ class ApplicationController < ActionController::Base
     administrator_index_path
   end
 
+  # def after_update_path_for(resource_or_scope)
+  #   # administrator_index_path
+  #   puts "____________________________"
+  # end
+
 end

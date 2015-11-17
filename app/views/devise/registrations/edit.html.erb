@@ -7,7 +7,9 @@
         <%= simple_form_for(resource, as: resource_name, url: update_admin_registration_path, html: { method: :put }) do |f| %>
           
           <div class="field">
-            <!-- <%= f.label :email %><br /> -->
+            <%= f.input :username , class: "form-group" %>
+          </div>
+          <div class="field">
             <%= f.input :email, autofocus: true, class: "form-group" %>
           </div>
 
