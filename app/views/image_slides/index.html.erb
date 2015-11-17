@@ -1,0 +1,33 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading">គ្រប់គ្រងស្លាយរូបភាព</div>
+  <div class="panel-body">
+    
+    <div class="row"> 
+    <% @image_slides.each do |img| %>
+      
+        <div class="col-md-6">
+          <div class="col-md-3">
+            <%= image_tag img.image.url(:thumb) %>
+          </div>
+          <div class="col-md-9">
+            <b><%= img.title %></b>
+            <p>
+              <%= img.description %>
+            </p>
+            <p>
+              <%= link_to t('form.actions.edit'), edit_image_slide_path(img) %> | 
+              <%= link_to t('form.actions.delete'),{ action: :destroy, id: img.id}, method: :delete, data: { confirm: "តើអ្នកពិតជាចង់លុប '#{img.title }' ?" } %>
+
+            </p>
+          </div>
+        </div>
+      
+    <% end %>
+    </div>
+
+  </div>
+  <div class="panel-footer">
+    <%= link_to t('form.actions.add'), new_image_slide_path, class: 'btn btn-primary' %>
+  </div>
+
+</div>

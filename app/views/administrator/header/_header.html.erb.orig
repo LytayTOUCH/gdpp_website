@@ -27,8 +27,15 @@
             <li><%= link_to t('dashboard.navigator_menu.public_services'), public_services_path, class: 'btn btn-default' %></li>
           </ul>
         </div>
+<<<<<<< HEAD
 	        <%= link_to t('dashboard.navigator_menu.faq'), faqs_path, class: 'btn btn-default' %>
           
+          <%= link_to t('dashboard.navigator_menu.org_structure'), org_structures_path, class: 'btn btn-default' %>
+
+          <%= link_to "image slide" , image_slides_path, class: 'btn btn-default' %>
+
+=======
+	  <%= link_to t('dashboard.navigator_menu.faq'), faqs_path, class: 'btn btn-default' %>
           <%= link_to t('dashboard.navigator_menu.org_structure'), org_structures_path, class: 'btn btn-default' %>
           <%= link_to t('dashboard.navigator_menu.procurement_method'), procurement_methods_path, class: 'btn btn-default' %>
           <%= link_to t('dashboard.navigator_menu.awarding_contract'), awarding_contracts_path, class: 'btn btn-default' %>
@@ -37,7 +44,7 @@
               <%= t('dashboard.navigator_menu.user_manager') %>
             <% end %>
           <% end %>
-	  <%= link_to "image slide" , image_slides_path, class: 'btn btn-default' %>
+>>>>>>> master
         </div>
         <div class="col-xs-3" style="text-align:right" >
           <div class= 'btn btn-default'>

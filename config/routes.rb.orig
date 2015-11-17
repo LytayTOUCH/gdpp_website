@@ -36,6 +36,9 @@ Rails.application.routes.draw do
       resources :faqs
       resources :org_structures
       resources :procurement_plans
+<<<<<<< HEAD
+      resources :image_slides
+=======
       resources :procurement_methods
       resources :awarding_contracts
       resources :admins
@@ -44,8 +47,8 @@ Rails.application.routes.draw do
           get 'edit' => 'current_profiles#edit'
         end
       end
-      resources :image_slides
       
+>>>>>>> master
     end
   end
 
