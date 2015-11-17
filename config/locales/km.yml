@@ -80,6 +80,22 @@ km:
         attachment_doc: 'ឯកសារប្រគល់កិច្ចសន្យា'
       procurement_method:
         name: 'ឈ្មោះ'
+      admin:
+        username: 'ឈ្មោះប្រើប្រាស់'
+        email: 'អ៊ីម៉ែល'
+        password: 'លេខសម្ងាត់'
+        password_confirmation: 'បញ្ជាក់លេខសម្ងាត់'
+        current_password: 'លេខសម្ងាត់បច្ចុប្បន្ន'
+      user_profile:
+        name: 'ឈ្មោះពេញ'
+        address: 'អាស័យដ្ឋាន'
+        phone: 'លេខទូរស័ព្ទ'
+        position: 'មុខដំណែង'
+      image_slide:
+        title: 'ចំណងជើង'
+        description: 'សេចក្តីអធិប្បាយ'
+        image: 'រូបភាព'
+
   form:
     header:
       login: "ប្រព័ន្ធគ្រប់គ្រង់គេហទំព័រ"
@@ -119,6 +135,8 @@ km:
       awarding_contract: 'ការប្រគល់កិច្ចសន្យា'
       law_category: 'ច្បាប់និងលិខិតបទដ្ឋានគតិយុត្តិ'
       contact: 'ទំនាក់ទំនង'
+      user_manager: 'គ្រប់គ្រងអ្នកប្រើប្រាស់'
+      image_slide:  'រូបភាពស្លាយ'
   website:
     label:
       new: 'ថ្មីៗ'

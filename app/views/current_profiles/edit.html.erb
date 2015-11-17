@@ -1,5 +1,5 @@
 <div class="panel panel-primary" >
-  <div class="panel-heading" >Profile <%= @profile.username %></div>
+  <div class="panel-heading" ><%= t('panel.heading.profile') + ' ' + @profile.user_profile.name %></div>
   <div class="panel-body" >
     <div class="col-xs-4 row " >
         <%= simple_form_for @profile, url: current_profile_path(0), html: {action: :update } do |f| %>
@@ -16,12 +16,12 @@
             <%= p.input :position %>
           <% end %>
           
-          <%= f.submit "Update", class: "btn btn-primary" %>
+          <%= f.submit class: "btn btn-primary" %>
           
         <% end %>
     </div>
   </div>
   <div class="panel-footer" >
-    <%= link_to "Back", :back, class: "btn btn-primary" %>
+    <%= link_to t('form.actions.back'), :back, class: "btn btn-primary" %>
   </div>
 </div>
