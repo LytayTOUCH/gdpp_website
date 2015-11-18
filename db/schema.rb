@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116070939) do
+ActiveRecord::Schema.define(version: 20151117094212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,18 +90,15 @@ ActiveRecord::Schema.define(version: 20151116070939) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "location_name", limit: 80, null: false
-    t.string   "email_one"
-    t.string   "email_two"
-    t.string   "email_three"
-    t.string   "phone_one"
-    t.string   "phone_two"
-    t.string   "phone_three"
-    t.text     "address_one"
-    t.text     "address_two"
-    t.text     "address_three"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "address"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "zoom_level"
   end
 
   create_table "faqs", force: :cascade do |t|

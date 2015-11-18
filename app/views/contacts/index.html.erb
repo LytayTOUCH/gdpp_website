@@ -3,51 +3,22 @@
     <b><%= t('dashboard.navigator_menu.contact') %></b>
   </div>
   <div class="panel-body" >
-    <table class="table table-bordered datatable" >
-      <thead>
-        <tr class="text-nowrap" >
-          <th>#</th>
-          <th><%= t('table.contact.location_name') %></th>
-          <th><%= t('table.contact.all_phones') %></th>
-          <th><%= t('table.contact.all_emails') %></th>
-          <th><%= t('table.contact.all_addresses') %></th>
-          <th><%= t('table.contact.actions') %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% no = 1; @contacts.each do |contact| %>
-          <tr>
-            <td> <%= no %> </td>
-            <td width="300px" > <%= contact.location_name %> </td>
-            <td> 
-              <%= t('form.number.first') %> - <%= check_contact_available(contact.phone_one) %><br/>
-              <%= t('form.number.second') %> - <%= check_contact_available(contact.phone_two) %><br/>
-              <%= t('form.number.third') %> - <%= check_contact_available(contact.phone_three) %> 
-            </td>
-            <td> 
-              <%= t('form.number.first') %> - <%= check_contact_available(contact.email_one) %><br/>
-              <%= t('form.number.second') %> - <%= check_contact_available(contact.email_two) %><br/>
-              <%= t('form.number.third') %> - <%= check_contact_available(contact.email_three) %> 
-            </td>
-            <td>
-              <%= t('form.number.first') %> - <%= check_contact_available(contact.address_one) %><br/>
-              <%= t('form.number.second') %> - <%= check_contact_available(contact.address_two) %><br/>
-              <%= t('form.number.third') %> - <%= check_contact_available(contact.address_three) %> 
-            </td>
-            <td>
-            <%= link_to t('form.actions.show'), contact_path(contact) , class: "btn btn-xs btn-success" %>
-            <%= link_to t('form.actions.edit'), edit_contact_path(contact) , class: "btn btn-xs btn-primary"  %> 
-              <%= link_to t('form.actions.delete'),  { action: :destroy, id: contact.id}, method: :delete, data: { confirm: 'Are you sure to delete this contact?' }, class: "btn btn-xs btn-danger" %>
-            </td>
-          </tr>
-
-        <% no+= 1;  end %>
-      </tbody>
-
-    </table>
-    
+  <div class="row">
+    <div class="col-md-5">
+      <p><%= "<b>#{t('website.label.address')} ៖ </b> #{@contact.address} ".html_safe %></p>
+      <p><%= "<b>#{t('website.label.phone')} ៖ </b> #{@contact.phone} ".html_safe %></p>
+      <p><%= "<b>#{t('website.label.fax')} ៖​ </b> #{@contact.fax} ".html_safe %></p>
+      <p><%= "<b>#{t('website.label.email')} ៖ </b> #{@contact.email} ".html_safe %></p>
+      <hr>
+      <%= link_to t('form.actions.edit'), edit_contact_path(@contact), class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-7">
+      <div class="map" id="admin-map" style="height: 400px" ></div>
+    </div>
   </div>
-  <div class="panel-footer" >
-    <%= link_to t('form.button.add'), new_contact_path, class: "btn btn-primary" %>
+
+  <div class="hide" id="admin-map-x" ><%= @contact.latitude %></div>
+  <div class="hide" id="admin-map-y" ><%= @contact.longitude %></div>
+  <div class="hide" id="admin-map-z" ><%= @contact.zoom_level %></div>
   </div>
 </div>

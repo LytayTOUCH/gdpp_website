@@ -1,5 +1,5 @@
 class WebsiteController < ApplicationController
-  before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements, :load_law_categories, :load_procurement_methods
+  before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements, :load_law_categories, :load_procurement_methods, :load_contact
   def index
     @announcement = Announcement.limit(6).sorted_by_date
     @law_regulations = LawRegulation.limit(4).sorted_by_date
@@ -10,10 +10,6 @@ class WebsiteController < ApplicationController
   def home
   end
 
-  # def contact
-
-  # end
-
   def show_public_services
     @public_services = PublicService.paginate(:page => params[:page], :per_page => 10)
   end
@@ -23,9 +19,9 @@ class WebsiteController < ApplicationController
   end
 
   def show_contact
-    @contacts = Contact.all
+    @contact = Contact.first
     puts "============================"
-    puts @contacts.inspect
+    puts @contact.inspect
   end
 
 # Procurement entity
@@ -118,6 +114,10 @@ class WebsiteController < ApplicationController
 
   def load_procurement_methods
     @procurement_methods = ProcurementMethod.all
+  end
+
+  def load_contact
+    @contact = Contact.first
   end
 
 end

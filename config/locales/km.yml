@@ -140,7 +140,14 @@ km:
   website:
     label:
       new: 'ថ្មីៗ'
+      contact: 'ទំនាក់ទំនង'
+      address: 'អាស័យដ្ឋាន'
+      phone: 'លេខទូរស័ព្ទ'
+      fax: 'ទូរសារ'
+      email: 'អ៊ីមែល'
+
     release_date: 'ថ្ងៃចេញផ្សាយ'
+    copy_right: 'រក្សាសិទ្ធិ ©២០១៥ អគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណៈ'
   table:
     actions: 'សកម្មភាព'
     announcement:
