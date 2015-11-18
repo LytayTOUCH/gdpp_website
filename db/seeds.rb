@@ -171,30 +171,30 @@ end
 announcement_type_list= [
   {name: "លទ្ធិកម្មទំនិញ",
     announcements: [
-      {title: "លទ្ធិកម្មទំនិញ - announcement 1", description: "លទ្ធិកម្មទំនិញ - Description announcement 1", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true  },
-      {title: "លទ្ធិកម្មទំនិញ - announcement 2", description: "លទ្ធិកម្មទំនិញ - Description announcement 2", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true  },
-      {title: "លទ្ធិកម្មទំនិញ - announcement 3", description: "លទ្ធិកម្មទំនិញ - Description announcement 3", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true }
+      {title: "លទ្ធិកម្មទំនិញ - announcement 1", description: "លទ្ធិកម្មទំនិញ - Description announcement 1", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true  },
+      {title: "លទ្ធិកម្មទំនិញ - announcement 2", description: "លទ្ធិកម្មទំនិញ - Description announcement 2", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true  },
+      {title: "លទ្ធិកម្មទំនិញ - announcement 3", description: "លទ្ធិកម្មទំនិញ - Description announcement 3", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true }
     ]
   },
   {name: "លទ្ធិកម្មសំណង់",
     announcements: [
-      {title: "លទ្ធិកម្មសំណង់ - announcement 1", description: "លទ្ធិកម្មសំណង់ - Description announcement 1", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true  },
-      {title: "លទ្ធិកម្មសំណង់ - announcement 2", description: "លទ្ធិកម្មសំណង់ - Description announcement 2", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true  },
-      {title: "លទ្ធិកម្មសំណង់ - announcement 3", description: "លទ្ធិកម្មសំណង់ - Description announcement 3", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true }
+      {title: "លទ្ធិកម្មសំណង់ - announcement 1", description: "លទ្ធិកម្មសំណង់ - Description announcement 1", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true  },
+      {title: "លទ្ធិកម្មសំណង់ - announcement 2", description: "លទ្ធិកម្មសំណង់ - Description announcement 2", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true  },
+      {title: "លទ្ធិកម្មសំណង់ - announcement 3", description: "លទ្ធិកម្មសំណង់ - Description announcement 3", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true }
     ]
   },
   {name: "លទ្ធិកម្មសេវាកម្ម",
     announcements: [
-      {title: "លទ្ធិកម្មសេវាកម្ម - announcement 1", description: "លទ្ធិកម្មសេវាកម្ម - Description announcement 1", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true  },
-      {title: "លទ្ធិកម្មសេវាកម្ម - announcement 2", description: "លទ្ធិកម្មសេវាកម្ម - Description announcement 2", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true  },
-      {title: "លទ្ធិកម្មសេវាកម្ម - announcement 3", description: "លទ្ធិកម្មសេវាកម្ម - Description announcement 3", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true }
+      {title: "លទ្ធិកម្មសេវាកម្ម - announcement 1", description: "លទ្ធិកម្មសេវាកម្ម - Description announcement 1", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true  },
+      {title: "លទ្ធិកម្មសេវាកម្ម - announcement 2", description: "លទ្ធិកម្មសេវាកម្ម - Description announcement 2", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true  },
+      {title: "លទ្ធិកម្មសេវាកម្ម - announcement 3", description: "លទ្ធិកម្មសេវាកម្ម - Description announcement 3", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true }
     ]
   },
   {name: "លទ្ធិកម្មសេវាទីប្រឹក្សា",
     announcements: [
-      {title: "លទ្ធិកម្មសេវាទីប្រឹក្សា - announcement 1", description: "លទ្ធិកម្មសេវាទីប្រឹក្សា - Description announcement 1", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true  },
-      {title: "លទ្ធិកម្មសេវាទីប្រឹក្សា - announcement 2", description: "លទ្ធិកម្មសេវាទីប្រឹក្សា - Description announcement 2", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true  },
-      {title: "លទ្ធិកម្មសេវាទីប្រឹក្សា - announcement 3", description: "លទ្ធិកម្មសេវាទីប្រឹក្សា - Description announcement 3", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , public: true }
+      {title: "លទ្ធិកម្មសេវាទីប្រឹក្សា - announcement 1", description: "លទ្ធិកម្មសេវាទីប្រឹក្សា - Description announcement 1", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true  },
+      {title: "លទ្ធិកម្មសេវាទីប្រឹក្សា - announcement 2", description: "លទ្ធិកម្មសេវាទីប្រឹក្សា - Description announcement 2", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true  },
+      {title: "លទ្ធិកម្មសេវាទីប្រឹក្សា - announcement 3", description: "លទ្ធិកម្មសេវាទីប្រឹក្សា - Description announcement 3", open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8" , publish: true }
     ]
   }
 ].each do |announcement_type|
@@ -209,16 +209,16 @@ announcement_type_list= [
       open_bid_doc_date: announcement[:open_bid_doc_date],
       procurement_entity_id: @procurement_entity.id,
       budget_source_id: @budget_source.id,
-      public: announcement[:public]
+      publish: announcement[:publish]
     ).find_or_create_by(title: announcement[:title])
   end
 end
 
 
 # [
-#   {title: "announcement 1", description: "Description announcement 1", announcement_type_id: @announcement_type.id, open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8"  , procurement_entity_id: @procurement_entity.id, budget_source_id: @budget_source.id, public: true  },
-#   {title: "announcement 2", description: "Description announcement 2", announcement_type_id: @announcement_type.id, open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8"  , procurement_entity_id: @procurement_entity.id, budget_source_id: @budget_source.id, public: true  },
-#   {title: "announcement 3", description: "Description announcement 3", announcement_type_id: @announcement_type.id, open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8"  , procurement_entity_id: @procurement_entity.id, budget_source_id: @budget_source.id, public: true }
+#   {title: "announcement 1", description: "Description announcement 1", announcement_type_id: @announcement_type.id, open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8"  , procurement_entity_id: @procurement_entity.id, budget_source_id: @budget_source.id, publish: true  },
+#   {title: "announcement 2", description: "Description announcement 2", announcement_type_id: @announcement_type.id, open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8"  , procurement_entity_id: @procurement_entity.id, budget_source_id: @budget_source.id, publish: true  },
+#   {title: "announcement 3", description: "Description announcement 3", announcement_type_id: @announcement_type.id, open_register_date: Time.now, close_submit_date: "2016-10-8", open_bid_doc_date: "2016-10-8"  , procurement_entity_id: @procurement_entity.id, budget_source_id: @budget_source.id, publish: true }
 
 # ].each do |announcement|
 #   Announcement.create_with(
@@ -230,7 +230,7 @@ end
 #       open_bid_doc_date: announcement[:open_bid_doc_date],
 #       procurement_entity_id: announcement[:procurement_entity_id],
 #       budget_source_id: announcement[:budget_source_id],
-#       public: announcement[:public]
+#       publish: announcement[:publish]
 #   ).find_or_create_by(title: announcement[:title])
 # end
 

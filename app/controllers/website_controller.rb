@@ -65,7 +65,7 @@ class WebsiteController < ApplicationController
 
 # order menu
   def show_announcements
-    @announcements = Announcement.where(announcement_type_id: params[:type_id], public: true ).sorted_by_date
+    @announcements = Announcement.where(announcement_type_id: params[:type_id], publish: true ).sorted_by_date
   end
 
   def show_announcement

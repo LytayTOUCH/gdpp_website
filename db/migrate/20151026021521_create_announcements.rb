@@ -9,7 +9,7 @@ class CreateAnnouncements < ActiveRecord::Migration
       t.date :open_register_date
       t.date :close_submit_date
       t.date :open_bid_doc_date
-      t.boolean :public
+      t.boolean :publish
 
       t.timestamps null: false
     end

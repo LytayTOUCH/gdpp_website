@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20151105035302) do
     t.date     "open_register_date"
     t.date     "close_submit_date"
     t.date     "open_bid_doc_date"
-    t.boolean  "public"
+    t.boolean  "publish"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "announcement_file_file_name"
