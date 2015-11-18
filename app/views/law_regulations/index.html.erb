@@ -3,11 +3,12 @@
     <b><%= t('dashboard.navigator_menu.law_regulation') %></b>
   </div>
   <div class="panel-body" >
-    <table class="table table-bordered datatable" >
+    <table class="table table-bordered datatable" id="datatables" >
       <thead>
         <tr>
           <th>#</th>
           <th><%= t('table.law_regulation.title') %></th>
+          <th><%= t('table.law_regulation.law_category_id') %></th>
           <th><%= t('table.law_regulation.description') %></th>
           <th><%= t('table.law_regulation.actions') %></th>
         </tr>

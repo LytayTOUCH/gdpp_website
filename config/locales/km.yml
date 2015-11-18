@@ -64,6 +64,7 @@ km:
       law_regulation:
         title: 'ចំណងជើង'
         description: 'បរិយាយ'
+        law_category_id: 'ប្រភេទច្បាប់គតិយុទ្ធ'
         thumbnail: 'រូបតំណាង'
         law_doc_attachment: 'ឯកសារច្បាប់គតិយុត្ត'
       faq:
@@ -160,6 +161,7 @@ km:
       actions: 'សកម្មភាព'
     law_regulation:
       title: 'ចំណងជើង'
+      law_category_id: 'ប្រភេទច្បាប់គតិយុទ្ធ'
       description: 'បរិយាយ'
       actions: 'សកម្មភាព'
     faq:

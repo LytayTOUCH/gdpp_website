@@ -1,20 +1,4 @@
 $(document).on('page:change', function() {
-  $('#my_datatable').DataTable({
-      'language': {
-        'lengthMenu': 'បង្ហាញ _MENU_ ក្នុងមួយទំព័រ',
-        'zeroRecords': 'មិនមានទិន្នន័យដែលបានស្វែងរក - សូមទោស',
-        'info': 'បង្ហាញ _PAGE_ នៃ _PAGES_ ទំព័រ',
-        'infoEmpty': 'មិនមានទិន្នន័យក្នុងតារាង',
-        'infoFiltered': '(បានតម្រង _MAX_ ជួរដេកនៃទន្នន័យសរុប)',
-        'search': 'ស្វែងរក',
-        "paginate": {
-          "first": "ដំបូង",
-          "last": "ចុងក្រោយ",
-          "next": "បន្ទាប់",
-          "previous": "មុន"
-        }
-      }
-  });
   $("#slideshow1").owlCarousel({
     autoPlay : 3000,
     navigation : false, // Show next and prev buttons
