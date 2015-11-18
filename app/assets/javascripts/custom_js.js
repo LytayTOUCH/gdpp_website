@@ -29,8 +29,6 @@ $(document).on('page:change', function() {
   if($('#map').length ){
     initMap();
   }
-
-
 })
 
 function initMap() {

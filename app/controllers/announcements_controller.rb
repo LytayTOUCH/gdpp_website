@@ -15,10 +15,10 @@ class AnnouncementsController < ApplicationController
   end
   def update
     if(@announcement.update_attributes(announcement_param))
-      flash[:notice] = "Update success"
+      flash[:notice] = t('message.success.update')
       redirect_to announcements_path
     else
-      flash[:warning] = "Update unsuccess!"
+      flash[:warning] = t('message.unsuccess.update')
       render "edit"
     end
   end
@@ -33,17 +33,17 @@ class AnnouncementsController < ApplicationController
   def create
     @announcement = Announcement.new(announcement_param)
     if @announcement.save
-      flash[:notice] = "Create successfully"
+      flash[:notice] = t('message.success.create')
       redirect_to announcements_path
     else
-      flash[:warning] = "Create unsuccess!"
+      flash[:warning] = t('message.unsuccess.create')
       render "new"
     end
   end
 
   def destroy
     @announcement.destroy
-    flash[:notice] = "Delete success"
+    flash[:notice] = t('message.success.destroy')
     redirect_to announcements_path
   end
 

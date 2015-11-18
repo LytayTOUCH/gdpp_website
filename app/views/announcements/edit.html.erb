@@ -1,9 +1,11 @@
 <div class="panel panel-primary" >
   <div class="panel-heading" >
-    Edit Announcement
+    <%= t('panel.heading.edit', model: t('model.announcement') ) %>
   </div>
   <div class="panel-body" > 
-    <%= render 'forms/form_announcement' %>
+    <div class="col-md-5 row">
+      <%= render 'forms/form_announcement' %>
+    </div>
   </div>
 </div>
 

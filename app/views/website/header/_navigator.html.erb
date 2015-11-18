@@ -15,6 +15,22 @@
             <li >
               <%= link_to 'ទំព័រដើម', root_path  %>
             </li>
+
+            <li class="dropdown">
+              <%= link_to '', class: 'dropdown-toggle' do %>
+                អំពីស្ថាប័ន
+                <span class="caret"></span>
+              <% end %>
+              <ul class="dropdown-menu">
+                <li>
+                  <!-- <%= link_to 'តួនាទីអគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណៈ', gdpp_role_path %> -->
+                </li>
+                <li>
+                  <%= link_to 'រចនាសម្ព័ន្ធស្ថាប័ន', gdpp_structure_path %>
+                </li>
+              </ul>
+            </li>
+
             <li class="dropdown">
               <%= link_to '#', class: 'dropdown-toggle' do %>
                 ស្ថាប័នអនុវត្តលទ្ធកម្ម
@@ -38,26 +54,12 @@
               <% end %>
             </li>
 
-            <li class="dropdown">
-              <%= link_to '', class: 'dropdown-toggle' do %>
-                អំពីស្ថាប័ន
-                <span class="caret"></span>
-              <% end %>
-              <ul class="dropdown-menu">
-                <li>
-                  <!-- <%= link_to 'តួនាទីអគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណៈ', gdpp_role_path %> -->
-                </li>
-                <li>
-                  <%= link_to 'រចនាសម្ព័ន្ធស្ថាប័ន', gdpp_structure_path %>
-                </li>
-              </ul>
-            </li>
             <li>
               <!-- <a href="">ទំនាក់ទំនង</a> -->
-              <%= link_to "ទំនាក់ទំនង", contact_path %>
+              <%= link_to "ទំនាក់ទំនង", show_contact_path %>
             </li>
             <li >
-              <%= link_to "សំណួរចម្លើយ", faq_path %>
+              <%= link_to "សំណួរចម្លើយ", faq_in_website_path %>
             </li>
           </ul>
           

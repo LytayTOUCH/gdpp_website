@@ -1,0 +1,44 @@
+<div class="content  col-md-8 body">
+    <div class="has-padding has-shadow" style="margin-bottom:10px;" >
+      <b>
+        <%= "តារាងនៃច្បាប់និងលិខិតបទដ្ឋានគត្តិយុទ្ធ - "  %>
+        <%= @law_category.name %>
+      </b>
+    </div>
+    <br>
+    <div class="box">
+      <div class="box-body">
+        <table border="1" id="my_datatable" class="table table-striped table-bordered dataTable" style="font-size: 13px;" >
+          <thead>
+            <tr>
+              <th >#</th>
+              <th ><%= "បរិយាយអំពីច្បាប់និងលិខិតបទដ្ឋានគត្តិយុទ្ធ" %></th>
+            </tr>
+          </thead>
+          <tbody  >
+            <% $i= 1; @law_regulations.each do |law_regulation| %>
+              <tr>
+                <td style="vertical-align: middle; text-align:center"><%= $i %></td>
+                <td style="line-height: 24px;" >
+                  <%= link_to law_regulation.title , show_law_regulation_path(law_regulation) %>
+                  <%= "<span class= 'badge' style='background-color: #C50000; padding: 10px 5px 5px 5px;' >#{t('website.label.new')}</span>".html_safe if (Time.now.to_i/(60*60*24) - law_regulation.updated_at.to_i/(60*60*24))<=15 %>
+                  <br>
+                  <%= "ច្បាប់និងលិខិតគត្តិយុទ្ធ៖" %>
+                  [
+                    <% if law_regulation.law_doc_attachment? %>
+                      <%= link_to "ភាសាខ្មែរ", law_regulation.law_doc_attachment.url, target: '_blank' %>
+                    <% else %>
+                      <%= "ពុំមានឯកសាភ្ជាប់" %>
+                    <% end %> </li>
+                  ]
+                  <br> 
+                  <i style="font-size: 11px" ><%= "#{t('website.release_date')} #{law_regulation.updated_at.strftime("%B %d, %Y") }" %></i>
+                </td>
+              </tr>   
+            <% $i +=1; end %>
+          </tbody>
+        </table>
+      </div><!-- /.box-body -->
+    </div><!-- /.box -->
+</div>
+<!-- /.content -->

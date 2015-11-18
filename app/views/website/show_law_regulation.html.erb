@@ -1,0 +1,38 @@
+<div class="content  col-md-8 body">
+  <div class="has-padding has-shadow" style="margin-bottom:10px;" >
+    <b>
+      <%= "ពត៌មានលម្អិតនៃច្បាប់និងលិខិតបទដ្ឋានគត្តិយុទ្ធ - "%>
+      <%= @law_regulation.title %>
+    </b>
+  </div>
+  <br>
+  <div class="box">
+    <div class="box-body">
+      <p style="font-weight:bold " class="color-fore" >
+        <%= @law_regulation.title %>
+      </p>
+
+      <p>
+        <b>
+        <%= "ប្រភេទច្បាប់និងលិខិតបទដ្ឋានគត្តិយុទ្ធ ៖ #{@law_regulation.law_category.name}" %><br>
+        <%= "ឯកសារច្បាប់និងលិខិតបទដ្ឋានគត្តិយុទ្ធ ៖ " %>
+          <% if @law_regulation.law_doc_attachment? %>
+          <%= link_to "ភាសាខ្មែរ", @law_regulation.law_doc_attachment.url, target: '_blank' %>
+          <% else %>
+            <%= "ពុំមានឯកសាភ្ជាប់" %>
+          <% end %>
+        <br>
+        </b>
+      </p>
+      
+      <br>
+      <%= "បរិយាយ ៖ " %>
+      <%= @law_regulation.description %>
+      <hr>
+      <p style="text-align:right" >
+        <i><%= @law_regulation.updated_at.strftime("%B %d, %Y") %></i>
+      </p>
+
+    </div>
+  </div>
+</div>

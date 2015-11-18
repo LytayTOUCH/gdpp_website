@@ -1,0 +1,11 @@
+<div class="panel panel-default panel-primary">
+  <div class="panel-heading"><%= t('panel.heading.add', model: t('model.user') ) %></div>
+  <div class="panel-body">
+    <div class="col-md-4">
+      <%= render 'form' %>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <%= link_to t('form.actions.back') , admins_path, class: "btn btn-default" %>
+  </div>
+</div>

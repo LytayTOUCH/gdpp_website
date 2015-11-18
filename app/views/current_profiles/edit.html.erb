@@ -1,0 +1,27 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" ><%= t('panel.heading.profile') + ' ' + @profile.user_profile.name %></div>
+  <div class="panel-body" >
+    <div class="col-xs-4 row " >
+        <%= simple_form_for @profile, url: current_profile_path(0), html: {action: :update } do |f| %>
+          <%= f.input :username, autofocus: true %>
+          <%= f.input :email %>
+          <%= f.input :password, autocomplete: "off" %>
+          <%= f.input :password_confirmation, autocomplete: "off" %>
+          <%= f.input :current_password, autocomplete: "off" %>
+
+          <%= f.simple_fields_for :user_profile do |p| %>
+            <%= p.input :name %>
+            <%= p.input :address %>
+            <%= p.input :phone %>
+            <%= p.input :position %>
+          <% end %>
+          
+          <%= f.submit class: "btn btn-primary" %>
+          
+        <% end %>
+    </div>
+  </div>
+  <div class="panel-footer" >
+    <%= link_to t('form.actions.back'), :back, class: "btn btn-primary" %>
+  </div>
+</div>

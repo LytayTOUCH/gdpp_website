@@ -8,13 +8,15 @@
       <div class="col-xs-6" >
         <ul style="list-style:none;" >
           <td>
-            <%= "Law Regulation Image: " %> 
             <% if @law_regulation.thumbnail? %>
-              <%= image_tag @law_regulation.thumbnail.url, size: "50x50" %>
+              <%= image_tag @law_regulation.thumbnail.url, size: "200x200" %>
             <% else %>
               No image(s)
             <% end %>  
           </td>
+          <li> <%= "Law Category: " %> 
+            <%= @law_regulation.law_category.name %>
+          </li>
           <li> <%= "Law Regulation file: " %> 
             <% if @law_regulation.law_doc_attachment? %>
               <%= link_to @law_regulation.law_doc_attachment_file_name, @law_regulation.law_doc_attachment.url, target: '_blank' %>
