@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   get 'show_law_regulation/:id' => 'website#show_law_regulation', as: 'show_law_regulation'
 
+  get 'ច្បាប់និងលិខិតបទដ្ឋានកត្តិយុទ្ធ/:name' => 'website#show_law_regulations_by_name', as: 'show_law_regulations_by_name'
+
   get 'show_awarding_contracts/:procurement_method_id' => 'website#show_awarding_contracts', as: 'show_awarding_contracts'
 
   get 'show_awarding_contract/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'

@@ -17,4 +17,6 @@ class LawRegulation < ActiveRecord::Base
 
   validates :title, presence: true
 
+  scope :royal_decree, lambda { |id| where(:id => id) }
+
 end
