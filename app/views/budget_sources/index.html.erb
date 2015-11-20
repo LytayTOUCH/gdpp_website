@@ -17,7 +17,7 @@
             <td> <%= no %> </td>
             <td> <%= budget_source.name %> </td>
             <td>
-              <%= link_to t('form.actions.edit'), edit_budget_source_path(budget_source) , class: "btn btn-xs btn-primary"  %> | 
+              <%= link_to t('form.actions.edit'), edit_budget_source_path(budget_source) , class: "btn btn-xs btn-success"  %> | 
               <%= link_to t('form.actions.delete'),  { action: :destroy, id: budget_source.id}, method: :delete, data: { confirm: 'Are you sure to delete budget source?' }, class: "btn btn-xs btn-danger" %>
             </td>
           </tr>

@@ -21,9 +21,9 @@
             <td> <%= awarding_contract.procurement_method.name %> </td>
             <td> <%= awarding_contract.description %> </td>
             <td>
-              <%= link_to t('form.actions.show'), awarding_contract_path(awarding_contract) , class: "btn btn-xs btn-success"  %>
+              <%= link_to t('form.actions.edit'), edit_awarding_contract_path(awarding_contract) , class: "btn btn-xs btn-success"  %>
+              <%= link_to t('form.actions.show'), awarding_contract_path(awarding_contract) , class: "btn btn-xs btn-primary"  %>
               <%= link_to t('form.actions.delete'),  { action: :destroy, id: awarding_contract.id}, method: :delete, data: { confirm: "Are you sure to delete '#{awarding_contract.title}'?" }, class: "btn btn-xs btn-danger" %>
-              <%= link_to t('form.actions.edit'), edit_awarding_contract_path(awarding_contract) , class: "btn btn-xs btn-primary"  %>
             </td>
           </tr>
         <% no+= 1;  end %>

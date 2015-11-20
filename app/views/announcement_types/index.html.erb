@@ -17,7 +17,7 @@
             <td> <%= no %> </td>
             <td> <%= announcement_type.name %> </td>
             <td>
-              <%= link_to t('form.actions.edit'), edit_announcement_type_path(announcement_type) , class: "btn btn-xs btn-primary"  %> | 
+              <%= link_to t('form.actions.edit'), edit_announcement_type_path(announcement_type) , class: "btn btn-xs btn-success" %> | 
               <%= link_to t('form.actions.delete'),  { action: :destroy, id: announcement_type.id}, method: :delete, data: { confirm: 'Are you sure to delete announcement type ?' }, class: "btn btn-xs btn-danger" %>
             </td>
           </tr>

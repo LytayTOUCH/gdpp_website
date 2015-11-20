@@ -21,9 +21,9 @@
             <td> <%= law_regulation.law_category.name %> </td>
             <td> <%= law_regulation.description %> </td>
             <td>
-              <%= link_to t('form.actions.show'), law_regulation_path(law_regulation) , class: "btn btn-xs btn-success"  %>
+              <%= link_to t('form.actions.edit'), edit_law_regulation_path(law_regulation) , class: "btn btn-xs btn-success" %>
+              <%= link_to t('form.actions.show'), law_regulation_path(law_regulation) , class: "btn btn-xs btn-primary" %>
               <%= link_to t('form.actions.delete'),  { action: :destroy, id: law_regulation.id}, method: :delete, data: { confirm: "Are you sure to delete '#{law_regulation.title }' ?" }, class: "btn btn-xs btn-danger" %>
-              <%= link_to t('form.actions.edit'), edit_law_regulation_path(law_regulation) , class: "btn btn-xs btn-primary"  %>
             </td>
           </tr>
         <% no+= 1;  end %>
