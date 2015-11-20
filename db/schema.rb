@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116070939) do
+ActiveRecord::Schema.define(version: 20151120083540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -209,6 +209,22 @@ ActiveRecord::Schema.define(version: 20151116070939) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "purchase_orders", force: :cascade do |t|
+    t.string   "project_name",            null: false
+    t.integer  "procurement_method_id"
+    t.integer  "procurement_category_id"
+    t.date     "purchase_order_date"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+  end
+
+  add_index "purchase_orders", ["procurement_category_id"], name: "index_purchase_orders_on_procurement_category_id", using: :btree
+  add_index "purchase_orders", ["procurement_method_id"], name: "index_purchase_orders_on_procurement_method_id", using: :btree
+
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "admin_id"
     t.string   "name"
@@ -226,4 +242,6 @@ ActiveRecord::Schema.define(version: 20151116070939) do
   add_foreign_key "law_regulations", "law_categories"
   add_foreign_key "procurement_entities", "procurement_categories"
   add_foreign_key "procurement_plans", "procurement_entities"
+  add_foreign_key "purchase_orders", "procurement_categories"
+  add_foreign_key "purchase_orders", "procurement_methods"
 end

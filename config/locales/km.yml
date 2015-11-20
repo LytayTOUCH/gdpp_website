@@ -95,6 +95,12 @@ km:
         title: 'ចំណងជើង'
         description: 'សេចក្តីអធិប្បាយ'
         image: 'រូបភាព'
+      purchase_order:
+        project_name: 'ឈ្មោះគម្រោង'
+        procurement_category_id: 'ប្រភេទលទ្ធកម្ម'
+        procurement_method_id: 'វិធីសាស្ត្រលទ្ធកម្ម'
+        purchase_order_date: 'ការបរិច្ឆេទបញ្ជាទិញ'
+        document: 'ឯកសារភ្ជាប់'
 
   form:
     header:
@@ -204,6 +210,12 @@ km:
       address_one: 'អាស័យដ្ឋានទី១'
       address_two: 'អាស័យដ្ឋានទី២'
       address_three: 'អាស័យដ្ឋានទី៣'
+    purchase_order:
+      project_name: 'ឈ្មោះគម្រោង'
+      procurement_category: 'ប្រភេទលទ្ធកម្ម'
+      procurement_method: 'វិធីសាស្ត្រលទ្ធកម្ម'
+      purchase_order_date: 'ការបរិច្ឆេទបញ្ជាទិញ'
+      document: 'ឯកសារភ្ជាប់'
   will_paginate:
     previous_label: "មុន"
     next_label: "បន្ទាប់"

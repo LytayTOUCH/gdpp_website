@@ -1,0 +1,43 @@
+<br><br>
+<br><br>
+
+<div class="panel panel-default" >
+  <div class="panel-heading">Purchase Order</div>
+  <div class="panel-body" >
+  <table class="table datatable" >
+    <thead>
+      <tr>
+        <th>#</th>
+        <th><%= t('table.purchase_order.project_name') %></th>
+        <th><%= t('table.purchase_order.procurement_method') %></th>
+        <th><%= t('table.purchase_order.procurement_category') %></th>
+        <th><%= t('table.purchase_order.purchase_order_date') %></th>
+        <th><%= t('table.purchase_order.document') %></th>
+        <th><%= t('table.actions') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% no = 1; @purchase_orders.each do |purchase_order| %>
+        <tr>
+          <td><%= no %></td>
+          <td><%= purchase_order.project_name %></td>
+          <td><%= purchase_order.procurement_method.name %></td>
+          <td><%= purchase_order.procurement_category.name %></td>
+          <td><%= purchase_order.purchase_order_date %></td>
+          <td><%= purchase_order.document_file_name || "no file" %></td>
+          <th>
+            <%= link_to t("form.actions.edit"), edit_purchase_order_path(purchase_order), class: 'btn btn-xs btn-info' %>
+            <%= link_to t('form.actions.delete'),  { action: :destroy, id: purchase_order.id}, method: :delete, data: { confirm: "#{t('message.confirm.delete')} [ #{purchase_order.project_name} ] ?"  }, class: "btn btn-xs btn-danger" %>
+          </th>
+        </tr>
+        
+      <% no +=1; end %>
+    </tbody>
+  </table>
+    
+  </div>
+  <div class="panel-footer" >
+    <%= link_to t('form.button.add'), new_purchase_order_path %>
+  </div>
+</div>
+

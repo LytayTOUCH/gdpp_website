@@ -55,6 +55,7 @@ Rails.application.routes.draw do
       resources :law_categories
       resources :contacts
       resources :image_slides
+      resources :purchase_orders
     end
   end
 

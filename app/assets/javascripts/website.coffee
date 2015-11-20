@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'ready page:load', ->
+  $('.datetimepicker').datetimepicker()
   
   $('.datatable').DataTable 'language':
     'lengthMenu': 'បង្ហាញ _MENU_ ក្នុងមួយទំព័រ'
