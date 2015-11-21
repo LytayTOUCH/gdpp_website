@@ -1,4 +1,5 @@
 class OrgStructure < ActiveRecord::Base
+  belongs_to :org_structure_category
   validates :title, presence: true
 
   has_attached_file :org_structure_image, :url => "/:class/:attachment/:id/:basename.:extension", :path => ":rails_root/public/:class/:attachment/:id/:basename.:extension" 

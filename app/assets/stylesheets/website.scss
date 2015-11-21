@@ -39,11 +39,14 @@ body{
 
 /* top-header */
 
+.has-border {
+  border: 1px solid #ccc;  
+}
 
 .bottom-header{
 
-
 }
+
 .header-conent{
   background-color: #fff;
 }
@@ -238,16 +241,32 @@ display: block;
   padding: 0px !important;
 
 }
-.footer-widget-box h2, .widget-box h2{
-  font-family: 'khmer muol' !important;
-  padding: 0px !important;
-  margin: 0px ;
-  margin-bottom: 5px ;
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 30px;
-  font-weight: normal;
+.footer-widget-box{
+  h2{
+    font-family: 'khmer muol' !important;
+    padding: 0px !important;
+    margin: 0px ;
+    margin-bottom: 5px ;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 30px;
+    font-weight: normal;
+  }
 }
+
+.widget-box{
+  h2 {
+    font-family: 'khmer muol' !important;
+    padding: 0px !important;
+    margin: 0px ;
+    margin-bottom: 5px ;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 30px;
+    font-weight: normal;
+  }  
+}
+
 .footer-widget-box p{
   margin-bottom: 2px !important;
 }

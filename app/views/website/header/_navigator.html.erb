@@ -16,6 +16,35 @@
               <%= link_to 'ទំព័រដើម', root_path  %>
             </li>
             <li class="dropdown">
+              <%= link_to '', class: 'dropdown-toggle' do %>
+                អំពីស្ថាប័ន
+                <span class="caret"></span>
+              <% end %>
+              <ul class="dropdown-menu">
+                <% @org_structure_categories.each do |org_structure_category| %>
+                  <li>
+                    <%= link_to org_structure_category.name, show_org_structures_path(org_structure_category_id: org_structure_category.id)  %>
+                  </li>
+              <% end %>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <%= link_to '', class: 'dropdown-toggle' do %>
+                ការអនុវត្តកម្មវិធី PMS
+                <span class="caret"></span>
+              <% end %>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to 'ផែនការសកម្មភាពរបស់អគ្គនាយកដ្ឋាន', gdpp_structure_path %>
+                </li>
+                <li>
+                  <%= link_to 'ការអនុវត្តផែនការសកម្មភាព', gdpp_structure_path %>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
               <%= link_to '#', class: 'dropdown-toggle' do %>
                 ស្ថាប័នអនុវត្តលទ្ធកម្ម
                 <span class="caret"></span>
@@ -38,26 +67,19 @@
               <% end %>
             </li>
 
-            <li class="dropdown">
-              <%= link_to '', class: 'dropdown-toggle' do %>
-                អំពីស្ថាប័ន
-                <span class="caret"></span>
-              <% end %>
-              <ul class="dropdown-menu">
-                <li>
-                  <!-- <%= link_to 'តួនាទីអគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណៈ', gdpp_role_path %> -->
-                </li>
-                <li>
-                  <%= link_to 'រចនាសម្ព័ន្ធស្ថាប័ន', gdpp_structure_path %>
-                </li>
-              </ul>
-            </li>
+            
             <li>
               <!-- <a href="">ទំនាក់ទំនង</a> -->
+              <%= link_to "ការបញ្ជាទិញ", show_contact_path %>
+            </li>
+            <li >
+              <%= link_to "ដំណោះស្រាយវិវាទ", faq_in_website_path %>
+            </li>
+            <li >
               <%= link_to "ទំនាក់ទំនង", show_contact_path %>
             </li>
             <li >
-              <%= link_to "សំណួរចម្លើយ", faq_in_website_path %>
+              <%= link_to "សំណួរ ចំលើយ", faq_in_website_path %>
             </li>
           </ul>
           

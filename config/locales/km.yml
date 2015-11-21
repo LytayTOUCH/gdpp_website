@@ -119,6 +119,7 @@ km:
       awarding_contract: 'ការប្រគល់កិច្ចសន្យា'
       law_category: 'ច្បាប់និងលិខិតបទដ្ឋានគតិយុត្តិ'
       contact: 'ទំនាក់ទំនង'
+      org_structure_category: 'ប្រភេទរចនាសម្ព័ន្ធស្ថាប័ន'
   website:
     label:
       new: 'ថ្មីៗ'
@@ -150,15 +151,15 @@ km:
     org_structure:
       title: 'ចំណងជើង'
       description: 'បរិយាយ'
+      org_structure_category: 'ប្រភេទរចនាសម្ព័ន្ធស្ថាប័ន'
+    org_structure_category:
+      name: 'ឈ្មោះ' 
     procurement_plan:
       name: 'ឈ្មោះផែនការ'
       year: 'ឆ្នាំ'
       adjusted: "លទ្ធកម្មកែតម្រូវ"
       annual: "លទ្ធកម្មដើមឆ្នាំ"
       file_name: "ឯកសារ"
-    org_structure:
-      title: 'ឈ្មោះ'
-      description: 'បរិយាយ'
     procurement_method:
       name: 'ឈ្មោះលទ្ធកម្ម'
     awarding_contract:
