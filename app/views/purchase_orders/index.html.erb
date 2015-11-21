@@ -1,8 +1,7 @@
 <br><br>
-<br><br>
 
-<div class="panel panel-default" >
-  <div class="panel-heading">Purchase Order</div>
+<div class="panel panel-primary" >
+  <div class="panel-heading"><%= t('dashboard.navigator_menu.purchase_order') %></div>
   <div class="panel-body" >
   <table class="table datatable" >
     <thead>
@@ -24,11 +23,17 @@
           <td><%= purchase_order.procurement_method.name %></td>
           <td><%= purchase_order.procurement_category.name %></td>
           <td><%= purchase_order.purchase_order_date %></td>
-          <td><%= purchase_order.document_file_name || "no file" %></td>
-          <th>
+          <td>
+            <% if purchase_order.document? %>
+              <%= link_to '<i class="fa fa-download" ></i>'.html_safe+t('table.download'), purchase_order.document.url, target: '_new' %>
+            <% else %>
+              <%= t('table.file_not_found') %>
+            <% end %>
+          </td>
+          <td class="text-nowrap" >
             <%= link_to t("form.actions.edit"), edit_purchase_order_path(purchase_order), class: 'btn btn-xs btn-info' %>
             <%= link_to t('form.actions.delete'),  { action: :destroy, id: purchase_order.id}, method: :delete, data: { confirm: "#{t('message.confirm.delete')} [ #{purchase_order.project_name} ] ?"  }, class: "btn btn-xs btn-danger" %>
-          </th>
+          </td>
         </tr>
         
       <% no +=1; end %>
@@ -37,7 +42,7 @@
     
   </div>
   <div class="panel-footer" >
-    <%= link_to t('form.button.add'), new_purchase_order_path %>
+    <%= link_to t('form.button.add'), new_purchase_order_path, class: 'btn btn-primary' %>
   </div>
 </div>
 

@@ -1,6 +1,10 @@
+<br><br>
 <div class="panel panel-primary">
-  <div class="panel-heading"> New purchase_order</div>
+  <div class="panel-heading"> <%= t('panel.heading.add', model: t('model.purchase_order')) %> </div>
   <div class="panel-body" >
   <%= render "form" %>
+  </div>
+  <div class="panel-footer" >
+    <%= link_to t('form.actions.back'), purchase_orders_path, class: 'btn btn-default' %> 
   </div>
 </div>

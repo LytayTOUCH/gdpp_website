@@ -143,12 +143,15 @@ km:
       contact: 'ទំនាក់ទំនង'
       user_manager: 'គ្រប់គ្រងអ្នកប្រើប្រាស់'
       image_slide:  'រូបភាពស្លាយ'
+      purchase_order: 'ការបញ្ជាទិញ'
   website:
     label:
       new: 'ថ្មីៗ'
     release_date: 'ថ្ងៃចេញផ្សាយ'
   table:
     actions: 'សកម្មភាព'
+    file_not_found: 'ពុំមានឯកសារភ្ជាប់'
+    download: 'ទាញយកឯកសារ'
     announcement:
       title: 'បរិយាយ'
       type: 'ប្រភេទ'
@@ -236,6 +239,7 @@ km:
     user: 'អ្នកប្រើប្រាស់'
     procurement_plan: 'ផែនការលទ្ធកម្ម'
     announcement: 'លទ្ធកម្ម'
+    purchase_order: 'ការបញ្ជាទិញ'
   panel:
     heading:
       profile: "ពត៌មានរបស់"
