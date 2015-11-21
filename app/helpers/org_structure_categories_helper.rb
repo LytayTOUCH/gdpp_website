@@ -1,0 +1,2 @@
+module OrgStructureCategoriesHelper
+end

@@ -1,5 +1,6 @@
 <%= simple_form_for(@org_structure, html: { multipart: true }) do |f| %>
   <%= f.input :title %>
+  <%= f.input :org_structure_category_id, collection: @org_structure_categories %>
   <%= f.input :description %>
   <%= f.input :org_structure_image, as: :file %>
   <% if @org_structure.new_record? %>

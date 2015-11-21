@@ -1,0 +1,8 @@
+<%= simple_form_for(@org_structure_category) do |f| %>
+  <%= f.input :name %>
+  <% if @org_structure_category.new_record? %>
+    <%= f.submit t('form.button.create'), class: 'btn btn-primary'%>
+  <% else %>
+    <%= f.submit t('form.button.update'), class: 'btn btn-primary'%>
+  <% end %>
+<% end %>

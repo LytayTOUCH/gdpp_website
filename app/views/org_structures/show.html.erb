@@ -8,14 +8,17 @@
       <div class="col-xs-6" >
         <ul style="list-style:none;" >
           <td>
-            <%= "Organizational Structure Image: " %> 
             <% if @org_structure.org_structure_image? %>
-              <%= image_tag @org_structure.org_structure_image.url, size: "80x50" %>
+              <%= image_tag @org_structure.org_structure_image.url, size: "200x150" %>
             <% else %>
               No image(s)
             <% end %>  
           </td>
-        </ul>
+        </ul><br>
+        <ul>
+          <%= "Organizational Structure Category: " %> 
+          <%= @org_structure.org_structure_category.name %>
+        </ul>  
       </div>
       <div class="col-xs-6" >
         <b><%= "Description" %></b><hr>

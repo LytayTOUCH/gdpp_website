@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   get 'show_awarding_contract/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'
 
+  get 'show_org_structures/:org_structure_category_id' => 'website#show_org_structures', as: 'show_org_structures'
+
   resources :administrator do
     collection do
       resources :budget_sources
@@ -43,6 +45,7 @@ Rails.application.routes.draw do
       resources :public_services
       resources :faqs
       resources :org_structures
+      resources :org_structure_categories
       resources :procurement_plans
       resources :procurement_methods
       resources :awarding_contracts

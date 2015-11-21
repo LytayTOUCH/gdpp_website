@@ -13,6 +13,7 @@ class OrgStructuresController < ApplicationController
 
   def new
     @org_structure = OrgStructure.new
+    @org_structure_categories = OrgStructureCategory.all
   end
 
   def create
@@ -30,6 +31,7 @@ class OrgStructuresController < ApplicationController
 
   def edit
     @org_structure = OrgStructure.find(params[:id])
+    @org_structure_categories = OrgStructureCategory.all
   end
 
   def update
@@ -56,6 +58,6 @@ class OrgStructuresController < ApplicationController
   end
 
   def org_structure_params
-    params.require(:org_structure).permit(:title, :description, :org_structure_image)
+    params.require(:org_structure).permit(:title, :description, :org_structure_image, :org_structure_category_id)
   end
 end
