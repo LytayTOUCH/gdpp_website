@@ -120,6 +120,7 @@ km:
       law_category: 'ច្បាប់និងលិខិតបទដ្ឋានគតិយុត្តិ'
       contact: 'ទំនាក់ទំនង'
       org_structure_category: 'ប្រភេទរចនាសម្ព័ន្ធស្ថាប័ន'
+      semester_year_pmf: 'ការអនុវត្តកម្មវិធី PMS'
   website:
     label:
       new: 'ថ្មីៗ'
@@ -181,6 +182,10 @@ km:
       address_one: 'អាស័យដ្ឋានទី១'
       address_two: 'អាស័យដ្ឋានទី២'
       address_three: 'អាស័យដ្ឋានទី៣'
+    semester_year_pmf:
+      title: 'ចំណងជើង'
+      year: 'ឆ្នាំ'
+      file_name: 'ឯកសារ'
   will_paginate:
     previous_label: "មុន"
     next_label: "បន្ទាប់"

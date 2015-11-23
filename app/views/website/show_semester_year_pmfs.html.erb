@@ -1,0 +1,37 @@
+<div class="content  col-md-8 body">
+    <div class="has-padding has-shadow" style="margin-bottom:10px;" >
+      <b>
+        <%= "ការអនុវត្តផែនការសកម្មភាព" %>
+      </b>
+    </div>
+    <br>
+    <div class="box">
+      <div class="box-body">
+        <div class="row">
+          <div class="col-md-12">
+            <% r = Time.new.year..Time.new.year-2 %>
+            <% (r.first).downto(r.last).each do |y| %>
+              <div class="row" >
+                <% if SemesterYearPmf.where(year: y).count != 0 %>
+                  <p class="box-year" padding="10px"><%= " - ឆ្នាំ " %> <%= y %></p>
+                <% end %>
+                <% SemesterYearPmf.all.limit(4).where(year: y).each do |semester_year_pmf| %>
+                  <div class="col-md-3" style="text-align: center;" >
+                    <p class="label-title text-center "> <%= semester_year_pmf.title %> </p>
+                    <% if semester_year_pmf.file_attachment? %>
+                      <%= link_to semester_year_pmf.file_attachment.url, target: "_blank" do %>
+                        <%= image_tag "file.png", size: '90x110' %>
+                      <% end %>
+                    <% else %>
+                      No attached file(s)
+                    <% end %>  
+                  </div>
+                <% end %>
+              </div><br>
+            <% end %>  
+          </div>
+        </div><!-- /.row -->  
+      </div><!-- /.box-body -->
+    </div><!-- /.box -->
+</div>
+<!-- /.content -->

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'show_public_services' => 'website#show_public_services'
   get 'faq_in_website'=> 'website#show_question_answer'
   get 'show_contact' => 'website#show_contact', as: 'show_contact'
+  get 'show_semester_year_pmfs' => 'website#show_semester_year_pmfs', as: 'show_semester_year_pmfs'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
   get 'procurement_entity_ministry' => 'website#show_procurement_entity_ministry'
@@ -51,6 +52,7 @@ Rails.application.routes.draw do
       resources :awarding_contracts
       resources :law_categories
       resources :contacts
+      resources :semester_year_pmfs
     end
   end
 
