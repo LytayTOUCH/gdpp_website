@@ -37,6 +37,8 @@ class PurchaseOrdersController < ApplicationController
       redirect_to purchase_orders_path
     else
       flash[:warning] = t('message.usuccess.update')
+      @procurement_categories = ProcurementCategory.all
+      @procurement_methods = ProcurementMethod.all
       render 'edit'
     end
   end

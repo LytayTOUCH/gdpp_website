@@ -1,0 +1,39 @@
+<div class="content  col-md-8 body">
+  <p class="text-center" style="font-family: 'khmer muol'; font-size: 20px; " > <%="ការបញ្ជារទិញ"%> </p>
+  <hr>
+  <br>
+
+  <table class='table table-bordered datatable' >
+    <thead>
+      <tr class="text-nowrap">
+        <th>#</th>
+        <th><%= 'ឈ្មោះគម្រោង' %></th>
+        <th><%= 'ប្រភេទលទ្ធកម្ម' %></th>
+        <th><%= 'ស្ថាប័នអនុវត្តិលទ្ធកម្ម' %></th>
+        <th><%= 'រយៈពេល' %></th>
+        <th><%= 'ឯកសារ' %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% no = 1; @purchase_orders.each do |po| %>
+        <tr>
+          <td><%= no %></td>
+          <td><%= po.project_name %></td>
+          <td><%= po.procurement_category.name %></td>
+          <td><%= po.procurement_method.name %></td>
+          <td><%= 'រយៈពេល' %></td>
+          <td>
+          <% if po.document? %>
+              <%= link_to t('table.download'), po.document.url, target: '_new' %>
+            <% else %>
+              <%= t('table.file_not_found') %>
+            <% end %>
+          </td>
+        </tr>
+      <% no +=1; end %>
+    </tbody>
+  </table>
+
+
+  </p>
+</div>
