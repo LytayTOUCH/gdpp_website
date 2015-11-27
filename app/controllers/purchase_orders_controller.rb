@@ -53,7 +53,6 @@ class PurchaseOrdersController < ApplicationController
     end
   end
 
-
   def set_purchase_order
     @purchase_order  = PurchaseOrder.find(params[:id])
   end
