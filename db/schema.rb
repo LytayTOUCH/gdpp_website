@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116070939) do
+ActiveRecord::Schema.define(version: 20151121042947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -146,6 +146,12 @@ ActiveRecord::Schema.define(version: 20151116070939) do
 
   add_index "law_regulations", ["law_category_id"], name: "index_law_regulations_on_law_category_id", using: :btree
 
+  create_table "org_structure_categories", force: :cascade do |t|
+    t.string   "name",       limit: 80, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "org_structures", force: :cascade do |t|
     t.string   "title",                            null: false
     t.text     "description"
@@ -155,7 +161,10 @@ ActiveRecord::Schema.define(version: 20151116070939) do
     t.datetime "org_structure_image_updated_at"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "org_structure_category_id"
   end
+
+  add_index "org_structures", ["org_structure_category_id"], name: "index_org_structures_on_org_structure_category_id", using: :btree
 
   create_table "procurement_categories", force: :cascade do |t|
     t.string   "name"
@@ -209,6 +218,17 @@ ActiveRecord::Schema.define(version: 20151116070939) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "semester_year_pmfs", force: :cascade do |t|
+    t.string   "title",                        null: false
+    t.string   "year"
+    t.string   "file_attachment_file_name"
+    t.string   "file_attachment_content_type"
+    t.integer  "file_attachment_file_size"
+    t.datetime "file_attachment_updated_at"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "admin_id"
     t.string   "name"
@@ -224,6 +244,7 @@ ActiveRecord::Schema.define(version: 20151116070939) do
   add_foreign_key "announcements", "procurement_entities"
   add_foreign_key "awarding_contracts", "procurement_methods"
   add_foreign_key "law_regulations", "law_categories"
+  add_foreign_key "org_structures", "org_structure_categories"
   add_foreign_key "procurement_entities", "procurement_categories"
   add_foreign_key "procurement_plans", "procurement_entities"
 end

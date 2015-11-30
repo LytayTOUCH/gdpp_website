@@ -1,5 +1,5 @@
 class WebsiteController < ApplicationController
-  before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements, :load_law_categories, :load_procurement_methods
+  before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements, :load_law_categories, :load_procurement_methods, :load_org_structure_categories
   def index
     @announcement = Announcement.limit(6).sorted_by_date
     @law_regulations = LawRegulation.limit(4).sorted_by_date
@@ -112,6 +112,19 @@ class WebsiteController < ApplicationController
     @awarding_contracts = AwardingContract.where(procurement_method_id: params[:procurement_method_id])
   end
 
+  def show_org_structures
+    @org_structure_category = OrgStructureCategory.find(params[:org_structure_category_id])
+    @org_structures = OrgStructure.where(org_structure_category_id: params[:org_structure_category_id])
+  end
+
+  def show_org_structure
+    
+  end
+
+  def show_semester_year_pmfs
+    # @semester_year_pmfs = SemesterYearPmf.all.order("year DESC")
+  end
+
 # Must load all action
   def load_announcement_type
     @announcement_types = AnnouncementType.all
@@ -131,6 +144,10 @@ class WebsiteController < ApplicationController
 
   def load_procurement_methods
     @procurement_methods = ProcurementMethod.all
+  end
+
+  def load_org_structure_categories
+    @org_structure_categories = OrgStructureCategory.all
   end
 
 end

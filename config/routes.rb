@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'show_public_services' => 'website#show_public_services'
   get 'faq_in_website'=> 'website#show_question_answer'
   get 'show_contact' => 'website#show_contact', as: 'show_contact'
+  get 'show_semester_year_pmfs' => 'website#show_semester_year_pmfs', as: 'show_semester_year_pmfs'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
   get 'procurement_entity_ministry' => 'website#show_procurement_entity_ministry'
@@ -35,6 +36,8 @@ Rails.application.routes.draw do
 
   get 'show_awarding_contract/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'
 
+  get 'show_org_structures/:org_structure_category_id' => 'website#show_org_structures', as: 'show_org_structures'
+
   resources :administrator do
     collection do
       resources :budget_sources
@@ -45,6 +48,7 @@ Rails.application.routes.draw do
       resources :public_services
       resources :faqs
       resources :org_structures
+      resources :org_structure_categories
       resources :procurement_plans
       resources :procurement_methods
       resources :awarding_contracts
@@ -56,6 +60,7 @@ Rails.application.routes.draw do
       end
       resources :law_categories
       resources :contacts
+      resources :semester_year_pmfs
       resources :image_slides
     end
   end
@@ -71,8 +76,7 @@ Rails.application.routes.draw do
   # get 'destroy_budget_source/:id' => 'administrator#edit_budget_source', as: "destroy_budget_source"
   # patch 'update_budget_source/:id' => 'administrator#update_budget_source' as: 
 
-
-  devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations], :controller => {:registrations => :registrations}
+  devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
   as :admin do
     # get 'administrator/login' => 'devise/sessions#new', as: :administrator_login
     # delete 'administrator/logout' => 'devise/sessions#destroy', as: :administrator_logout

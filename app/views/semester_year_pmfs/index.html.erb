@@ -1,0 +1,42 @@
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= t('dashboard.navigator_menu.semester_year_pmf') %></b>
+  </div>
+  <div class="panel-body" >
+    <table class="table table-bordered datatable" >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= t('table.semester_year_pmf.title') %></th>
+          <th><%= t('table.semester_year_pmf.year') %></th>
+          <th><%= t('table.semester_year_pmf.file_name') %></th>
+          <th><%= t('table.actions') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% no = 1; @semester_year_pmfs.each do |semester_year_pmf| %>
+          <tr>
+            <td> <%= no %> </td>
+            <td> <%= semester_year_pmf.title %> </td>
+            <td> <%= semester_year_pmf.year %> </td>
+            <td>
+              <% if semester_year_pmf.file_attachment? %>
+                <%= link_to semester_year_pmf.file_attachment_file_name, semester_year_pmf.file_attachment.url, target: "_blank" %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to t('form.actions.show'), semester_year_pmf_path(semester_year_pmf) , class: "btn btn-xs btn-success"  %>
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: semester_year_pmf.id}, method: :delete, data: { confirm: "Are you sure to delete this structure ?" }, class: "btn btn-xs btn-danger" %>
+              <%= link_to t('form.actions.edit'), edit_semester_year_pmf_path(semester_year_pmf) , class: "btn btn-xs btn-primary"  %>
+            </td>
+          </tr>
+        <% no+= 1;  end %>
+      </tbody>
+
+    </table>
+    
+  </div>
+  <div class="panel-footer" >
+    <%= link_to t('form.button.add'), new_semester_year_pmf_path, class: "btn btn-primary" %>
+  </div>
+</div>

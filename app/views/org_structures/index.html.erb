@@ -8,6 +8,7 @@
         <tr>
           <th>#</th>
           <th><%= t('table.org_structure.title') %></th>
+          <th><%= t('table.org_structure.org_structure_category') %></th>
           <th><%= t('table.org_structure.description') %></th>
           <th><%= t('table.actions') %></th>
         </tr>
@@ -17,6 +18,7 @@
           <tr>
             <td> <%= no %> </td>
             <td> <%= org_structure.title %> </td>
+            <td> <%= org_structure.org_structure_category.name %> </td>
             <td> <%= org_structure.description %> </td>
             <td>
               <%= link_to t('form.actions.show'), org_structure_path(org_structure) , class: "btn btn-xs btn-success"  %>
