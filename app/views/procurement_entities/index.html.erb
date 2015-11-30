@@ -3,7 +3,7 @@
     <b><%= t('dashboard.navigator_menu.procurement_entity') %></b>
   </div>
   <div class="panel-body" >
-    <table class="table table-bordered datatable" >
+    <table class="table table-bordered datatable" id="datatables" >
       <thead>
         <tr>
           <th><%= "#" %></th>
@@ -19,9 +19,9 @@
             <td> <%= pe.name %> </td>
             <td> <%= pe.phone %> </td>
             <td>
-              <%= link_to t('form.actions.edit'), edit_procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %>
-              <%= link_to t('form.actions.delete'),  { action: :destroy, id: pe.id}, method: :delete, data: { confirm: 'Are you sure to delete procurement entity source?' }, class: "btn btn-xs btn-danger" %>
+              <%= link_to t('form.actions.edit'), edit_procurement_entity_path(pe) , class: "btn btn-xs btn-success"  %>
               <%= link_to t('form.actions.show'), procurement_entity_path(pe) , class: "btn btn-xs btn-primary"  %>
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: pe.id}, method: :delete, data: { confirm: 'Are you sure to delete procurement entity source?' }, class: "btn btn-xs btn-danger" %>
             </td>
           </tr>
 

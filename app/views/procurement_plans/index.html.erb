@@ -3,7 +3,7 @@
     <b><%= t('dashboard.navigator_menu.procurement_plan') %></b>
   </div>
   <div class="panel-body" >
-    <table class="table table-bordered datatable" >
+    <table class="table table-bordered datatable" id="datatables" >
       <thead>
         <tr>
           <th><%= "#" %></th>
@@ -33,9 +33,9 @@
               <% end %>
             </td>
             <td>
-              <%= link_to t('form.actions.edit'), edit_procurement_plan_path(pp) , class: "btn btn-xs btn-primary"  %>
+              <%= link_to t('form.actions.edit'), edit_procurement_plan_path(pp) , class: "btn btn-xs btn-success"  %>
+              <%= link_to t('form.actions.show'), procurement_plan_path(pp) , class: "btn btn-xs btn-primarry"  %>
               <%= link_to t('form.actions.delete'),  { action: :destroy, id: pp.id}, method: :delete, data: { confirm: "Are you sure to delete [#{pp.name}] ?" }, class: "btn btn-xs btn-danger" %>
-              <%= link_to t('form.actions.show'), procurement_plan_path(pp) , class: "btn btn-xs btn-info"  %>
             </td>
           </tr>
         <% no+= 1;  end %>
