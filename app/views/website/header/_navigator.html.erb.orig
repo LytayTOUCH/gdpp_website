@@ -22,6 +22,21 @@
                 <span class="caret"></span>
               <% end %>
               <ul class="dropdown-menu">
+                <li>
+                  <!-- <%= link_to 'តួនាទីអគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណៈ', gdpp_role_path %> -->
+                </li>
+                <li>
+                  <%= link_to 'រចនាសម្ព័ន្ធស្ថាប័ន', gdpp_structure_path %>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <%= link_to '', class: 'dropdown-toggle' do %>
+                អំពីស្ថាប័ន
+                <span class="caret"></span>
+              <% end %>
+              <ul class="dropdown-menu">
                 <% @org_structure_categories.each do |org_structure_category| %>
                   <li>
                     <%= link_to org_structure_category.name, show_org_structures_path(org_structure_category_id: org_structure_category.id)  %>
@@ -37,7 +52,7 @@
               <% end %>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to 'ផែនការសកម្មភាពរបស់អគ្គនាយកដ្ឋាន', show_quater_years_pfms_path %>
+                  <%= link_to 'ផែនការសកម្មភាពរបស់អគ្គនាយកដ្ឋាន', gdpp_structure_path %>
                 </li>
                 <li>
                   <%= link_to 'ការអនុវត្តផែនការសកម្មភាព', gdpp_structure_path %>
@@ -68,7 +83,10 @@
               <% end %>
             </li>
 
-
+<<<<<<< HEAD
+=======
+            
+>>>>>>> origin/update_navigators
             <li>
               <!-- <a href="">ទំនាក់ទំនង</a> -->
               <%= link_to "ការបញ្ជាទិញ", show_contact_path %>
