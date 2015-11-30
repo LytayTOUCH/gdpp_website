@@ -65,7 +65,7 @@ class WebsiteController < ApplicationController
   end
 
   def show_quater_years_pfms
-    @quater_years_pfms = QuaterYearsPfm.all
+    @quater_years_pfms = QuaterYearsPfm.order(title: :desc)
   end
 
   def show_gdpp_structure
