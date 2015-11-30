@@ -96,6 +96,12 @@ km:
         title: 'ចំណងជើង'
         description: 'សេចក្តីអធិប្បាយ'
         image: 'រូបភាព'
+      purchase_order:
+        project_name: 'ឈ្មោះគម្រោង'
+        procurement_category_id: 'ប្រភេទលទ្ធកម្ម'
+        procurement_method_id: 'វិធីសាស្ត្រលទ្ធកម្ម'
+        purchase_order_date: 'ការបរិច្ឆេទបញ្ជាទិញ'
+        document: 'ឯកសារភ្ជាប់'
 
   form:
     header:
@@ -140,12 +146,16 @@ km:
       semester_year_pmf: 'ការអនុវត្តកម្មវិធី PMS'
       user_manager: 'គ្រប់គ្រងអ្នកប្រើប្រាស់'
       image_slide:  'រូបភាពស្លាយ'
+      purchase_order: 'ការបញ្ជាទិញ'
+      org_structure_category: 'ប្រភេទរចនាសម្ព័ន្ធស្ថាប័ន'
   website:
     label:
       new: 'ថ្មីៗ'
     release_date: 'ថ្ងៃចេញផ្សាយ'
   table:
     actions: 'សកម្មភាព'
+    file_not_found: 'ពុំមានឯកសារភ្ជាប់'
+    download: 'ទាញយកឯកសារ'
     announcement:
       title: 'បរិយាយ'
       type: 'ប្រភេទ'
@@ -211,7 +221,13 @@ km:
       address_one: 'អាស័យដ្ឋានទី១'
       address_two: 'អាស័យដ្ឋានទី២'
       address_three: 'អាស័យដ្ឋានទី៣'
-    semester_year_pmf:
+  purchase_order:
+      project_name: 'ឈ្មោះគម្រោង'
+      procurement_category: 'ប្រភេទលទ្ធកម្ម'
+      procurement_method: 'វិធីសាស្ត្រលទ្ធកម្ម'
+      purchase_order_date: 'ការបរិច្ឆេទបញ្ជាទិញ'
+      document: 'ឯកសារភ្ជាប់'
+  semester_year_pmf:
       title: 'ចំណងជើង'
       year: 'ឆ្នាំ'
       file_name: 'ឯកសារ'
@@ -219,3 +235,26 @@ km:
     previous_label: "មុន"
     next_label: "បន្ទាប់"
     page_gap: "&hellip;"
+
+  message:
+    confirm:
+      delete: 'តើអ្នកពិតជាចង់លុប'
+    success:
+      create: 'បង្កើតបានដោយជោគជ័យ'
+      update: 'កែប្រែបានដោយជោគជ័យ'
+      delete: 'បានលុបដោយជោគជ័យ'
+    unsuccess:
+      create: 'មិនអាចបង្កើតបានទេ'
+      update: 'មិនអាចកែប្រែបានទេ'
+      delete: 'មិនអាចលុបបានទេ'
+    permission_deny: 'ពុំមានសិទ្ធដើម្បីចូលប្រើប្រាស់'
+  model:
+    user: 'អ្នកប្រើប្រាស់'
+    procurement_plan: 'ផែនការលទ្ធកម្ម'
+    announcement: 'លទ្ធកម្ម'
+    purchase_order: 'ការបញ្ជាទិញ'
+  panel:
+    heading:
+      profile: "ពត៌មានរបស់"
+      add: ! "បន្ថែម%{model}"
+      edit: ! 'កែប្រែ%{model}'

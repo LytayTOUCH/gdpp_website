@@ -38,6 +38,8 @@ Rails.application.routes.draw do
 
   get 'show_org_structures/:org_structure_category_id' => 'website#show_org_structures', as: 'show_org_structures'
 
+  get 'show_purchase_orders' => 'website#show_purchase_orders'
+
   resources :administrator do
     collection do
       resources :budget_sources
@@ -62,6 +64,7 @@ Rails.application.routes.draw do
       resources :contacts
       resources :semester_year_pmfs
       resources :image_slides
+      resources :purchase_orders
     end
   end
 
