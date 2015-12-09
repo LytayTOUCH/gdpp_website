@@ -123,10 +123,10 @@ km:
       create: 'បង្កើត'
       update: 'កែប្រែ'
     number:
-      first: 'ទី១'
+      first: 'ទី១' 
       second: 'ទី២'
       third: 'ទី៣'
-  date:
+  date: 
     order: "Test"
   dashboard:
     navigator_menu:
@@ -148,6 +148,7 @@ km:
       image_slide:  'រូបភាពស្លាយ'
       purchase_order: 'ការបញ្ជាទិញ'
       org_structure_category: 'ប្រភេទរចនាសម្ព័ន្ធស្ថាប័ន'
+      semester_year_pmf: 'ការអនុវត្តកម្មវិធី PMS'
       quater_years_pfm: 'ផែនការសកម្មភាពរបស់អគ្គនាយកដ្ឋាន'
   website:
     label:
@@ -234,6 +235,10 @@ km:
       procurement_method: 'វិធីសាស្ត្រលទ្ធកម្ម'
       purchase_order_date: 'ការបរិច្ឆេទបញ្ជាទិញ'
       document: 'ឯកសារភ្ជាប់'
+    semester_year_pmf:
+      title: 'ចំណងជើង'
+      year: 'ឆ្នាំ'
+      file_name: 'ឯកសារ'
   will_paginate:
     previous_label: "មុន"
     next_label: "បន្ទាប់"

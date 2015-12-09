@@ -110,6 +110,10 @@ class WebsiteController < ApplicationController
 
   end
 
+  def show_semester_year_pmfs
+    # @semester_year_pmfs = SemesterYearPmf.all.order("year DESC")
+  end
+
 # Must load all action
   def load_announcement_type
     @announcement_types = AnnouncementType.all
