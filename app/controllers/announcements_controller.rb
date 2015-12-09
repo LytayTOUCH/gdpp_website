@@ -64,8 +64,7 @@ class AnnouncementsController < ApplicationController
         :open_bid_doc_date,
         :announcement_file,
         :bidding_file,
-
-        :public
+        :publish
         )
     end
 

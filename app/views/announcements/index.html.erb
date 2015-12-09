@@ -14,7 +14,7 @@
           <!-- <th>Open register</th>
           <th>Close submit</th>
           <th>Open bidding</th> -->
-          <th><%= t('table.announcement.public') %></th>
+          <th><%= t('table.announcement.publish') %></th>
           <th><%= t('table.announcement.actions') %></th>
         </tr>
       </thead>
@@ -30,8 +30,8 @@
             <td> <%= announcement.close_submit_date %> </td>
             <td> <%= announcement.open_bid_doc_date %> </td> -->
             <td>
-            <%= "<p class='btn btn-xs btn-success' >Yes</p>".html_safe if announcement.public == true %>
-            <%= "<p class='btn btn-xs btn-danger' >No</p>".html_safe if announcement.public == false %>
+            <%= "<p class='btn btn-xs btn-success' >Yes</p>".html_safe if announcement.publish == true %>
+            <%= "<p class='btn btn-xs btn-danger' >No</p>".html_safe if announcement.publish == false %>
             </td>
             <td>
             <%= link_to t('form.actions.edit'), edit_announcement_path(announcement) , class: "btn btn-xs btn-primary"  %> 
