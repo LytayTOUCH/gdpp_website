@@ -1,0 +1,44 @@
+</div>
+    <!-- main content -->
+</div>
+  <!-- full width content -->
+  <div class="main-footer col-md-12 no-padding">
+      <!-- footer-top -->
+      <div class="footer-top">
+        <!-- footer-top -->
+      </div>  
+      <!-- /footer-top -->
+      <!-- footer-content -->
+        <div class="footer-content background-color-fore has-padding col-md-12">
+          <!-- widget box -->
+<<<<<<< HEAD
+          <div class="footer-widget-box col-md-៥ pull-left">
+            <h2>អាស័យដ្ឋានទំនាក់ទំនង</h2>
+            <h2>អគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណ:នៃសេដ្ឋកិច្ច និង ហិរញ្ញវត្ថុ</h2>
+            <h2>ផ្លូវលេខ ៩២ សង្កាត់វត្តភ្នំ ខ័ណ្ឌពេញ រាជធានីភ្នំពេញ</h2>
+          </div>
+          <!-- /widget box  -->
+          
+          <div class="footer-widget-box col-md-3 pull-right">
+            <h2>ទូរស័ព្ទ: ០១២ ១២៣ ៤៥៦</h2>
+            <h2>ទូរសារ: ០១២ ១២៣ ៤៥៦</h2>
+            <h2>សារអេឡិចត្រូនិច: gdpp@mef.gov.kh</h2>
+=======
+          <div class="footer-widget-box widget-box col-md-5 pull-right ">
+            <h2 style="border-bottom:1px solid #fff;" ><%= t('website.label.contact') %></h2>
+            <p > <%= t('website.label.address')+" ៖​​ #{@contact.address}"  %> </p>
+            <p > <%= t('website.label.phone') +" ៖​​ #{@contact.phone}"  %> </p>
+            <p > <%= t('website.label.fax')+" ៖​​ #{@contact.fax}"  %> </p>
+            <p > <%= t('website.label.email')+" ៖​​ #{@contact.email}"  %> </p>
+>>>>>>> contact_dev
+          </div>
+        </div>
+        <!-- /footer-content -->
+        <!-- bottom-footer -->
+        <div class="bottom-footer color-white background-color-3 has-padding col-md-12">
+          <%= t('website.copy_right') %>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
