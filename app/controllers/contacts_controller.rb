@@ -4,26 +4,7 @@ class ContactsController < ApplicationController
   layout 'administrator'
   
   def index
-    @contacts = Contact.all
-  end
-
-  def show
-    @contact = Contact.find(params[:id])
-  end
-
-  def new
-    @contact = Contact.new
-  end
-
-  def create
-    @contact = Contact.new(contact_params)
-    if @contact.save
-      flash[:notice] = "Create success!"
-      redirect_to contacts_path
-    else
-      flash[:warning] = "Create unsuccess!"
-      render "new"
-    end
+    @contact = Contact.first
   end
 
   def edit
@@ -41,18 +22,12 @@ class ContactsController < ApplicationController
       render "edit"
     end
   end
-  
-  def destroy
-    @contact.destroy
-    flash[:notice] = "Delete success"
-    redirect_to contacts_path
-  end
 
   private
   def set_contact
     @contact = Contact.find(params[:id])
   end
   def contact_params
-    params.require(:contact).permit(:location_name, :phone_one, :phone_two, :phone_three, :email_one, :email_two, :email_three, :address_one, :address_two, :address_three)
+    params.require(:contact).permit(:address, :phone, :fax, :email, :latitude, :longitude, :zoom_level)
   end
 end

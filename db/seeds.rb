@@ -291,3 +291,6 @@ end
 ].each do |law_category|
   LawCategory.create_with(name: law_category[:name]).find_or_create_by(name: law_category[:name])
 end
+if Contact.all.blank?
+  Contact.create_with(address: 'St.92, Sangkat Wat Phnom, Khan Daun Penh, Phnom Penh, Cambodia', phone: '855-23-724 664', fax: '855-23-427 798', email: 'admin@mef.gov.kh', latitude: 11.541079, longitude: 104.8870254, zoom_level: 13 ).find_or_create_by(phone: '855-23-427 798')
+end

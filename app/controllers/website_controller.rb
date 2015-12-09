@@ -1,5 +1,5 @@
 class WebsiteController < ApplicationController
-  before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements, :load_law_categories, :load_procurement_methods, :load_org_structure_categories
+  before_action :load_announcement_type, :load_procurement_category, :load_newest_announcements, :load_law_categories, :load_procurement_methods, :load_org_structure_categories, :load_contact
   def index
     @announcement = Announcement.limit(6).sorted_by_date
     @law_regulations = LawRegulation.limit(4).sorted_by_date
@@ -10,10 +10,6 @@ class WebsiteController < ApplicationController
   def home
   end
 
-  # def contact
-
-  # end
-
   def show_public_services
     @public_services = PublicService.paginate(:page => params[:page], :per_page => 10)
   end
@@ -21,11 +17,9 @@ class WebsiteController < ApplicationController
   def show_question_answer
     @faqs = Faq.all
   end
-
+load_announcement_type, :load_procurement_ca
   def show_contact
-    @contacts = Contact.all
-    puts "============================"
-    puts @contacts.inspect
+    @contact = Contact.first
   end
 
 # Procurement entity
@@ -74,7 +68,7 @@ class WebsiteController < ApplicationController
 
 # other menus
   def show_announcements
-    @announcements = Announcement.where(announcement_type_id: params[:type_id], publish: true ).sorted_by_date
+    @announcements = Announcement.where(announcement_type_id: params[:type_id], public: true ).sorted_by_date
   end
 
   def show_announcement
@@ -135,6 +129,9 @@ class WebsiteController < ApplicationController
 
   def load_org_structure_categories
     @org_structure_categories = OrgStructureCategory.all
+  end
+  def load_contact
+    @contact = Contact.first
   end
 
 end
