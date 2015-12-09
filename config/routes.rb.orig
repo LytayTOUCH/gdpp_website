@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'show_public_services' => 'website#show_public_services'
   get 'faq_in_website'=> 'website#show_question_answer'
-  get 'contact' => 'website#show_contact'
+  get 'show_contact' => 'website#show_contact', as: 'show_contact'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
   get 'procurement_entity_ministry' => 'website#show_procurement_entity_ministry'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'bidding_document' => 'website#show_bidding_document'
   get 'planning_approval_correction' => 'website#show_planning_approval_correction'
 
-  get  'gdpp_role' => 'website#show_gdpp_role'
+  get 'gdpp_role' => 'website#show_gdpp_role'
   get 'gdpp_structure' => 'website#show_gdpp_structure'
 
   get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
@@ -24,6 +24,22 @@ Rails.application.routes.draw do
   get 'show_procurement_entities/:category_id' => 'website#show_procurement_entities', as: 'show_procurement_entities'
 
   get 'show_procurement_plans/:type' => 'website#show_procurement_plans', as: 'show_procurement_plans'
+
+  get 'show_law_regulations/:law_category_id' => 'website#show_law_regulations', as: 'show_law_regulations'
+
+  get 'show_law_regulation/:id' => 'website#show_law_regulation', as: 'show_law_regulation'
+
+  get 'show_awarding_contracts/:procurement_method_id' => 'website#show_awarding_contracts', as: 'show_awarding_contracts'
+
+  get 'show_awarding_contract/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'
+
+  get 'show_org_structures/:org_structure_category_id' => 'website#show_org_structures', as: 'show_org_structures'
+
+<<<<<<< HEAD
+  get 'show_quater_years_pfms' => 'website#show_quater_years_pfms', as: 'show_quater_years_pfms'
+=======
+  get 'show_purchase_orders' => 'website#show_purchase_orders'
+>>>>>>> purchase_order_dev
 
   resources :administrator do
     collection do
@@ -35,10 +51,8 @@ Rails.application.routes.draw do
       resources :public_services
       resources :faqs
       resources :org_structures
+      resources :org_structure_categories
       resources :procurement_plans
-<<<<<<< HEAD
-      resources :image_slides
-=======
       resources :procurement_methods
       resources :awarding_contracts
       resources :admins
@@ -47,8 +61,14 @@ Rails.application.routes.draw do
           get 'edit' => 'current_profiles#edit'
         end
       end
-      
->>>>>>> master
+      resources :law_categories
+      resources :contacts
+      resources :image_slides
+<<<<<<< HEAD
+      resources :quater_years_pfms
+=======
+      resources :purchase_orders
+>>>>>>> purchase_order_dev
     end
   end
 
@@ -63,7 +83,8 @@ Rails.application.routes.draw do
   # get 'destroy_budget_source/:id' => 'administrator#edit_budget_source', as: "destroy_budget_source"
   # patch 'update_budget_source/:id' => 'administrator#update_budget_source' as: 
 
-  devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
+
+  devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations], :controller => {:registrations => :registrations}
   as :admin do
     # get 'administrator/login' => 'devise/sessions#new', as: :administrator_login
     # delete 'administrator/logout' => 'devise/sessions#destroy', as: :administrator_logout

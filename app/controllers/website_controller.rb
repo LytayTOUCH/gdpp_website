@@ -66,6 +66,10 @@ class WebsiteController < ApplicationController
     @org_structures = OrgStructure.all
   end
 
+  def show_purchase_orders
+    @purchase_orders = PurchaseOrder.all
+  end
+
 # other menus
   def show_announcements
     @announcements = Announcement.where(announcement_type_id: params[:type_id], public: true ).sorted_by_date

@@ -1,0 +1,10 @@
+<div class="col-md-5 row" >
+  <%= simple_form_for @purchase_order do |f| %>
+    <%= f.input :project_name %>
+    <%= f.input :procurement_method_id, collection:@procurement_methods %>
+    <%= f.input :procurement_category_id, collection: @procurement_categories %>
+    <%= f.input :purchase_order_date, as: :date_picker %>
+    <%= f.input :document, as: :file %> 
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
