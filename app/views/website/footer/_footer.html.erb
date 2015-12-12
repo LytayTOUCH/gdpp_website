@@ -1,4 +1,4 @@
-    </div>
+</div>
     <!-- main content -->
 </div>
 <!-- full width content -->
@@ -15,23 +15,22 @@
           <div class="footer-widget-box col-md-៥ pull-left">
             <h2>អាស័យដ្ឋានទំនាក់ទំនង</h2>
             <h2>អគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណ:នៃសេដ្ឋកិច្ច និង ហិរញ្ញវត្ថុ</h2>
-            <h2>ផ្លូវលេខ ៩២ សង្កាត់វត្តភ្នំ ខ័ណ្ឌពេញ រាជធានីភ្នំពេញ</h2>
+            <h2><%= t('website.label.address')+" ៖​​ #{@contact.address}"  %></h2>
           </div>
           <!-- /widget box  -->
           
           <div class="footer-widget-box col-md-3 pull-right">
-            <h2>ទូរស័ព្ទ: ០១២ ១២៣ ៤៥៦</h2>
-            <h2>ទូរសារ: ០១២ ១២៣ ៤៥៦</h2>
-            <h2>សារអេឡិចត្រូនិច: gdpp@mef.gov.kh</h2>
+            <h2><%= t('website.label.phone') +" ៖​​ #{@contact.phone}"  %></h2>
+            <h2><%= t('website.label.fax')+" ៖​​ #{@contact.fax}"  %></h2>
+            <h2><%= t('website.label.email')+" ៖​​ #{@contact.email}"  %></h2>
           </div>
           <!-- /widget box  -->
 
         </div>
-      <!-- /footer-content -->
-
-      <!-- bottom-footer -->
+        <!-- /footer-content -->
+        <!-- bottom-footer -->
         <div class="bottom-footer color-white background-color-3 has-padding col-md-12">
-          រក្សាសិទ្ធិ ©២០១៤​ អគ្គនាយកដ្ឋានលទ្ធកម្មសាធារណៈ
+          <%= t('website.copy_right') %>
         </div>
       <!-- /bottom-footer -->
     </div>
@@ -40,6 +39,6 @@
       </div>
       <!-- /.main container  -->
     </div>
-   
+    </div>
 </div>
 <!-- /container  -->

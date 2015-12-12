@@ -30,8 +30,6 @@ Rails.application.routes.draw do
 
   get 'show_law_regulation/:id' => 'website#show_law_regulation', as: 'show_law_regulation'
 
-  get 'ច្បាប់និងលិខិតបទដ្ឋានកត្តិយុទ្ធ/:name' => 'website#show_law_regulations_by_name', as: 'show_law_regulations_by_name'
-
   get 'show_awarding_contracts/:procurement_method_id' => 'website#show_awarding_contracts', as: 'show_awarding_contracts'
 
   get 'show_awarding_contract/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'
@@ -39,7 +37,8 @@ Rails.application.routes.draw do
   get 'show_org_structures/:org_structure_category_id' => 'website#show_org_structures', as: 'show_org_structures'
 
   get 'show_purchase_orders' => 'website#show_purchase_orders'
-
+  get 'solution_conflict' => 'website#show_conflict'
+  get 'show_quater_years_pfms' => 'website#show_quater_years_pfms', as: 'show_quater_years_pfms'
   resources :administrator do
     collection do
       resources :budget_sources
@@ -64,6 +63,7 @@ Rails.application.routes.draw do
       resources :contacts
       resources :semester_year_pmfs
       resources :image_slides
+      resources :quater_years_pfms
       resources :purchase_orders
     end
   end
@@ -71,15 +71,16 @@ Rails.application.routes.draw do
   # # budget source
   # get 'budget_sources' => 'administrator#budget_sources'
   # post 'create_budget_source' => 'administrator#create_budget_source'
-  
+
   # get 'new_budget_source/new' => 'administrator#new_budget_source', as: "new_budget_source"
-  
+
   # get 'budget_source/:id' => 'administrator#show_budget_source', as: "budget_source"
   # get 'edit_budget_source/:id/edit' => 'administrator#edit_budget_source', as: "edit_budget_source"
   # get 'destroy_budget_source/:id' => 'administrator#edit_budget_source', as: "destroy_budget_source"
-  # patch 'update_budget_source/:id' => 'administrator#update_budget_source' as: 
+  # patch 'update_budget_source/:id' => 'administrator#update_budget_source' as:
 
-  devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations]
+
+  devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations], :controller => {:registrations => :registrations}
   as :admin do
     # get 'administrator/login' => 'devise/sessions#new', as: :administrator_login
     # delete 'administrator/logout' => 'devise/sessions#destroy', as: :administrator_logout
