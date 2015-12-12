@@ -102,7 +102,7 @@ km:
         project_name: 'ឈ្មោះគម្រោង'
         procurement_category_id: 'ប្រភេទលទ្ធកម្ម'
         procurement_method_id: 'វិធីសាស្ត្រលទ្ធកម្ម'
-        purchase_order_date: 'ការបរិច្ឆេទបញ្ជាទិញ'
+        purchase_order_date: 'កាលបរិច្ឆេទបញ្ជាទិញ'
         document: 'ឯកសារភ្ជាប់'
 
   form:
@@ -233,7 +233,7 @@ km:
       project_name: 'ឈ្មោះគម្រោង'
       procurement_category: 'ប្រភេទលទ្ធកម្ម'
       procurement_method: 'វិធីសាស្ត្រលទ្ធកម្ម'
-      purchase_order_date: 'ការបរិច្ឆេទបញ្ជាទិញ'
+      purchase_order_date: 'កាលបរិច្ឆេទបញ្ជាទិញ'
       document: 'ឯកសារភ្ជាប់'
     semester_year_pmf:
       title: 'ចំណងជើង'

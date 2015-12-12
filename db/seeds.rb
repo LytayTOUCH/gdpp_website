@@ -294,3 +294,13 @@ end
 if Contact.all.blank?
   Contact.create_with(address: 'St.92, Sangkat Wat Phnom, Khan Daun Penh, Phnom Penh, Cambodia', phone: '855-23-724 664', fax: '855-23-427 798', email: 'admin@mef.gov.kh', latitude: 11.541079, longitude: 104.8870254, zoom_level: 13 ).find_or_create_by(phone: '855-23-427 798')
 end
+
+[
+  {name: 'រចនាសម្ព័ន្ធស្ថាប័ន'},
+  {name: 'នាយកដ្ឋានរដ្ឋាបាល បុគ្គលិក និងផែនការ'},
+  {name: 'នាយកដ្ឋានគ្រប់គ្រងលទ្ធកម្មទំនិញ'},
+  {name: 'នាយកដ្ឋានគ្រប់គ្រងលទ្ធកម្មសំណង់ និងសេវា'},
+  {name: 'នាយកដ្ឋានគ្រប់គ្រងលទ្ធកម្មរដ្ឋបាលថ្នាក់ក្រោមជាតិ'}
+].each do |org_cat|
+  OrgStructureCategory.create_with(org_cat).find_or_create_by(name: org_cat[:name])
+end

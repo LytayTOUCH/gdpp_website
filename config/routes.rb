@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get 'show_org_structures/:org_structure_category_id' => 'website#show_org_structures', as: 'show_org_structures'
 
   get 'show_purchase_orders' => 'website#show_purchase_orders'
+  get 'solution_conflict' => 'website#show_conflict'
   get 'show_quater_years_pfms' => 'website#show_quater_years_pfms', as: 'show_quater_years_pfms'
   resources :administrator do
     collection do
