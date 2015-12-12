@@ -1,0 +1,27 @@
+<br><br>
+<div class="panel panel-primary" >
+  <div class="panel-heading" > <%= t('dashboard.navigator_menu.quater_years_pfm') %> </div>
+  <div class="panel-body"> 
+    <div class="col-sm-12" >
+      <div class="row">  
+        <% @quater_years_pfms.each do |qyp| %>
+        <div class="col-md-2 text-center"  >
+          <div style="border:1px solid #eee; padding:5px;" >
+            <b><%= qyp.title %></b><br>
+            <%= link_to qyp.document.url, target: '_new' do %>
+              <%= image_tag qyp.document.url(:thumb),  style: 'margin: 5px;' %>
+            <% end %>
+            <div>
+              <%= link_to t('form.actions.edit'), edit_quater_years_pfm_path(qyp), class: "" %> |
+              <%= link_to t('form.actions.delete'), { action: :destroy, id: qyp.id}, method: :delete, data: { confirm: "Are you sure to delete [ #{qyp.title} ] ?"  }, style: 'color: red;' %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer" >
+    <%= link_to t('form.button.add'),  new_quater_years_pfm_path, class: 'btn btn-primary' %>
+  </div>
+</div>

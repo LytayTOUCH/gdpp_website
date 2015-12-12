@@ -3,7 +3,7 @@
     <b><%= t('dashboard.navigator_menu.announcement') %></b>
   </div>
   <div class="panel-body" >
-    <table class="table table-bordered datatable" id="datatables" >
+    <table class="table table-bordered datatable" >
       <thead>
         <tr class="text-nowrap" >
           <th>#</th>
@@ -14,7 +14,7 @@
           <!-- <th>Open register</th>
           <th>Close submit</th>
           <th>Open bidding</th> -->
-          <th><%= t('table.announcement.public') %></th>
+          <th><%= t('table.announcement.publish') %></th>
           <th><%= t('table.announcement.actions') %></th>
         </tr>
       </thead>
@@ -30,12 +30,13 @@
             <td> <%= announcement.close_submit_date %> </td>
             <td> <%= announcement.open_bid_doc_date %> </td> -->
             <td>
-            <%= announcement.public == true ? "<p class='btn btn-xs btn-warning' >Yes</p>".html_safe : "<p class='btn btn-xs btn-danger' >No</p>".html_safe%>
+            <%= "<p class='btn btn-xs btn-success' >Yes</p>".html_safe if announcement.publish == true %>
+            <%= "<p class='btn btn-xs btn-danger' >No</p>".html_safe if announcement.publish == false %>
             </td>
             <td>
-            <%= link_to t('form.actions.edit'), edit_announcement_path(announcement) , class: "btn btn-xs btn-success" %> 
-            <%= link_to t('form.actions.show'), announcement_path(announcement) , class: "btn btn-xs btn-primary" %>
-            <%= link_to t('form.actions.delete'),  { action: :destroy, id: announcement.id}, method: :delete, data: { confirm: t('message.confirm.delete') + announcement.title + '?' }, class: "btn btn-xs btn-danger" %>
+            <%= link_to t('form.actions.edit'), edit_announcement_path(announcement) , class: "btn btn-xs btn-primary"  %>
+              <%= link_to t('form.actions.delete'),  { action: :destroy, id: announcement.id}, method: :delete, data: { confirm: t('message.confirm.delete') + announcement.title + '?' }, class: "btn btn-xs btn-danger" %>
+              <%= link_to t('form.actions.show'), announcement_path(announcement) , class: "btn btn-xs btn-primary" %>
             </td>
           </tr>
 
@@ -43,7 +44,7 @@
       </tbody>
 
     </table>
-    
+
   </div>
   <div class="panel-footer" >
     <%= link_to t('form.button.add'), new_announcement_path, class: "btn btn-primary" %>

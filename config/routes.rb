@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'show_public_services' => 'website#show_public_services'
   get 'faq_in_website'=> 'website#show_question_answer'
   get 'show_contact' => 'website#show_contact', as: 'show_contact'
+  get 'show_semester_year_pmfs' => 'website#show_semester_year_pmfs', as: 'show_semester_year_pmfs'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
   get 'procurement_entity_ministry' => 'website#show_procurement_entity_ministry'
@@ -33,6 +34,11 @@ Rails.application.routes.draw do
 
   get 'show_awarding_contract/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'
 
+  get 'show_org_structures/:org_structure_category_id' => 'website#show_org_structures', as: 'show_org_structures'
+
+  get 'show_purchase_orders' => 'website#show_purchase_orders'
+  get 'solution_conflict' => 'website#show_conflict'
+  get 'show_quater_years_pfms' => 'website#show_quater_years_pfms', as: 'show_quater_years_pfms'
   resources :administrator do
     collection do
       resources :budget_sources
@@ -43,6 +49,7 @@ Rails.application.routes.draw do
       resources :public_services
       resources :faqs
       resources :org_structures
+      resources :org_structure_categories
       resources :procurement_plans
       resources :procurement_methods
       resources :awarding_contracts
@@ -54,20 +61,23 @@ Rails.application.routes.draw do
       end
       resources :law_categories
       resources :contacts
+      resources :semester_year_pmfs
       resources :image_slides
+      resources :quater_years_pfms
+      resources :purchase_orders
     end
   end
 
   # # budget source
   # get 'budget_sources' => 'administrator#budget_sources'
   # post 'create_budget_source' => 'administrator#create_budget_source'
-  
+
   # get 'new_budget_source/new' => 'administrator#new_budget_source', as: "new_budget_source"
-  
+
   # get 'budget_source/:id' => 'administrator#show_budget_source', as: "budget_source"
   # get 'edit_budget_source/:id/edit' => 'administrator#edit_budget_source', as: "edit_budget_source"
   # get 'destroy_budget_source/:id' => 'administrator#edit_budget_source', as: "destroy_budget_source"
-  # patch 'update_budget_source/:id' => 'administrator#update_budget_source' as: 
+  # patch 'update_budget_source/:id' => 'administrator#update_budget_source' as:
 
 
   devise_for :admin, skip: [:sessions, :passwords, :confirmations, :registrations], :controller => {:registrations => :registrations}

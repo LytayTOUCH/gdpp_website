@@ -1,0 +1,10 @@
+<%= simple_form_for(@semester_year_pmf, html: { multipart: true }) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :year %>
+  <%= f.input :file_attachment, as: :file %>
+  <% if @semester_year_pmf.new_record? %>
+    <%= f.submit t('form.button.create'), class: 'btn btn-primary'%>
+  <% else %>
+    <%= f.submit t('form.button.update'), class: 'btn btn-primary'%>
+  <% end %>
+<% end %>

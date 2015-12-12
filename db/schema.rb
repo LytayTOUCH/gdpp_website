@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116070939) do
+ActiveRecord::Schema.define(version: 20151128014955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20151116070939) do
     t.date     "open_register_date"
     t.date     "close_submit_date"
     t.date     "open_bid_doc_date"
-    t.boolean  "public"
+    t.boolean  "publish"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "announcement_file_file_name"
@@ -90,18 +90,15 @@ ActiveRecord::Schema.define(version: 20151116070939) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "location_name", limit: 80, null: false
-    t.string   "email_one"
-    t.string   "email_two"
-    t.string   "email_three"
-    t.string   "phone_one"
-    t.string   "phone_two"
-    t.string   "phone_three"
-    t.text     "address_one"
-    t.text     "address_two"
-    t.text     "address_three"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "address"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "zoom_level"
   end
 
   create_table "faqs", force: :cascade do |t|
@@ -146,6 +143,12 @@ ActiveRecord::Schema.define(version: 20151116070939) do
 
   add_index "law_regulations", ["law_category_id"], name: "index_law_regulations_on_law_category_id", using: :btree
 
+  create_table "org_structure_categories", force: :cascade do |t|
+    t.string   "name",       limit: 80, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "org_structures", force: :cascade do |t|
     t.string   "title",                            null: false
     t.text     "description"
@@ -155,7 +158,10 @@ ActiveRecord::Schema.define(version: 20151116070939) do
     t.datetime "org_structure_image_updated_at"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "org_structure_category_id"
   end
+
+  add_index "org_structures", ["org_structure_category_id"], name: "index_org_structures_on_org_structure_category_id", using: :btree
 
   create_table "procurement_categories", force: :cascade do |t|
     t.string   "name"
@@ -209,6 +215,43 @@ ActiveRecord::Schema.define(version: 20151116070939) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "purchase_orders", force: :cascade do |t|
+    t.string   "project_name",            null: false
+    t.integer  "procurement_method_id"
+    t.integer  "procurement_category_id"
+    t.date     "purchase_order_date"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+  end
+
+  add_index "purchase_orders", ["procurement_category_id"], name: "index_purchase_orders_on_procurement_category_id", using: :btree
+  add_index "purchase_orders", ["procurement_method_id"], name: "index_purchase_orders_on_procurement_method_id", using: :btree
+
+  create_table "quater_years_pfms", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+  end
+
+  create_table "semester_year_pmfs", force: :cascade do |t|
+    t.string   "title",                        null: false
+    t.string   "year"
+    t.string   "file_attachment_file_name"
+    t.string   "file_attachment_content_type"
+    t.integer  "file_attachment_file_size"
+    t.datetime "file_attachment_updated_at"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "admin_id"
     t.string   "name"
@@ -224,6 +267,9 @@ ActiveRecord::Schema.define(version: 20151116070939) do
   add_foreign_key "announcements", "procurement_entities"
   add_foreign_key "awarding_contracts", "procurement_methods"
   add_foreign_key "law_regulations", "law_categories"
+  add_foreign_key "org_structures", "org_structure_categories"
   add_foreign_key "procurement_entities", "procurement_categories"
   add_foreign_key "procurement_plans", "procurement_entities"
+  add_foreign_key "purchase_orders", "procurement_categories"
+  add_foreign_key "purchase_orders", "procurement_methods"
 end

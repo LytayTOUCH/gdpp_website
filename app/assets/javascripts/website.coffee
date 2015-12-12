@@ -2,7 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'ready page:load', ->
-  $('#datatables').DataTable 'language':
+  $('.datetimepicker').datetimepicker()
+  
+  $('.datatable').DataTable 'language':
     'lengthMenu': 'បង្ហាញ _MENU_ ក្នុងមួយទំព័រ'
     'zeroRecords': 'មិនមានទិន្នន័យដែលបានស្វែងរក - សូមទោស'
     'info': 'បង្ហាញ _PAGE_ នៃ _PAGES_ ទំព័រ'

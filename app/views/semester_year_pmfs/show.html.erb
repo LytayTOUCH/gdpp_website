@@ -1,0 +1,22 @@
+<br>
+<div class="panel panel-primary" >
+  <div class="panel-heading" >
+    <b><%= @semester_year_pmf.title %></b>
+  </div>
+  <div class="panel-body" >
+    <p style="line-height: 30px;" >
+      
+      <%= t('table.semester_year_pmf.title') %> <%= " : #{@semester_year_pmf.title}" %><br>
+      <%= t('table.semester_year_pmf.year') + " : #{@semester_year_pmf.year}" %><br>
+      <%= t('table.semester_year_pmf.file_name') + " : " %>
+      <% if @semester_year_pmf.file_attachment? %>
+        <%= link_to @semester_year_pmf.file_attachment_file_name, @semester_year_pmf.file_attachment.url, target: "_blank" %>
+      <% end %>
+
+    </p>
+  </div>
+  <div class="panel-footer" >
+    <%= link_to "Back", semester_year_pmfs_path, class: 'btn btn-sm btn-primary' %>
+    <%= link_to "Edit", edit_semester_year_pmf_path(@semester_year_pmf), class: 'btn btn-sm btn-primary' %>
+  </div>
+</div>

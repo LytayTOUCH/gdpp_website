@@ -1,42 +1,17 @@
 <!-- content -->      
 <div class="content  col-md-8 body">
-
     <div>
       <h1 class="content-main-title" ><%= "អាស័យដ្ឋានទំនាក់ទំនង" %></h1>
       <br>
-      <% @contacts.each do |contact| %>
-        <tr>
-          <td>Location name : <b><%= contact.location_name %></b></td>
-        </tr><hr>
-        <tr>  
-          <td>
-            <b>Phone numbers</b><br>
-            First number : <%= check_contact_available(contact.phone_one) %><br>
-            Second number : <%= check_contact_available(contact.phone_two) %><br>
-            Third number : <%= check_contact_available(contact.phone_three) %>
-          </td>  
-        </tr><hr> 
-        <tr>  
-          <td>
-            <b>Email</b><br>
-            First email : <%= check_contact_available(contact.email_one) %><br> 
-            Second email : <%= check_contact_available(contact.email_two) %><br> 
-            Third email : <%= check_contact_available(contact.email_three) %> 
-          </td>  
-        </tr><hr>
+      <p><%= "<b>អាស័យដ្ឋាន : </b> #{@contact.address}".html_safe %></p>
+      <p><%= "<b>លេខទូរស័ព្ទ : </b> #{@contact.phone}".html_safe %></p>
+      <p><%= "<b>ទូរសារ : </b> #{@contact.fax}".html_safe %></p>
+      <p><%= "<b>អ៊ីមែល : </b> #{@contact.email}".html_safe %></p>
 
-        <tr>  
-          <td>
-            <b>Address</b><br>
-            First address : <%= check_contact_available(contact.address_one) %><br> 
-            Second address : <%= check_contact_available(contact.address_two) %><br>
-            Third address : <%= check_contact_available(contact.address_three) %>
-          </td>  
-        </tr><br><br>
-      <% end %>
     </div>
-
-    <div id="map" style="height: 400px" ></div>
-
+    <div class="hide" id="front-map-x"><%= @contact.latitude %></div>
+    <div class="hide" id="front-map-y"><%= @contact.longitude %></div>
+    <div class="hide" id="front-map-z"><%= @contact.zoom_level %></div>
+    <div id="front-map" style="height: 400px" ></div>
 </div>
 <!-- /.content -->
