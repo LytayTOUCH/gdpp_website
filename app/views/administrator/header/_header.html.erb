@@ -12,40 +12,57 @@
           </button>
           <ul class="dropdown-menu">
             <li><%= link_to t('dashboard.navigator_menu.announcement'), announcements_path, class: 'btn btn-default' %></li>
-            <li><%= link_to t('dashboard.navigator_menu.announcement_type'), announcement_types_path, class: 'btn btn-default' %></li>
             <li><%= link_to t('dashboard.navigator_menu.budget_sources'), budget_sources_path, class: 'btn btn-default' %></li>
             <li><%= link_to t('dashboard.navigator_menu.procurement_plan'), procurement_plans_path, class: 'btn btn-default' %></li>
           </ul>
         </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ការអនុវត្តកម្មវិធី PMS <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to t('dashboard.navigator_menu.quater_years_pfm') , quater_years_pfms_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.semester_year_pmf'), semester_year_pmfs_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.purchase_order') , purchase_orders_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.awarding_contract'), awarding_contracts_path, class: 'btn btn-default' %></li>
+          </ul>
+        </div>
+
         <div class="btn-group">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             អំពីស្ថាប័ន <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li><%= link_to t('dashboard.navigator_menu.procurement_entity'), procurement_entities_path, class: 'btn btn-default' %></li>
-            <li><%= link_to t('dashboard.navigator_menu.law_category'), law_categories_path, class: 'btn btn-default' %></li>
             <li><%= link_to t('dashboard.navigator_menu.law_regulation'), law_regulations_path, class: 'btn btn-default' %></li>
             <li><%= link_to t('dashboard.navigator_menu.public_services'), public_services_path, class: 'btn btn-default' %></li>
             <li><%= link_to t('dashboard.navigator_menu.contact'), contacts_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.faq'), faqs_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.org_structure'), org_structures_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.org_structure_category'), org_structure_categories_path, class: 'btn btn-default' %></li>
           </ul>
         </div>
-        <%= link_to t('dashboard.navigator_menu.faq'), faqs_path, class: 'btn btn-default' %>
-        <%= link_to t('dashboard.navigator_menu.org_structure'), org_structures_path, class: 'btn btn-default' %>
-        <%= link_to t('dashboard.navigator_menu.procurement_method'), procurement_methods_path, class: 'btn btn-default' %>
-        <%= link_to t('dashboard.navigator_menu.awarding_contract'), awarding_contracts_path, class: 'btn btn-default' %>
-        <%= link_to t('dashboard.navigator_menu.contact'), contacts_path, class: 'btn btn-default' %>
-        <%= link_to t('dashboard.navigator_menu.org_structure_category'), org_structure_categories_path, class: 'btn btn-default' %>
-        <%= link_to t('dashboard.navigator_menu.semester_year_pmf'), semester_year_pmfs_path, class: 'btn btn-default' %>
 
-	<% if current_admin.admin == true %>
-            <%= link_to admins_path, class: 'btn btn-default' do %>
-              <%= t('dashboard.navigator_menu.user_manager') %>
-            <% end %>
-          <% end %>
-	  <%= link_to t('dashboard.navigator_menu.image_slide') , image_slides_path, class: 'btn btn-default' %>
-    <%= link_to t('dashboard.navigator_menu.quater_years_pfm') , quater_years_pfms_path, class: 'btn btn-default' %>
-    <%= link_to t('dashboard.navigator_menu.purchase_order') , purchase_orders_path, class: 'btn btn-default' %>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            កំណត់បុរេទិន្នន័យ <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to t('dashboard.navigator_menu.procurement_entity'), procurement_entities_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.procurement_method'), procurement_methods_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.law_category'), law_categories_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.announcement_type'), announcement_types_path, class: 'btn btn-default' %></li>
+            <li><%= link_to t('dashboard.navigator_menu.image_slide') , image_slides_path, class: 'btn btn-default' %></li>
+          </ul>
         </div>
+
+        <% if current_admin.admin == true %>
+          <%= link_to admins_path, class: 'btn btn-default' do %>
+            <%= t('dashboard.navigator_menu.user_manager') %>
+          <% end %>
+        <% end %>
+        </div>
+
         <div class="col-xs-3" style="text-align:right" >
           <div class= 'btn btn-default'>
             <i class="fa fa-user"></i>
