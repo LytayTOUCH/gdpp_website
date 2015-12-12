@@ -35,7 +35,7 @@
         <ul style="list-style:none">
           <% @law_categories.each do |law_category| %>
             <li> 
-              <%= link_to law_category.name, show_law_regulations_by_name_path(name: law_category.name) %> 
+              <%= link_to law_category.name, show_law_regulations_path(law_category_id: law_category.id ) %>
             </li>
           <% end %>  
         </ul>  
