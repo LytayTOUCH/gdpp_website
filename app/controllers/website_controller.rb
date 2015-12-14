@@ -88,13 +88,7 @@ class WebsiteController < ApplicationController
   end
 
   def show_law_regulations_by_name
-    p '+++++++++++++++++++'
-    p request.original_url
-    p '+++++++++++++++++++'
-    p params[:name]
-    p '+++++++++++++++++++'
     lc = LawCategory.find_by(name: params[:name])
-    
     # @law_regulation = LawRegulation.find(LawCategory.find_by(name: params[:name]).id)
     @name = params[:name]
     @law_regulations = lc.law_regulations

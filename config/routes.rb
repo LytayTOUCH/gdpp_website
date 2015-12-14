@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root 'website#index'
   # get 'contact' => 'website#contact'
 
-  get 'show_public_services' => 'website#show_public_services'
-  get 'faq_in_website'=> 'website#show_question_answer'
-  get 'show_contact' => 'website#show_contact', as: 'show_contact'
+  get 'សេវាសាធារណៈ' => 'website#show_public_services', as: 'show_public_services'
+  get 'សំណួរចំលើយ'=> 'website#show_question_answer', as: 'faq_in_website'
+  get 'ទំនាក់ទំនង' => 'website#show_contact', as: 'show_contact'
   get 'show_semester_year_pmfs' => 'website#show_semester_year_pmfs', as: 'show_semester_year_pmfs'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
@@ -26,7 +26,9 @@ Rails.application.routes.draw do
 
   get 'show_procurement_plans/:type' => 'website#show_procurement_plans', as: 'show_procurement_plans'
 
-  get 'show_law_regulations/:law_category_id' => 'website#show_law_regulations', as: 'show_law_regulations'
+  # get 'show_law_regulations/:law_category_id' => 'website#show_law_regulations', as: 'show_law_regulations'
+
+  get 'ច្បាប់និងលិខិតបទដ្ឋានកត្តិយុទ្ធ/:name' => 'website#show_law_regulations_by_name', as: 'show_law_regulations_by_name'
 
   get 'show_law_regulation/:id' => 'website#show_law_regulation', as: 'show_law_regulation'
 
@@ -36,8 +38,8 @@ Rails.application.routes.draw do
 
   get 'show_org_structures/:org_structure_category_id' => 'website#show_org_structures', as: 'show_org_structures'
 
-  get 'show_purchase_orders' => 'website#show_purchase_orders'
-  get 'solution_conflict' => 'website#show_conflict'
+  get 'ការបញ្ជាទិញ' => 'website#show_purchase_orders', as: 'show_purchase_orders'
+  get 'ដំណោះស្រាយវិវាទ' => 'website#show_conflict', as: 'solution_conflict'
   get 'show_quater_years_pfms' => 'website#show_quater_years_pfms', as: 'show_quater_years_pfms'
   resources :administrator do
     collection do
