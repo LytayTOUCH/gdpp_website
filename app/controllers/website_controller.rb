@@ -24,7 +24,8 @@ class WebsiteController < ApplicationController
 
 # Procurement entity
   def show_procurement_entities
-    @procurement_entities = ProcurementEntity.where(procurement_category_id: params[:category_id]).paginate(:page => params[:page], :per_page => 16)
+    procurement_category = ProcurementCategory.find_by(name: params[:name])
+    @procurement_entities = ProcurementEntity.where(procurement_category_id: procurement_category.id).paginate(:page => params[:page], :per_page => 16)
   end
 
   def show_procurement_entity_city_province
@@ -58,9 +59,6 @@ class WebsiteController < ApplicationController
 
   end
 
-  def show_quater_years_pfms
-    @quater_years_pfms = QuaterYearsPfm.order(title: :desc)
-  end
 
   def show_gdpp_structure
     @org_structures = OrgStructure.all
@@ -72,7 +70,8 @@ class WebsiteController < ApplicationController
 
 # other menus
   def show_announcements
-    @announcements = Announcement.where(announcement_type_id: params[:type_id], publish: true ).sorted_by_date
+    announcement_type = AnnouncementType.find_by(name: params[:name])
+    @announcements = Announcement.where(announcement_type_id: announcement_type.id, publish: true ).sorted_by_date
   end
 
   def show_announcement
@@ -80,7 +79,11 @@ class WebsiteController < ApplicationController
   end
 
   def show_procurement_plans
-    @procurement_plans = ProcurementPlan.where(procurement_plan_type: params[:type])
+    if !params[:name].eql?('ផែនការលទ្ធកម្មដើមឆ្នាំ')
+      @procurement_plans = ProcurementPlan.where(procurement_plan_type: 'annual')
+    else
+      @procurement_plans = ProcurementPlan.where(procurement_plan_type: 'adjusted')
+    end
   end
 
   def show_law_regulation
@@ -104,13 +107,13 @@ class WebsiteController < ApplicationController
   end
 
   def show_awarding_contracts
-    @procurement_method = ProcurementMethod.find(params[:procurement_method_id])
-    @awarding_contracts = AwardingContract.where(procurement_method_id: params[:procurement_method_id])
+    procurement_method = ProcurementMethod.find_by(name: params[:name])
+    @awarding_contracts = AwardingContract.where(procurement_method_id: procurement_method.id)
   end
 
   def show_org_structures
-    @org_structure_category = OrgStructureCategory.find(params[:org_structure_category_id])
-    @org_structures = OrgStructure.where(org_structure_category_id: params[:org_structure_category_id])
+    @org_structure_category = OrgStructureCategory.find_by(name: params[:name])
+    @org_structures = OrgStructure.where(org_structure_category_id: @org_structure_category.id)
   end
 
   def show_org_structure
@@ -121,7 +124,8 @@ class WebsiteController < ApplicationController
 
   end
 
-  def show_semester_year_pmfs
+  def show_pfm_attachements
+    @pfm_attachmetns = QuaterYearsPfm.order(title: :desc)
     # @semester_year_pmfs = SemesterYearPmf.all.order("year DESC")
   end
 

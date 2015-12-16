@@ -8,14 +8,14 @@
                     <span class="after-titl" ><%= na.announcement_type.name %> - <%= na.updated_at.strftime("%B %d, %Y") %></span>
                   </div>
                 <% end %>
-        </div>    
+        </div>
     <% end %>
     <div class=" widget-box has-shadow">
         <h2>ដំណឹងស្តីពីការដេញថ្លៃ</h2>
         <ul style="list-style:none">
           <% @announcement_types.each do |announcement_type| %>
-            <li> 
-              <%= link_to announcement_type.name , show_announcements_path(type_id: announcement_type.id ) %> 
+            <li>
+              <%= link_to announcement_type.name , show_announcements_path(announcement_type.name) %>
             </li>
           <% end %>
         </ul>
@@ -23,33 +23,32 @@
 
     <div class=" widget-box has-shadow">
       <h2><%= "ផែនការលទ្ធកម្ម" %></h2>
-      
       <ul style="list-style:none" >
-        <li> <%= link_to "ផែនការលទ្ធកម្មដើមឆ្នាំ ", show_procurement_plans_path(type: "annual" ) %></li>
-        <li> <%= link_to "ផែនការលទ្ធកម្មកែតម្រូវ", show_procurement_plans_path(type: "adjusted" ) %></li>
-      </ul> 
+        <li> <%= link_to "ផែនការលទ្ធកម្មដើមឆ្នាំ", show_procurement_plans_path(name:"ផែនការលទ្ធកម្មដើមឆ្នាំ") %></li>
+        <li> <%= link_to "ផែនការលទ្ធកម្មកែតម្រូវ", show_procurement_plans_path(name:"ផែនការលទ្ធកម្មកែតម្រូវ") %></li>
+      </ul>
     </div>
     <% if  !request.fullpath.end_with?("/","/announcements") %>
       <div class="widget-box has-shadow">
         <h2>ច្បាប់និងលិខិតបទដ្ឋានកត្តិយុទ្ធ</h2>
         <ul style="list-style:none">
           <% @law_categories.each do |law_category| %>
-            <li> 
+            <li>
               <%= link_to law_category.name, show_law_regulations_by_name_path(law_category.name) %>
             </li>
-          <% end %>  
-        </ul>  
+          <% end %>
+        </ul>
       </div>
     <% end %>
     <div class="widget-box has-shadow">
       <h2> <%= "ការប្រគល់កិច្ចសន្យា" %> </h2>
       <ul style="list-style:none" >
         <% @procurement_methods.each do |procurement_method| %>
-          <li> 
-            <%= link_to procurement_method.name, show_awarding_contracts_path(procurement_method_id: procurement_method.id ) %> 
+          <li>
+            <%= link_to procurement_method.name, show_awarding_contracts_path(name: procurement_method.name ) %>
           </li>
-        <% end %>  
-      </ul>  
+        <% end %>
+      </ul>
     </div>
 
 </div>

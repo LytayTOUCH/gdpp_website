@@ -1,6 +1,9 @@
 <div class="content  col-md-8 body">
   <div class="has-padding has-shadow" style="margin-bottom:10px;" >
-    <b><%= "តារាងនៃការផ្សព្វផ្សាយការដេញថ្លៃ "  %></b>
+    <b>
+      <%= "តារាងនៃការផ្សព្វផ្សាយការដេញថ្លៃ - "  %>
+      <%= params[:name] %>
+    </b>
   </div>
   <br>
   <div class="box">
@@ -42,17 +45,17 @@
                 ]
               </span>
               <br>
-              
+
               <i style="font-size: 11px" ><%= "#{t('website.release_date')} #{announcement.updated_at.strftime("%B %d, %Y") }" %></i>
               </td>
               <td style="vertical-align:middle; line-height: 24px;" ><%= announcement.procurement_entity.name %></td>
               <td style="vertical-align:middle; line-height: 24px;" ><%= announcement.budget_source.name %></td>
 
-            </tr>   
+            </tr>
           <% $i +=1; end %>
 
         </tbody>
-        
+
       </table>
     </div><!-- /.box-body -->
   </div><!-- /.box -->

@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'សេវាសាធារណៈ' => 'website#show_public_services', as: 'show_public_services'
   get 'សំណួរចំលើយ'=> 'website#show_question_answer', as: 'faq_in_website'
   get 'ទំនាក់ទំនង' => 'website#show_contact', as: 'show_contact'
-  get 'show_semester_year_pmfs' => 'website#show_semester_year_pmfs', as: 'show_semester_year_pmfs'
 
   get 'procurement_entity_city_province' => 'website#show_procurement_entity_city_province'
   get 'procurement_entity_ministry' => 'website#show_procurement_entity_ministry'
@@ -18,13 +17,13 @@ Rails.application.routes.draw do
   get 'gdpp_role' => 'website#show_gdpp_role'
   get 'gdpp_structure' => 'website#show_gdpp_structure'
 
-  get 'show_announcements/:type_id' => 'website#show_announcements', as: 'show_announcements'
+  get 'តារាងនៃការផ្សព្វផ្សាយការដេញថ្លៃ/:name' => 'website#show_announcements', as: 'show_announcements'
 
-  get 'show_announcement/:id' => 'website#show_announcement', as: 'show_announcement'
+  get 'ពត៌មានលម្អិតនៃការផ្សព្វផ្សាយការដេញថ្លៃ/:id' => 'website#show_announcement', as: 'show_announcement'
 
-  get 'show_procurement_entities/:category_id' => 'website#show_procurement_entities', as: 'show_procurement_entities'
+  get 'ស្ថាប័នអនុវត្តលទ្ធកម្ម/:name' => 'website#show_procurement_entities', as: 'show_procurement_entities'
 
-  get 'show_procurement_plans/:type' => 'website#show_procurement_plans', as: 'show_procurement_plans'
+  get 'ផែនការលទ្ធកម្ម/:name' => 'website#show_procurement_plans', as: 'show_procurement_plans'
 
   # get 'show_law_regulations/:law_category_id' => 'website#show_law_regulations', as: 'show_law_regulations'
 
@@ -32,15 +31,22 @@ Rails.application.routes.draw do
 
   get 'show_law_regulation/:id' => 'website#show_law_regulation', as: 'show_law_regulation'
 
-  get 'show_awarding_contracts/:procurement_method_id' => 'website#show_awarding_contracts', as: 'show_awarding_contracts'
+  get 'ការប្រគល់កិច្ចសន្យា/:name' => 'website#show_awarding_contracts', as: 'show_awarding_contracts'
 
-  get 'show_awarding_contract/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'
+  get 'ការប្រគល់កិច្ចសន្យា/:id' => 'website#show_awarding_contract', as: 'show_awarding_contract'
 
-  get 'show_org_structures/:org_structure_category_id' => 'website#show_org_structures', as: 'show_org_structures'
+  get 'អំពីស្ថាប័ន/:name' => 'website#show_org_structures', as: 'show_org_structures'
 
   get 'ការបញ្ជាទិញ' => 'website#show_purchase_orders', as: 'show_purchase_orders'
   get 'ដំណោះស្រាយវិវាទ' => 'website#show_conflict', as: 'solution_conflict'
-  get 'show_quater_years_pfms' => 'website#show_quater_years_pfms', as: 'show_quater_years_pfms'
+
+  get 'ការអនុវត្តកម្មវិធី PM/:name' => 'website#show_pfm_attachements', as: 'show_pfm_attachements'
+
+  # scope 'ការអនុវត្តកម្មវិធី PMS' do
+  #   get 'ការអនុវត្តកម្មវិធី PM/:name' => 'website#show_semester_year_pmfs', as: 'show_semester_year_pmfs'
+  #   get 'ការអនុវត្តកម្មវិធី PMS/:name' => 'website#show_quater_years_pfms', as: 'show_quater_years_pfms'
+  # end
+
   resources :administrator do
     collection do
       resources :budget_sources

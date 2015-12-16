@@ -2,7 +2,7 @@
   <div class="has-padding has-shadow" style="margin-bottom:10px;" >
     <b>
       <%= "តារាងនៃការប្រគល់កិច្ចសន្យា - " %>
-      <%= @procurement_method.name %>
+      <%= params[:name] %>
     </b>
   </div>
   <br>
@@ -32,14 +32,14 @@
                 <% end %> </li>
               ]
               <br>
-              
+
               <i style="font-size: 11px" ><%= "#{t('website.release_date')} #{awarding_contract.updated_at.strftime("%B %d, %Y") }" %></i>
               </td>
-            </tr>   
+            </tr>
           <% $i +=1; end %>
 
         </tbody>
-        
+
       </table>
     </div><!-- /.box-body -->
   </div><!-- /.box -->

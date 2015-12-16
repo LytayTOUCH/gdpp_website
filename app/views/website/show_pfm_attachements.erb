@@ -1,0 +1,47 @@
+<!-- content -->
+<div class="content  col-md-8 body">
+  <div class="has-padding has-shadow" style="margin-bottom:10px;" >
+    <b>
+      <%="ផែនការសកម្មភាពរបស់អគ្គនាយកដ្ឋាន - "%>
+      <%= params[:name] %>
+    </b>
+  </div>
+  <br/>
+    <div class="row" >
+      <% if !params[:name].eql?('ការអនុវត្តផែនការសកម្មភាព') %>
+        <% @pfm_attachmetns.each do |qyp| %>
+        <div class="col-md-3 text-center" style="margin-bottom: 8px;" >
+          <div style="border:1px solid #eee; padding:5px;" >
+            <b><%= qyp.title %></b><br>
+            <%= link_to qyp.document.url, target: '_new' do %>
+              <%= image_tag qyp.document.url(:thumb),  style: 'margin: 5px;' %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      <% else %>
+        <div class="col-md-12">
+          <% r = Time.new.year..Time.new.year-2 %>
+          <% (r.first).downto(r.last).each do |y| %>
+            <div class="row" >
+              <% if SemesterYearPmf.where(year: y).count != 0 %>
+                <p class="box-year" padding="10px"><%= " - ឆ្នាំ " %> <%= y %></p>
+              <% end %>
+              <% SemesterYearPmf.all.limit(4).where(year: y).each do |semester_year_pmf| %>
+                <div class="col-md-3" style="text-align: center;" >
+                  <p class="label-title text-center "> <%= semester_year_pmf.title %> </p>
+                  <% if semester_year_pmf.file_attachment? %>
+                    <%= link_to semester_year_pmf.file_attachment.url, target: "_blank" do %>
+                      <%= image_tag "file.png", size: '90x110' %>
+                    <% end %>
+                  <% else %>
+                    No attached file(s)
+                  <% end %>
+                </div>
+              <% end %>
+            </div><br>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+</div>
